@@ -28,13 +28,17 @@ spring:
   #freemarker热部署配置
   freemarker:
     cache: false
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+    charset: utf-8
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    request-context-attribute: request
+
 pagehelper:
   helper-dialect: mysql
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
-#pagehelper分页插件配置
-#pagehelper.helperDialect=mysql
-#pagehelper.reasonable=true
-#pagehelper.supportMethodsArguments=true
-#pagehelper.params=count=countSql
