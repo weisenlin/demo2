@@ -7,6 +7,7 @@ import com.wsl.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -38,5 +39,16 @@ public class UserController {
     public String testFtl(ModelMap mv){
         mv.addAttribute("user",userService.getEntity("1"));
         return "index";
+    }
+
+    @RequestMapping("/test/user")
+    public String testUser(){
+        return "user/list";
+    }
+
+    @RequestMapping("/edit/{id}")
+    public User getUser(@PathVariable(value = "id") String id){
+        User user = userService.getEntity(id);
+        return user;
     }
 }
