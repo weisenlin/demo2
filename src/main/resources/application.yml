@@ -36,9 +36,13 @@ spring:
     expose-session-attributes: false
     expose-spring-macro-helpers: false
     request-context-attribute: request
+  resources:
+    static-locations: classpath:/static/
 
 pagehelper:
   helper-dialect: mysql
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+
+
