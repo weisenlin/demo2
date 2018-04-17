@@ -47,6 +47,7 @@ public class UserController {
     }
 
     @RequestMapping("/edit/{id}")
+    @ResponseBody
     public User getUser(@PathVariable(value = "id") String id){
         User user = userService.getEntity(id);
         return user;
