@@ -1,7 +1,6 @@
 package com.wsl.demo.controller;
 
 import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
 import com.wsl.demo.model.Result;
 import com.wsl.demo.model.User;
 import com.wsl.demo.service.UserService;
@@ -10,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * 名称:
@@ -25,14 +26,12 @@ public class UserController {
 
     @RequestMapping("/list.do")
     @ResponseBody
-    public Result list(){
+    public List<User> list(){
         Result result = new Result();
 //        List<User> users = userService.getAll();
 //        User users = userService.findByPage(1,5);
-        Page<User> pages = userService.findByPage(1,2);
-        PageInfo users = new PageInfo(pages);
-        result.setData(users);
-        return result;
+        Page<User> pages = userService.findByPage(1,20);
+        return pages.getResult();
     }
 
     @RequestMapping("/ftl.do")
