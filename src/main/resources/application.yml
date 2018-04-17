@@ -25,6 +25,7 @@ spring:
   devtools:
     restart:
       additional-paths: src/main/java
+      enabled: true
   #freemarker热部署配置
   freemarker:
     cache: false
