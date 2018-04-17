@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsl.demo.mapper.ModuleMapper" >
+  <resultMap id="BaseResultMap" type="com.wsl.demo.model.Module" >
+    <id column="ModuleID" property="moduleid" jdbcType="VARCHAR" />
+    <result column="Level" property="level" jdbcType="INTEGER" />
+    <result column="ParentModuleID" property="parentmoduleid" jdbcType="VARCHAR" />
+    <result column="ModuleName" property="modulename" jdbcType="VARCHAR" />
+    <result column="ModuleDesc" property="moduledesc" jdbcType="VARCHAR" />
+    <result column="URL" property="url" jdbcType="VARCHAR" />
+    <result column="StopFlag" property="stopflag" jdbcType="CHAR" />
+    <result column="DisplaySeq" property="displayseq" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ModuleID, Level, ParentModuleID, ModuleName, ModuleDesc, URL, StopFlag, DisplaySeq
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from admmodule
+    where ModuleID = #{moduleid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from admmodule
+    where ModuleID = #{moduleid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wsl.demo.model.Module" >
+    insert into admmodule (ModuleID, Level, ParentModuleID, 
+      ModuleName, ModuleDesc, URL, 
+      StopFlag, DisplaySeq)
+    values (#{moduleid,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{parentmoduleid,jdbcType=VARCHAR}, 
+      #{modulename,jdbcType=VARCHAR}, #{moduledesc,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{stopflag,jdbcType=CHAR}, #{displayseq,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wsl.demo.model.Module" >
+    insert into admmodule
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="moduleid != null" >
+        ModuleID,
+      </if>
+      <if test="level != null" >
+        Level,
+      </if>
+      <if test="parentmoduleid != null" >
+        ParentModuleID,
+      </if>
+      <if test="modulename != null" >
+        ModuleName,
+      </if>
+      <if test="moduledesc != null" >
+        ModuleDesc,
+      </if>
+      <if test="url != null" >
+        URL,
+      </if>
+      <if test="stopflag != null" >
+        StopFlag,
+      </if>
+      <if test="displayseq != null" >
+        DisplaySeq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="moduleid != null" >
+        #{moduleid,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="parentmoduleid != null" >
+        #{parentmoduleid,jdbcType=VARCHAR},
+      </if>
+      <if test="modulename != null" >
+        #{modulename,jdbcType=VARCHAR},
+      </if>
+      <if test="moduledesc != null" >
+        #{moduledesc,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="stopflag != null" >
+        #{stopflag,jdbcType=CHAR},
+      </if>
+      <if test="displayseq != null" >
+        #{displayseq,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wsl.demo.model.Module" >
+    update admmodule
+    <set >
+      <if test="level != null" >
+        Level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="parentmoduleid != null" >
+        ParentModuleID = #{parentmoduleid,jdbcType=VARCHAR},
+      </if>
+      <if test="modulename != null" >
+        ModuleName = #{modulename,jdbcType=VARCHAR},
+      </if>
+      <if test="moduledesc != null" >
+        ModuleDesc = #{moduledesc,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        URL = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="stopflag != null" >
+        StopFlag = #{stopflag,jdbcType=CHAR},
+      </if>
+      <if test="displayseq != null" >
+        DisplaySeq = #{displayseq,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ModuleID = #{moduleid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wsl.demo.model.Module" >
+    update admmodule
+    set Level = #{level,jdbcType=INTEGER},
+      ParentModuleID = #{parentmoduleid,jdbcType=VARCHAR},
+      ModuleName = #{modulename,jdbcType=VARCHAR},
+      ModuleDesc = #{moduledesc,jdbcType=VARCHAR},
+      URL = #{url,jdbcType=VARCHAR},
+      StopFlag = #{stopflag,jdbcType=CHAR},
+      DisplaySeq = #{displayseq,jdbcType=INTEGER}
+    where ModuleID = #{moduleid,jdbcType=VARCHAR}
+  </update>
+</mapper>

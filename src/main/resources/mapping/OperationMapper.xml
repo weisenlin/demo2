@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsl.demo.mapper.OperationMapper" >
+  <resultMap id="BaseResultMap" type="com.wsl.demo.model.Operation" >
+    <id column="OprID" property="oprid" jdbcType="VARCHAR" />
+    <result column="ModuleID" property="moduleid" jdbcType="VARCHAR" />
+    <result column="OprName" property="oprname" jdbcType="VARCHAR" />
+    <result column="OprDesc" property="oprdesc" jdbcType="VARCHAR" />
+    <result column="StopFlag" property="stopflag" jdbcType="CHAR" />
+    <result column="DisplaySeq" property="displayseq" jdbcType="INTEGER" />
+    <result column="AgentUnitFlag" property="agentunitflag" jdbcType="VARCHAR" />
+    <result column="OwnerUnitFlag" property="ownerunitflag" jdbcType="VARCHAR" />
+    <result column="PlatUnitFlag" property="platunitflag" jdbcType="VARCHAR" />
+    <result column="FlowFlag" property="flowflag" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    OprID, ModuleID, OprName, OprDesc, StopFlag, DisplaySeq, AgentUnitFlag, OwnerUnitFlag, 
+    PlatUnitFlag, FlowFlag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from admopr
+    where OprID = #{oprid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from admopr
+    where OprID = #{oprid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wsl.demo.model.Operation" >
+    insert into admopr (OprID, ModuleID, OprName, 
+      OprDesc, StopFlag, DisplaySeq, 
+      AgentUnitFlag, OwnerUnitFlag, PlatUnitFlag, 
+      FlowFlag)
+    values (#{oprid,jdbcType=VARCHAR}, #{moduleid,jdbcType=VARCHAR}, #{oprname,jdbcType=VARCHAR}, 
+      #{oprdesc,jdbcType=VARCHAR}, #{stopflag,jdbcType=CHAR}, #{displayseq,jdbcType=INTEGER}, 
+      #{agentunitflag,jdbcType=VARCHAR}, #{ownerunitflag,jdbcType=VARCHAR}, #{platunitflag,jdbcType=VARCHAR}, 
+      #{flowflag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wsl.demo.model.Operation" >
+    insert into admopr
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="oprid != null" >
+        OprID,
+      </if>
+      <if test="moduleid != null" >
+        ModuleID,
+      </if>
+      <if test="oprname != null" >
+        OprName,
+      </if>
+      <if test="oprdesc != null" >
+        OprDesc,
+      </if>
+      <if test="stopflag != null" >
+        StopFlag,
+      </if>
+      <if test="displayseq != null" >
+        DisplaySeq,
+      </if>
+      <if test="agentunitflag != null" >
+        AgentUnitFlag,
+      </if>
+      <if test="ownerunitflag != null" >
+        OwnerUnitFlag,
+      </if>
+      <if test="platunitflag != null" >
+        PlatUnitFlag,
+      </if>
+      <if test="flowflag != null" >
+        FlowFlag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="oprid != null" >
+        #{oprid,jdbcType=VARCHAR},
+      </if>
+      <if test="moduleid != null" >
+        #{moduleid,jdbcType=VARCHAR},
+      </if>
+      <if test="oprname != null" >
+        #{oprname,jdbcType=VARCHAR},
+      </if>
+      <if test="oprdesc != null" >
+        #{oprdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="stopflag != null" >
+        #{stopflag,jdbcType=CHAR},
+      </if>
+      <if test="displayseq != null" >
+        #{displayseq,jdbcType=INTEGER},
+      </if>
+      <if test="agentunitflag != null" >
+        #{agentunitflag,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerunitflag != null" >
+        #{ownerunitflag,jdbcType=VARCHAR},
+      </if>
+      <if test="platunitflag != null" >
+        #{platunitflag,jdbcType=VARCHAR},
+      </if>
+      <if test="flowflag != null" >
+        #{flowflag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wsl.demo.model.Operation" >
+    update admopr
+    <set >
+      <if test="moduleid != null" >
+        ModuleID = #{moduleid,jdbcType=VARCHAR},
+      </if>
+      <if test="oprname != null" >
+        OprName = #{oprname,jdbcType=VARCHAR},
+      </if>
+      <if test="oprdesc != null" >
+        OprDesc = #{oprdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="stopflag != null" >
+        StopFlag = #{stopflag,jdbcType=CHAR},
+      </if>
+      <if test="displayseq != null" >
+        DisplaySeq = #{displayseq,jdbcType=INTEGER},
+      </if>
+      <if test="agentunitflag != null" >
+        AgentUnitFlag = #{agentunitflag,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerunitflag != null" >
+        OwnerUnitFlag = #{ownerunitflag,jdbcType=VARCHAR},
+      </if>
+      <if test="platunitflag != null" >
+        PlatUnitFlag = #{platunitflag,jdbcType=VARCHAR},
+      </if>
+      <if test="flowflag != null" >
+        FlowFlag = #{flowflag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OprID = #{oprid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wsl.demo.model.Operation" >
+    update admopr
+    set ModuleID = #{moduleid,jdbcType=VARCHAR},
+      OprName = #{oprname,jdbcType=VARCHAR},
+      OprDesc = #{oprdesc,jdbcType=VARCHAR},
+      StopFlag = #{stopflag,jdbcType=CHAR},
+      DisplaySeq = #{displayseq,jdbcType=INTEGER},
+      AgentUnitFlag = #{agentunitflag,jdbcType=VARCHAR},
+      OwnerUnitFlag = #{ownerunitflag,jdbcType=VARCHAR},
+      PlatUnitFlag = #{platunitflag,jdbcType=VARCHAR},
+      FlowFlag = #{flowflag,jdbcType=VARCHAR}
+    where OprID = #{oprid,jdbcType=VARCHAR}
+  </update>
+</mapper>
