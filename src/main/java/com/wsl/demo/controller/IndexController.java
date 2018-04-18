@@ -1,6 +1,8 @@
 package com.wsl.demo.controller;
 
+import com.wsl.demo.model.Enterprise;
 import com.wsl.demo.model.User;
+import com.wsl.demo.service.EnterpriseService;
 import com.wsl.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,9 @@ import java.util.Map;
 public class IndexController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private EnterpriseService enterpriseService;
 
     @RequestMapping("shiro/test")
     public String login() {

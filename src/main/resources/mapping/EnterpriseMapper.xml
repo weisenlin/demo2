@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsl.demo.mapper.EnterpriseMapper" >
+  <resultMap id="BaseResultMap" type="com.wsl.demo.model.Enterprise" >
+    <id column="PlatEntID" property="platEntID" jdbcType="INTEGER" />
+    <result column="PlatEntType" property="platEntType" jdbcType="VARCHAR" />
+    <result column="PlatEntName" property="platEntName" jdbcType="VARCHAR" />
+    <result column="SccCode" property="sccCode" jdbcType="VARCHAR" />
+    <result column="OrgCode" property="orgCode" jdbcType="VARCHAR" />
+    <result column="TradeCode" property="tradeCode" jdbcType="VARCHAR" />
+    <result column="PlatEntNameE" property="platEntNameE" jdbcType="VARCHAR" />
+    <result column="CustomsCode" property="customsCode" jdbcType="VARCHAR" />
+    <result column="MftecCode" property="mftecCode" jdbcType="VARCHAR" />
+    <result column="NGTCCode" property="NGTCCode" jdbcType="VARCHAR" />
+    <result column="DistrictCode" property="districtCode" jdbcType="VARCHAR" />
+    <result column="AEOType" property="AEOType" jdbcType="VARCHAR" />
+    <result column="CoOwner" property="coOwner" jdbcType="VARCHAR" />
+    <result column="LegalPerson" property="legalPerson" jdbcType="VARCHAR" />
+    <result column="LegalPersonPhone" property="legalPersonPhone" jdbcType="VARCHAR" />
+    <result column="LegalPersonFax" property="legalPersonFax" jdbcType="VARCHAR" />
+    <result column="ChargeMan" property="chargeMan" jdbcType="VARCHAR" />
+    <result column="ChargeManPhone" property="chargeManPhone" jdbcType="VARCHAR" />
+    <result column="ChargeManFax" property="chargeManFax" jdbcType="VARCHAR" />
+    <result column="Bank" property="bank" jdbcType="VARCHAR" />
+    <result column="BankAccount" property="bankAccount" jdbcType="VARCHAR" />
+    <result column="Address" property="address" jdbcType="VARCHAR" />
+    <result column="AddressE" property="addressE" jdbcType="VARCHAR" />
+    <result column="OwnerCode" property="ownerCode" jdbcType="VARCHAR" />
+    <result column="OwnerCodeScc" property="ownerCodeScc" jdbcType="VARCHAR" />
+    <result column="OwnerCodeOrg" property="ownerCodeOrg" jdbcType="VARCHAR" />
+    <result column="OwnerName" property="ownerName" jdbcType="VARCHAR" />
+    <result column="TradeCo" property="tradeCo" jdbcType="VARCHAR" />
+    <result column="TradeCoScc" property="tradeCoScc" jdbcType="VARCHAR" />
+    <result column="TradeCoOrg" property="tradeCoOrg" jdbcType="VARCHAR" />
+    <result column="TradeName" property="tradeName" jdbcType="VARCHAR" />
+    <result column="AgentCode" property="agentCode" jdbcType="VARCHAR" />
+    <result column="AgentCodeScc" property="agentCodeScc" jdbcType="VARCHAR" />
+    <result column="AgentCodeOrg" property="agentCodeOrg" jdbcType="VARCHAR" />
+    <result column="AgentName" property="agentName" jdbcType="VARCHAR" />
+    <result column="Notes" property="notes" jdbcType="VARCHAR" />
+    <result column="emstr_flag" property="emstr_flag" jdbcType="CHAR" />
+    <result column="ems_flag" property="ems_flag" jdbcType="CHAR" />
+    <result column="emsdcr_flag" property="emsdcr_flag" jdbcType="CHAR" />
+    <result column="dec_flag" property="dec_flag" jdbcType="CHAR" />
+    <result column="transapply_flag" property="transapply_flag" jdbcType="CHAR" />
+    <result column="transbill_flag" property="transbill_flag" jdbcType="CHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.wsl.demo.model.Enterprise" extends="BaseResultMap" >
+    <result column="SignBmp" property="signBmp" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PlatEntID, PlatEntType, PlatEntName, SccCode, OrgCode, TradeCode, PlatEntNameE, CustomsCode, 
+    MftecCode, NGTCCode, DistrictCode, AEOType, CoOwner, LegalPerson, LegalPersonPhone, 
+    LegalPersonFax, ChargeMan, ChargeManPhone, ChargeManFax, Bank, BankAccount, Address, 
+    AddressE, OwnerCode, OwnerCodeScc, OwnerCodeOrg, OwnerName, TradeCo, TradeCoScc, 
+    TradeCoOrg, TradeName, AgentCode, AgentCodeScc, AgentCodeOrg, AgentName, Notes, emstr_flag, 
+    ems_flag, emsdcr_flag, dec_flag, transapply_flag, transbill_flag
+  </sql>
+  <sql id="Blob_Column_List" >
+    SignBmp
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from platentinfo
+    where PlatEntID = #{platEntID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from platentinfo
+    where PlatEntID = #{platEntID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wsl.demo.model.Enterprise" >
+    insert into platentinfo (PlatEntID, PlatEntType, PlatEntName, 
+      SccCode, OrgCode, TradeCode, 
+      PlatEntNameE, CustomsCode, MftecCode, 
+      NGTCCode, DistrictCode, AEOType, 
+      CoOwner, LegalPerson, LegalPersonPhone, 
+      LegalPersonFax, ChargeMan, ChargeManPhone, 
+      ChargeManFax, Bank, BankAccount, 
+      Address, AddressE, OwnerCode, 
+      OwnerCodeScc, OwnerCodeOrg, OwnerName, 
+      TradeCo, TradeCoScc, TradeCoOrg, 
+      TradeName, AgentCode, AgentCodeScc, 
+      AgentCodeOrg, AgentName, Notes, 
+      emstr_flag, ems_flag, emsdcr_flag, 
+      dec_flag, transapply_flag, transbill_flag, 
+      SignBmp)
+    values (#{platEntID,jdbcType=INTEGER}, #{platEntType,jdbcType=VARCHAR}, #{platEntName,jdbcType=VARCHAR}, 
+      #{sccCode,jdbcType=VARCHAR}, #{orgCode,jdbcType=VARCHAR}, #{tradeCode,jdbcType=VARCHAR}, 
+      #{platEntNameE,jdbcType=VARCHAR}, #{customsCode,jdbcType=VARCHAR}, #{mftecCode,jdbcType=VARCHAR}, 
+      #{NGTCCode,jdbcType=VARCHAR}, #{districtCode,jdbcType=VARCHAR}, #{AEOType,jdbcType=VARCHAR}, 
+      #{coOwner,jdbcType=VARCHAR}, #{legalPerson,jdbcType=VARCHAR}, #{legalPersonPhone,jdbcType=VARCHAR}, 
+      #{legalPersonFax,jdbcType=VARCHAR}, #{chargeMan,jdbcType=VARCHAR}, #{chargeManPhone,jdbcType=VARCHAR}, 
+      #{chargeManFax,jdbcType=VARCHAR}, #{bank,jdbcType=VARCHAR}, #{bankAccount,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{addressE,jdbcType=VARCHAR}, #{ownerCode,jdbcType=VARCHAR}, 
+      #{ownerCodeScc,jdbcType=VARCHAR}, #{ownerCodeOrg,jdbcType=VARCHAR}, #{ownerName,jdbcType=VARCHAR}, 
+      #{tradeCo,jdbcType=VARCHAR}, #{tradeCoScc,jdbcType=VARCHAR}, #{tradeCoOrg,jdbcType=VARCHAR}, 
+      #{tradeName,jdbcType=VARCHAR}, #{agentCode,jdbcType=VARCHAR}, #{agentCodeScc,jdbcType=VARCHAR}, 
+      #{agentCodeOrg,jdbcType=VARCHAR}, #{agentName,jdbcType=VARCHAR}, #{notes,jdbcType=VARCHAR}, 
+      #{emstr_flag,jdbcType=CHAR}, #{ems_flag,jdbcType=CHAR}, #{emsdcr_flag,jdbcType=CHAR}, 
+      #{dec_flag,jdbcType=CHAR}, #{transapply_flag,jdbcType=CHAR}, #{transbill_flag,jdbcType=CHAR}, 
+      #{signBmp,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wsl.demo.model.Enterprise" >
+    insert into platentinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="platEntID != null" >
+        PlatEntID,
+      </if>
+      <if test="platEntType != null" >
+        PlatEntType,
+      </if>
+      <if test="platEntName != null" >
+        PlatEntName,
+      </if>
+      <if test="sccCode != null" >
+        SccCode,
+      </if>
+      <if test="orgCode != null" >
+        OrgCode,
+      </if>
+      <if test="tradeCode != null" >
+        TradeCode,
+      </if>
+      <if test="platEntNameE != null" >
+        PlatEntNameE,
+      </if>
+      <if test="customsCode != null" >
+        CustomsCode,
+      </if>
+      <if test="mftecCode != null" >
+        MftecCode,
+      </if>
+      <if test="NGTCCode != null" >
+        NGTCCode,
+      </if>
+      <if test="districtCode != null" >
+        DistrictCode,
+      </if>
+      <if test="AEOType != null" >
+        AEOType,
+      </if>
+      <if test="coOwner != null" >
+        CoOwner,
+      </if>
+      <if test="legalPerson != null" >
+        LegalPerson,
+      </if>
+      <if test="legalPersonPhone != null" >
+        LegalPersonPhone,
+      </if>
+      <if test="legalPersonFax != null" >
+        LegalPersonFax,
+      </if>
+      <if test="chargeMan != null" >
+        ChargeMan,
+      </if>
+      <if test="chargeManPhone != null" >
+        ChargeManPhone,
+      </if>
+      <if test="chargeManFax != null" >
+        ChargeManFax,
+      </if>
+      <if test="bank != null" >
+        Bank,
+      </if>
+      <if test="bankAccount != null" >
+        BankAccount,
+      </if>
+      <if test="address != null" >
+        Address,
+      </if>
+      <if test="addressE != null" >
+        AddressE,
+      </if>
+      <if test="ownerCode != null" >
+        OwnerCode,
+      </if>
+      <if test="ownerCodeScc != null" >
+        OwnerCodeScc,
+      </if>
+      <if test="ownerCodeOrg != null" >
+        OwnerCodeOrg,
+      </if>
+      <if test="ownerName != null" >
+        OwnerName,
+      </if>
+      <if test="tradeCo != null" >
+        TradeCo,
+      </if>
+      <if test="tradeCoScc != null" >
+        TradeCoScc,
+      </if>
+      <if test="tradeCoOrg != null" >
+        TradeCoOrg,
+      </if>
+      <if test="tradeName != null" >
+        TradeName,
+      </if>
+      <if test="agentCode != null" >
+        AgentCode,
+      </if>
+      <if test="agentCodeScc != null" >
+        AgentCodeScc,
+      </if>
+      <if test="agentCodeOrg != null" >
+        AgentCodeOrg,
+      </if>
+      <if test="agentName != null" >
+        AgentName,
+      </if>
+      <if test="notes != null" >
+        Notes,
+      </if>
+      <if test="emstr_flag != null" >
+        emstr_flag,
+      </if>
+      <if test="ems_flag != null" >
+        ems_flag,
+      </if>
+      <if test="emsdcr_flag != null" >
+        emsdcr_flag,
+      </if>
+      <if test="dec_flag != null" >
+        dec_flag,
+      </if>
+      <if test="transapply_flag != null" >
+        transapply_flag,
+      </if>
+      <if test="transbill_flag != null" >
+        transbill_flag,
+      </if>
+      <if test="signBmp != null" >
+        SignBmp,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="platEntID != null" >
+        #{platEntID,jdbcType=INTEGER},
+      </if>
+      <if test="platEntType != null" >
+        #{platEntType,jdbcType=VARCHAR},
+      </if>
+      <if test="platEntName != null" >
+        #{platEntName,jdbcType=VARCHAR},
+      </if>
+      <if test="sccCode != null" >
+        #{sccCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCode != null" >
+        #{orgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCode != null" >
+        #{tradeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="platEntNameE != null" >
+        #{platEntNameE,jdbcType=VARCHAR},
+      </if>
+      <if test="customsCode != null" >
+        #{customsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mftecCode != null" >
+        #{mftecCode,jdbcType=VARCHAR},
+      </if>
+      <if test="NGTCCode != null" >
+        #{NGTCCode,jdbcType=VARCHAR},
+      </if>
+      <if test="districtCode != null" >
+        #{districtCode,jdbcType=VARCHAR},
+      </if>
+      <if test="AEOType != null" >
+        #{AEOType,jdbcType=VARCHAR},
+      </if>
+      <if test="coOwner != null" >
+        #{coOwner,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPerson != null" >
+        #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonPhone != null" >
+        #{legalPersonPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonFax != null" >
+        #{legalPersonFax,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeMan != null" >
+        #{chargeMan,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeManPhone != null" >
+        #{chargeManPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeManFax != null" >
+        #{chargeManFax,jdbcType=VARCHAR},
+      </if>
+      <if test="bank != null" >
+        #{bank,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccount != null" >
+        #{bankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="addressE != null" >
+        #{addressE,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCode != null" >
+        #{ownerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCodeScc != null" >
+        #{ownerCodeScc,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCodeOrg != null" >
+        #{ownerCodeOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerName != null" >
+        #{ownerName,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCo != null" >
+        #{tradeCo,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCoScc != null" >
+        #{tradeCoScc,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCoOrg != null" >
+        #{tradeCoOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeName != null" >
+        #{tradeName,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCode != null" >
+        #{agentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCodeScc != null" >
+        #{agentCodeScc,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCodeOrg != null" >
+        #{agentCodeOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="agentName != null" >
+        #{agentName,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="emstr_flag != null" >
+        #{emstr_flag,jdbcType=CHAR},
+      </if>
+      <if test="ems_flag != null" >
+        #{ems_flag,jdbcType=CHAR},
+      </if>
+      <if test="emsdcr_flag != null" >
+        #{emsdcr_flag,jdbcType=CHAR},
+      </if>
+      <if test="dec_flag != null" >
+        #{dec_flag,jdbcType=CHAR},
+      </if>
+      <if test="transapply_flag != null" >
+        #{transapply_flag,jdbcType=CHAR},
+      </if>
+      <if test="transbill_flag != null" >
+        #{transbill_flag,jdbcType=CHAR},
+      </if>
+      <if test="signBmp != null" >
+        #{signBmp,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wsl.demo.model.Enterprise" >
+    update platentinfo
+    <set >
+      <if test="platEntType != null" >
+        PlatEntType = #{platEntType,jdbcType=VARCHAR},
+      </if>
+      <if test="platEntName != null" >
+        PlatEntName = #{platEntName,jdbcType=VARCHAR},
+      </if>
+      <if test="sccCode != null" >
+        SccCode = #{sccCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCode != null" >
+        OrgCode = #{orgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCode != null" >
+        TradeCode = #{tradeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="platEntNameE != null" >
+        PlatEntNameE = #{platEntNameE,jdbcType=VARCHAR},
+      </if>
+      <if test="customsCode != null" >
+        CustomsCode = #{customsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mftecCode != null" >
+        MftecCode = #{mftecCode,jdbcType=VARCHAR},
+      </if>
+      <if test="NGTCCode != null" >
+        NGTCCode = #{NGTCCode,jdbcType=VARCHAR},
+      </if>
+      <if test="districtCode != null" >
+        DistrictCode = #{districtCode,jdbcType=VARCHAR},
+      </if>
+      <if test="AEOType != null" >
+        AEOType = #{AEOType,jdbcType=VARCHAR},
+      </if>
+      <if test="coOwner != null" >
+        CoOwner = #{coOwner,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPerson != null" >
+        LegalPerson = #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonPhone != null" >
+        LegalPersonPhone = #{legalPersonPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonFax != null" >
+        LegalPersonFax = #{legalPersonFax,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeMan != null" >
+        ChargeMan = #{chargeMan,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeManPhone != null" >
+        ChargeManPhone = #{chargeManPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeManFax != null" >
+        ChargeManFax = #{chargeManFax,jdbcType=VARCHAR},
+      </if>
+      <if test="bank != null" >
+        Bank = #{bank,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccount != null" >
+        BankAccount = #{bankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        Address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="addressE != null" >
+        AddressE = #{addressE,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCode != null" >
+        OwnerCode = #{ownerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCodeScc != null" >
+        OwnerCodeScc = #{ownerCodeScc,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCodeOrg != null" >
+        OwnerCodeOrg = #{ownerCodeOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerName != null" >
+        OwnerName = #{ownerName,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCo != null" >
+        TradeCo = #{tradeCo,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCoScc != null" >
+        TradeCoScc = #{tradeCoScc,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCoOrg != null" >
+        TradeCoOrg = #{tradeCoOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeName != null" >
+        TradeName = #{tradeName,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCode != null" >
+        AgentCode = #{agentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCodeScc != null" >
+        AgentCodeScc = #{agentCodeScc,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCodeOrg != null" >
+        AgentCodeOrg = #{agentCodeOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="agentName != null" >
+        AgentName = #{agentName,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        Notes = #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="emstr_flag != null" >
+        emstr_flag = #{emstr_flag,jdbcType=CHAR},
+      </if>
+      <if test="ems_flag != null" >
+        ems_flag = #{ems_flag,jdbcType=CHAR},
+      </if>
+      <if test="emsdcr_flag != null" >
+        emsdcr_flag = #{emsdcr_flag,jdbcType=CHAR},
+      </if>
+      <if test="dec_flag != null" >
+        dec_flag = #{dec_flag,jdbcType=CHAR},
+      </if>
+      <if test="transapply_flag != null" >
+        transapply_flag = #{transapply_flag,jdbcType=CHAR},
+      </if>
+      <if test="transbill_flag != null" >
+        transbill_flag = #{transbill_flag,jdbcType=CHAR},
+      </if>
+      <if test="signBmp != null" >
+        SignBmp = #{signBmp,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where PlatEntID = #{platEntID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wsl.demo.model.Enterprise" >
+    update platentinfo
+    set PlatEntType = #{platEntType,jdbcType=VARCHAR},
+      PlatEntName = #{platEntName,jdbcType=VARCHAR},
+      SccCode = #{sccCode,jdbcType=VARCHAR},
+      OrgCode = #{orgCode,jdbcType=VARCHAR},
+      TradeCode = #{tradeCode,jdbcType=VARCHAR},
+      PlatEntNameE = #{platEntNameE,jdbcType=VARCHAR},
+      CustomsCode = #{customsCode,jdbcType=VARCHAR},
+      MftecCode = #{mftecCode,jdbcType=VARCHAR},
+      NGTCCode = #{NGTCCode,jdbcType=VARCHAR},
+      DistrictCode = #{districtCode,jdbcType=VARCHAR},
+      AEOType = #{AEOType,jdbcType=VARCHAR},
+      CoOwner = #{coOwner,jdbcType=VARCHAR},
+      LegalPerson = #{legalPerson,jdbcType=VARCHAR},
+      LegalPersonPhone = #{legalPersonPhone,jdbcType=VARCHAR},
+      LegalPersonFax = #{legalPersonFax,jdbcType=VARCHAR},
+      ChargeMan = #{chargeMan,jdbcType=VARCHAR},
+      ChargeManPhone = #{chargeManPhone,jdbcType=VARCHAR},
+      ChargeManFax = #{chargeManFax,jdbcType=VARCHAR},
+      Bank = #{bank,jdbcType=VARCHAR},
+      BankAccount = #{bankAccount,jdbcType=VARCHAR},
+      Address = #{address,jdbcType=VARCHAR},
+      AddressE = #{addressE,jdbcType=VARCHAR},
+      OwnerCode = #{ownerCode,jdbcType=VARCHAR},
+      OwnerCodeScc = #{ownerCodeScc,jdbcType=VARCHAR},
+      OwnerCodeOrg = #{ownerCodeOrg,jdbcType=VARCHAR},
+      OwnerName = #{ownerName,jdbcType=VARCHAR},
+      TradeCo = #{tradeCo,jdbcType=VARCHAR},
+      TradeCoScc = #{tradeCoScc,jdbcType=VARCHAR},
+      TradeCoOrg = #{tradeCoOrg,jdbcType=VARCHAR},
+      TradeName = #{tradeName,jdbcType=VARCHAR},
+      AgentCode = #{agentCode,jdbcType=VARCHAR},
+      AgentCodeScc = #{agentCodeScc,jdbcType=VARCHAR},
+      AgentCodeOrg = #{agentCodeOrg,jdbcType=VARCHAR},
+      AgentName = #{agentName,jdbcType=VARCHAR},
+      Notes = #{notes,jdbcType=VARCHAR},
+      emstr_flag = #{emstr_flag,jdbcType=CHAR},
+      ems_flag = #{ems_flag,jdbcType=CHAR},
+      emsdcr_flag = #{emsdcr_flag,jdbcType=CHAR},
+      dec_flag = #{dec_flag,jdbcType=CHAR},
+      transapply_flag = #{transapply_flag,jdbcType=CHAR},
+      transbill_flag = #{transbill_flag,jdbcType=CHAR},
+      SignBmp = #{signBmp,jdbcType=LONGVARBINARY}
+    where PlatEntID = #{platEntID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wsl.demo.model.Enterprise" >
+    update platentinfo
+    set PlatEntType = #{platEntType,jdbcType=VARCHAR},
+      PlatEntName = #{platEntName,jdbcType=VARCHAR},
+      SccCode = #{sccCode,jdbcType=VARCHAR},
+      OrgCode = #{orgCode,jdbcType=VARCHAR},
+      TradeCode = #{tradeCode,jdbcType=VARCHAR},
+      PlatEntNameE = #{platEntNameE,jdbcType=VARCHAR},
+      CustomsCode = #{customsCode,jdbcType=VARCHAR},
+      MftecCode = #{mftecCode,jdbcType=VARCHAR},
+      NGTCCode = #{NGTCCode,jdbcType=VARCHAR},
+      DistrictCode = #{districtCode,jdbcType=VARCHAR},
+      AEOType = #{AEOType,jdbcType=VARCHAR},
+      CoOwner = #{coOwner,jdbcType=VARCHAR},
+      LegalPerson = #{legalPerson,jdbcType=VARCHAR},
+      LegalPersonPhone = #{legalPersonPhone,jdbcType=VARCHAR},
+      LegalPersonFax = #{legalPersonFax,jdbcType=VARCHAR},
+      ChargeMan = #{chargeMan,jdbcType=VARCHAR},
+      ChargeManPhone = #{chargeManPhone,jdbcType=VARCHAR},
+      ChargeManFax = #{chargeManFax,jdbcType=VARCHAR},
+      Bank = #{bank,jdbcType=VARCHAR},
+      BankAccount = #{bankAccount,jdbcType=VARCHAR},
+      Address = #{address,jdbcType=VARCHAR},
+      AddressE = #{addressE,jdbcType=VARCHAR},
+      OwnerCode = #{ownerCode,jdbcType=VARCHAR},
+      OwnerCodeScc = #{ownerCodeScc,jdbcType=VARCHAR},
+      OwnerCodeOrg = #{ownerCodeOrg,jdbcType=VARCHAR},
+      OwnerName = #{ownerName,jdbcType=VARCHAR},
+      TradeCo = #{tradeCo,jdbcType=VARCHAR},
+      TradeCoScc = #{tradeCoScc,jdbcType=VARCHAR},
+      TradeCoOrg = #{tradeCoOrg,jdbcType=VARCHAR},
+      TradeName = #{tradeName,jdbcType=VARCHAR},
+      AgentCode = #{agentCode,jdbcType=VARCHAR},
+      AgentCodeScc = #{agentCodeScc,jdbcType=VARCHAR},
+      AgentCodeOrg = #{agentCodeOrg,jdbcType=VARCHAR},
+      AgentName = #{agentName,jdbcType=VARCHAR},
+      Notes = #{notes,jdbcType=VARCHAR},
+      emstr_flag = #{emstr_flag,jdbcType=CHAR},
+      ems_flag = #{ems_flag,jdbcType=CHAR},
+      emsdcr_flag = #{emsdcr_flag,jdbcType=CHAR},
+      dec_flag = #{dec_flag,jdbcType=CHAR},
+      transapply_flag = #{transapply_flag,jdbcType=CHAR},
+      transbill_flag = #{transbill_flag,jdbcType=CHAR}
+    where PlatEntID = #{platEntID,jdbcType=INTEGER}
+  </update>
+</mapper>

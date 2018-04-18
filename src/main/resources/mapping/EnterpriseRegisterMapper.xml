@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsl.demo.mapper.EnterpriseRegisterMapper" >
+  <resultMap id="BaseResultMap" type="com.wsl.demo.model.EnterpriseRegister" >
+    <id column="PlatEntregID" property="platEntregID" jdbcType="INTEGER" />
+    <result column="PlatEntType" property="platEntType" jdbcType="VARCHAR" />
+    <result column="PlatEntStatus" property="platEntStatus" jdbcType="VARCHAR" />
+    <result column="PlatEntName" property="platEntName" jdbcType="VARCHAR" />
+    <result column="TradeCode" property="tradeCode" jdbcType="VARCHAR" />
+    <result column="SccCode" property="sccCode" jdbcType="VARCHAR" />
+    <result column="OrgNo" property="orgNo" jdbcType="VARCHAR" />
+    <result column="LinkMan" property="linkMan" jdbcType="VARCHAR" />
+    <result column="PhoneNumber" property="phoneNumber" jdbcType="VARCHAR" />
+    <result column="Email" property="email" jdbcType="VARCHAR" />
+    <result column="Notes" property="notes" jdbcType="VARCHAR" />
+    <result column="RegisterDate" property="registerDate" jdbcType="TIMESTAMP" />
+    <result column="AuditMan" property="auditMan" jdbcType="VARCHAR" />
+    <result column="AuditDate" property="auditDate" jdbcType="TIMESTAMP" />
+    <result column="AuditNotes" property="auditNotes" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PlatEntregID, PlatEntType, PlatEntStatus, PlatEntName, TradeCode, SccCode, OrgNo, 
+    LinkMan, PhoneNumber, Email, Notes, RegisterDate, AuditMan, AuditDate, AuditNotes
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from platentregister
+    where PlatEntregID = #{platEntregID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from platentregister
+    where PlatEntregID = #{platEntregID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wsl.demo.model.EnterpriseRegister" >
+    insert into platentregister (PlatEntregID, PlatEntType, PlatEntStatus, 
+      PlatEntName, TradeCode, SccCode, 
+      OrgNo, LinkMan, PhoneNumber, 
+      Email, Notes, RegisterDate, 
+      AuditMan, AuditDate, AuditNotes
+      )
+    values (#{platEntregID,jdbcType=INTEGER}, #{platEntType,jdbcType=VARCHAR}, #{platEntStatus,jdbcType=VARCHAR}, 
+      #{platEntName,jdbcType=VARCHAR}, #{tradeCode,jdbcType=VARCHAR}, #{sccCode,jdbcType=VARCHAR}, 
+      #{orgNo,jdbcType=VARCHAR}, #{linkMan,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{notes,jdbcType=VARCHAR}, #{registerDate,jdbcType=TIMESTAMP}, 
+      #{auditMan,jdbcType=VARCHAR}, #{auditDate,jdbcType=TIMESTAMP}, #{auditNotes,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wsl.demo.model.EnterpriseRegister" >
+    insert into platentregister
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="platEntregID != null" >
+        PlatEntregID,
+      </if>
+      <if test="platEntType != null" >
+        PlatEntType,
+      </if>
+      <if test="platEntStatus != null" >
+        PlatEntStatus,
+      </if>
+      <if test="platEntName != null" >
+        PlatEntName,
+      </if>
+      <if test="tradeCode != null" >
+        TradeCode,
+      </if>
+      <if test="sccCode != null" >
+        SccCode,
+      </if>
+      <if test="orgNo != null" >
+        OrgNo,
+      </if>
+      <if test="linkMan != null" >
+        LinkMan,
+      </if>
+      <if test="phoneNumber != null" >
+        PhoneNumber,
+      </if>
+      <if test="email != null" >
+        Email,
+      </if>
+      <if test="notes != null" >
+        Notes,
+      </if>
+      <if test="registerDate != null" >
+        RegisterDate,
+      </if>
+      <if test="auditMan != null" >
+        AuditMan,
+      </if>
+      <if test="auditDate != null" >
+        AuditDate,
+      </if>
+      <if test="auditNotes != null" >
+        AuditNotes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="platEntregID != null" >
+        #{platEntregID,jdbcType=INTEGER},
+      </if>
+      <if test="platEntType != null" >
+        #{platEntType,jdbcType=VARCHAR},
+      </if>
+      <if test="platEntStatus != null" >
+        #{platEntStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="platEntName != null" >
+        #{platEntName,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCode != null" >
+        #{tradeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sccCode != null" >
+        #{sccCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNo != null" >
+        #{orgNo,jdbcType=VARCHAR},
+      </if>
+      <if test="linkMan != null" >
+        #{linkMan,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDate != null" >
+        #{registerDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditMan != null" >
+        #{auditMan,jdbcType=VARCHAR},
+      </if>
+      <if test="auditDate != null" >
+        #{auditDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditNotes != null" >
+        #{auditNotes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wsl.demo.model.EnterpriseRegister" >
+    update platentregister
+    <set >
+      <if test="platEntType != null" >
+        PlatEntType = #{platEntType,jdbcType=VARCHAR},
+      </if>
+      <if test="platEntStatus != null" >
+        PlatEntStatus = #{platEntStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="platEntName != null" >
+        PlatEntName = #{platEntName,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeCode != null" >
+        TradeCode = #{tradeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sccCode != null" >
+        SccCode = #{sccCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNo != null" >
+        OrgNo = #{orgNo,jdbcType=VARCHAR},
+      </if>
+      <if test="linkMan != null" >
+        LinkMan = #{linkMan,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        PhoneNumber = #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        Email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        Notes = #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDate != null" >
+        RegisterDate = #{registerDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditMan != null" >
+        AuditMan = #{auditMan,jdbcType=VARCHAR},
+      </if>
+      <if test="auditDate != null" >
+        AuditDate = #{auditDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditNotes != null" >
+        AuditNotes = #{auditNotes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PlatEntregID = #{platEntregID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wsl.demo.model.EnterpriseRegister" >
+    update platentregister
+    set PlatEntType = #{platEntType,jdbcType=VARCHAR},
+      PlatEntStatus = #{platEntStatus,jdbcType=VARCHAR},
+      PlatEntName = #{platEntName,jdbcType=VARCHAR},
+      TradeCode = #{tradeCode,jdbcType=VARCHAR},
+      SccCode = #{sccCode,jdbcType=VARCHAR},
+      OrgNo = #{orgNo,jdbcType=VARCHAR},
+      LinkMan = #{linkMan,jdbcType=VARCHAR},
+      PhoneNumber = #{phoneNumber,jdbcType=VARCHAR},
+      Email = #{email,jdbcType=VARCHAR},
+      Notes = #{notes,jdbcType=VARCHAR},
+      RegisterDate = #{registerDate,jdbcType=TIMESTAMP},
+      AuditMan = #{auditMan,jdbcType=VARCHAR},
+      AuditDate = #{auditDate,jdbcType=TIMESTAMP},
+      AuditNotes = #{auditNotes,jdbcType=VARCHAR}
+    where PlatEntregID = #{platEntregID,jdbcType=INTEGER}
+  </update>
+</mapper>
