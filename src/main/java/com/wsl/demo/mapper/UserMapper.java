@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.wsl.demo.model.User;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserMapper {
     int deleteByPrimaryKey(String userid);
@@ -21,4 +22,6 @@ public interface UserMapper {
     List<User> selectAllUser();
 
     Page<User> findByPage();
+
+    User login(Map<String,Object> user);
 }

@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.wsl.demo.model.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 名称:
@@ -23,4 +24,7 @@ public interface UserService {
      * @return
      */
     Page<User> findByPage(int pageNo, int pageSize);
+
+
+    User login(Map<String,Object> user);
 }

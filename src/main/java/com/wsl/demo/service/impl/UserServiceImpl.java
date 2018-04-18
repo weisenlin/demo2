@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 名称:
@@ -35,5 +36,10 @@ public class UserServiceImpl implements UserService {
     public Page<User> findByPage(int pageNo, int pageSize) {
         PageHelper.startPage(pageNo, pageSize);
         return userMapper.findByPage();
+    }
+
+    @Override
+    public User login(Map<String,Object> user) {
+        return userMapper.login(user);
     }
 }

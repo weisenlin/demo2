@@ -27,6 +27,13 @@
     <include refid="Base_Column_List" />
     from admuser ORDER BY admuser.displayseq
   </select>
+  <select id="login" resultMap="BaseResultMap" resultType="map" >
+    select
+    <include refid="Base_Column_List" />
+    from admuser WHERE LoginAccount = #{loginaccount,jdbcType=VARCHAR}
+    AND LoginPwd = #{loginpwd,jdbcType=VARCHAR} AND PlatEntID = #{platentid,jdbcType=VARCHAR}
+    ORDER BY admuser.displayseq
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from admuser
     where UserID = #{userid,jdbcType=VARCHAR}
