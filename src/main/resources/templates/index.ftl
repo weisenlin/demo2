@@ -29,4 +29,17 @@
 </table>
 
 </body>
+
+<script>
+    $(function(){
+        $.ajax({
+            url:'/errorAdvice/test/ajax',
+            success:function(result){
+                if(result.code==401){
+                    alert(result.message);
+                }
+            }
+        })
+    })
+</script>
 </html>
