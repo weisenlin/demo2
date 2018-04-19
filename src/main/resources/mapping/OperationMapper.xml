@@ -12,6 +12,7 @@
     <result column="OwnerUnitFlag" property="ownerunitflag" jdbcType="VARCHAR" />
     <result column="PlatUnitFlag" property="platunitflag" jdbcType="VARCHAR" />
     <result column="FlowFlag" property="flowflag" jdbcType="VARCHAR" />
+    <association property="module" column="moduleid" javaType="com.wsl.demo.model.Module" select="com.wsl.demo.mapper.ModuleMapper.selectByPrimaryKey"/>
   </resultMap>
   <sql id="Base_Column_List" >
     OprID, ModuleID, OprName, OprDesc, StopFlag, DisplaySeq, AgentUnitFlag, OwnerUnitFlag, 
@@ -22,6 +23,12 @@
     <include refid="Base_Column_List" />
     from admopr
     where OprID = #{oprid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByModuleId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    *
+    from admopr
+    where ModuleID = #{moduleid}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from admopr

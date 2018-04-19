@@ -44,6 +44,8 @@
     <result column="dec_flag" property="dec_flag" jdbcType="CHAR" />
     <result column="transapply_flag" property="transapply_flag" jdbcType="CHAR" />
     <result column="transbill_flag" property="transbill_flag" jdbcType="CHAR" />
+    <!-- 一对多 查询-->
+    <collection property="users" ofType="com.wsl.demo.model.User" javaType="ArrayList" column="PlatEntID" select="getUsersByEnterprise"/>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.wsl.demo.model.Enterprise" extends="BaseResultMap" >
     <result column="SignBmp" property="signBmp" jdbcType="LONGVARBINARY" />
@@ -59,6 +61,9 @@
   <sql id="Blob_Column_List" >
     SignBmp
   </sql>
+  <select id="getUsersByEnterprise" resultType="com.wsl.demo.model.User" parameterType="int">
+    select * from admuser u where u.platentid=#{platentid}
+  </select>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

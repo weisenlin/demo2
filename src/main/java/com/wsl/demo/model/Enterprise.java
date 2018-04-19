@@ -1,5 +1,7 @@
 package com.wsl.demo.model;
 
+import java.util.List;
+
 public class Enterprise {
     private Integer platEntID;
 
@@ -86,6 +88,8 @@ public class Enterprise {
     private String transbill_flag;
 
     private byte[] signBmp;
+
+    private List<User> users;
 
     public Integer getPlatEntID() {
         return platEntID;
@@ -429,5 +433,13 @@ public class Enterprise {
 
     public void setSignBmp(byte[] signBmp) {
         this.signBmp = signBmp;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }

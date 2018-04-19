@@ -21,6 +21,8 @@ public class Operation {
 
     private String flowflag;
 
+    private Module module;
+
     public String getOprid() {
         return oprid;
     }
@@ -99,5 +101,13 @@ public class Operation {
 
     public void setFlowflag(String flowflag) {
         this.flowflag = flowflag == null ? null : flowflag.trim();
+    }
+
+    public Module getModule() {
+        return module;
+    }
+
+    public void setModule(Module module) {
+        this.module = module;
     }
 }

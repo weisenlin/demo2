@@ -1,44 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.wsl.demo.mapper.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.wsl.demo.model.User" >
-    <id column="UserID" property="userid" jdbcType="VARCHAR" />
-    <result column="UserName" property="username" jdbcType="VARCHAR" />
-    <result column="PlatEntID" property="platentid" jdbcType="INTEGER" />
-    <result column="LoginAccount" property="loginaccount" jdbcType="VARCHAR" />
-    <result column="LoginPwd" property="loginpwd" jdbcType="VARCHAR" />
-    <result column="AgentPersonID" property="agentpersonid" jdbcType="VARCHAR" />
-    <result column="AdminFlag" property="adminflag" jdbcType="CHAR" />
-    <result column="StopFlag" property="stopflag" jdbcType="CHAR" />
-    <result column="DisplaySeq" property="displayseq" jdbcType="INTEGER" />
-  </resultMap>
-  <sql id="Base_Column_List" >
+<mapper namespace="com.wsl.demo.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.wsl.demo.model.User">
+        <id column="UserID" property="userid" jdbcType="VARCHAR"/>
+        <result column="UserName" property="username" jdbcType="VARCHAR"/>
+        <result column="PlatEntID" property="platentid" jdbcType="INTEGER"/>
+        <result column="LoginAccount" property="loginaccount" jdbcType="VARCHAR"/>
+        <result column="LoginPwd" property="loginpwd" jdbcType="VARCHAR"/>
+        <result column="AgentPersonID" property="agentpersonid" jdbcType="VARCHAR"/>
+        <result column="AdminFlag" property="adminflag" jdbcType="CHAR"/>
+        <result column="StopFlag" property="stopflag" jdbcType="CHAR"/>
+        <result column="DisplaySeq" property="displayseq" jdbcType="INTEGER"/>
+        <association property="enterprise" column="PlatEntID" select="getEnterpriseCollection"/>
+    </resultMap>
+    <sql id="Base_Column_List">
     UserID, UserName, PlatEntID, LoginAccount, LoginPwd, AgentPersonID, AdminFlag, StopFlag, 
     DisplaySeq
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
-    <include refid="Base_Column_List" />
-    from admuser
-    where UserID = #{userid,jdbcType=VARCHAR}
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from admuser
+        where UserID = #{userid,jdbcType=VARCHAR}
+    </select>
+    <select id="getEnterpriseCollection" resultType="com.wsl.demo.model.Enterprise" parameterType="int">
+    select * from platentinfo p where p.platentid=#{platentid}
   </select>
-  <select id="selectAllUser" resultMap="BaseResultMap" >
-    select
-    <include refid="Base_Column_List" />
-    from admuser ORDER BY admuser.displayseq
-  </select>
-  <select id="login" resultMap="BaseResultMap" resultType="map" >
-    select
-    <include refid="Base_Column_List" />
-    from admuser WHERE LoginAccount = #{loginaccount,jdbcType=VARCHAR}
-    AND LoginPwd = #{loginpwd,jdbcType=VARCHAR} AND PlatEntID = #{platentid,jdbcType=VARCHAR}
-    ORDER BY admuser.displayseq
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    <select id="selectAllUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from admuser ORDER BY admuser.displayseq
+    </select>
+    <select id="login" resultMap="BaseResultMap" resultType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from admuser WHERE LoginAccount = #{loginaccount,jdbcType=VARCHAR}
+        AND LoginPwd = #{loginpwd,jdbcType=VARCHAR} AND PlatEntID = #{platentid,jdbcType=VARCHAR}
+        ORDER BY admuser.displayseq
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from admuser
     where UserID = #{userid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.wsl.demo.model.User" >
+
+    <insert id="insert" parameterType="com.wsl.demo.model.User">
     insert into admuser (UserID, UserName, PlatEntID, 
       LoginAccount, LoginPwd, AgentPersonID, 
       AdminFlag, StopFlag, DisplaySeq
@@ -48,98 +54,101 @@
       #{adminflag,jdbcType=CHAR}, #{stopflag,jdbcType=CHAR}, #{displayseq,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.wsl.demo.model.User" >
-    insert into admuser
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userid != null" >
-        UserID,
-      </if>
-      <if test="username != null" >
-        UserName,
-      </if>
-      <if test="platentid != null" >
-        PlatEntID,
-      </if>
-      <if test="loginaccount != null" >
-        LoginAccount,
-      </if>
-      <if test="loginpwd != null" >
-        LoginPwd,
-      </if>
-      <if test="agentpersonid != null" >
-        AgentPersonID,
-      </if>
-      <if test="adminflag != null" >
-        AdminFlag,
-      </if>
-      <if test="stopflag != null" >
-        StopFlag,
-      </if>
-      <if test="displayseq != null" >
-        DisplaySeq,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userid != null" >
-        #{userid,jdbcType=VARCHAR},
-      </if>
-      <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="platentid != null" >
-        #{platentid,jdbcType=INTEGER},
-      </if>
-      <if test="loginaccount != null" >
-        #{loginaccount,jdbcType=VARCHAR},
-      </if>
-      <if test="loginpwd != null" >
-        #{loginpwd,jdbcType=VARCHAR},
-      </if>
-      <if test="agentpersonid != null" >
-        #{agentpersonid,jdbcType=VARCHAR},
-      </if>
-      <if test="adminflag != null" >
-        #{adminflag,jdbcType=CHAR},
-      </if>
-      <if test="stopflag != null" >
-        #{stopflag,jdbcType=CHAR},
-      </if>
-      <if test="displayseq != null" >
-        #{displayseq,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.wsl.demo.model.User" >
-    update admuser
-    <set >
-      <if test="username != null" >
-        UserName = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="platentid != null" >
-        PlatEntID = #{platentid,jdbcType=INTEGER},
-      </if>
-      <if test="loginaccount != null" >
-        LoginAccount = #{loginaccount,jdbcType=VARCHAR},
-      </if>
-      <if test="loginpwd != null" >
-        LoginPwd = #{loginpwd,jdbcType=VARCHAR},
-      </if>
-      <if test="agentpersonid != null" >
-        AgentPersonID = #{agentpersonid,jdbcType=VARCHAR},
-      </if>
-      <if test="adminflag != null" >
-        AdminFlag = #{adminflag,jdbcType=CHAR},
-      </if>
-      <if test="stopflag != null" >
-        StopFlag = #{stopflag,jdbcType=CHAR},
-      </if>
-      <if test="displayseq != null" >
-        DisplaySeq = #{displayseq,jdbcType=INTEGER},
-      </if>
-    </set>
-    where UserID = #{userid,jdbcType=VARCHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.wsl.demo.model.User" >
+
+    <insert id="insertSelective" parameterType="com.wsl.demo.model.User">
+        insert into admuser
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userid != null">
+                UserID,
+            </if>
+            <if test="username != null">
+                UserName,
+            </if>
+            <if test="platentid != null">
+                PlatEntID,
+            </if>
+            <if test="loginaccount != null">
+                LoginAccount,
+            </if>
+            <if test="loginpwd != null">
+                LoginPwd,
+            </if>
+            <if test="agentpersonid != null">
+                AgentPersonID,
+            </if>
+            <if test="adminflag != null">
+                AdminFlag,
+            </if>
+            <if test="stopflag != null">
+                StopFlag,
+            </if>
+            <if test="displayseq != null">
+                DisplaySeq,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userid != null">
+                #{userid,jdbcType=VARCHAR},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="platentid != null">
+                #{platentid,jdbcType=INTEGER},
+            </if>
+            <if test="loginaccount != null">
+                #{loginaccount,jdbcType=VARCHAR},
+            </if>
+            <if test="loginpwd != null">
+                #{loginpwd,jdbcType=VARCHAR},
+            </if>
+            <if test="agentpersonid != null">
+                #{agentpersonid,jdbcType=VARCHAR},
+            </if>
+            <if test="adminflag != null">
+                #{adminflag,jdbcType=CHAR},
+            </if>
+            <if test="stopflag != null">
+                #{stopflag,jdbcType=CHAR},
+            </if>
+            <if test="displayseq != null">
+                #{displayseq,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.wsl.demo.model.User">
+        update admuser
+        <set>
+            <if test="username != null">
+                UserName = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="platentid != null">
+                PlatEntID = #{platentid,jdbcType=INTEGER},
+            </if>
+            <if test="loginaccount != null">
+                LoginAccount = #{loginaccount,jdbcType=VARCHAR},
+            </if>
+            <if test="loginpwd != null">
+                LoginPwd = #{loginpwd,jdbcType=VARCHAR},
+            </if>
+            <if test="agentpersonid != null">
+                AgentPersonID = #{agentpersonid,jdbcType=VARCHAR},
+            </if>
+            <if test="adminflag != null">
+                AdminFlag = #{adminflag,jdbcType=CHAR},
+            </if>
+            <if test="stopflag != null">
+                StopFlag = #{stopflag,jdbcType=CHAR},
+            </if>
+            <if test="displayseq != null">
+                DisplaySeq = #{displayseq,jdbcType=INTEGER},
+            </if>
+        </set>
+        where UserID = #{userid,jdbcType=VARCHAR}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.wsl.demo.model.User">
     update admuser
     set UserName = #{username,jdbcType=VARCHAR},
       PlatEntID = #{platentid,jdbcType=INTEGER},
@@ -153,9 +162,9 @@
   </update>
 
 
-  <select id="findByPage" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from admuser
-  </select>
+    <select id="findByPage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from admuser
+    </select>
 </mapper>

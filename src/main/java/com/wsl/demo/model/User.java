@@ -19,6 +19,8 @@ public class User {
 
     private Integer displayseq;
 
+    private Enterprise enterprise;
+
     public String getUserid() {
         return userid;
     }
@@ -89,5 +91,13 @@ public class User {
 
     public void setDisplayseq(Integer displayseq) {
         this.displayseq = displayseq;
+    }
+
+    public Enterprise getEnterprise() {
+        return enterprise;
+    }
+
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
     }
 }

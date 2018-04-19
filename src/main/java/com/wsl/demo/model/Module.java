@@ -1,5 +1,7 @@
 package com.wsl.demo.model;
 
+import java.util.List;
+
 public class Module {
     private String moduleid;
 
@@ -16,6 +18,8 @@ public class Module {
     private String stopflag;
 
     private Integer displayseq;
+
+    private List<Operation> operations;
 
     public String getModuleid() {
         return moduleid;
@@ -79,5 +83,13 @@ public class Module {
 
     public void setDisplayseq(Integer displayseq) {
         this.displayseq = displayseq;
+    }
+
+    public List<Operation> getOperations() {
+        return operations;
+    }
+
+    public void setOperations(List<Operation> operations) {
+        this.operations = operations;
     }
 }

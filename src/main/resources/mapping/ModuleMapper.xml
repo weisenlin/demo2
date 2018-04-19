@@ -10,6 +10,9 @@
     <result column="URL" property="url" jdbcType="VARCHAR" />
     <result column="StopFlag" property="stopflag" jdbcType="CHAR" />
     <result column="DisplaySeq" property="displayseq" jdbcType="INTEGER" />
+    <!-- 跟一对一一样用association标签,实体类定义的成员,要跟数据库字段名对应上 -->
+    <collection property="operations" column="ModuleID" javaType="ArrayList"
+                ofType="com.wsl.demo.model.Operation" select="getOperationByModuleId"/>
   </resultMap>
   <sql id="Base_Column_List" >
     ModuleID, Level, ParentModuleID, ModuleName, ModuleDesc, URL, StopFlag, DisplaySeq
@@ -19,6 +22,9 @@
     <include refid="Base_Column_List" />
     from admmodule
     where ModuleID = #{moduleid,jdbcType=VARCHAR}
+  </select>
+  <select id="getOperationByModuleId" resultType="com.wsl.demo.model.Operation" >
+    select * from admopr a where a.moduleid=#{moduleid}
   </select>
   <select id="selectAll" resultMap="BaseResultMap" >
     select
