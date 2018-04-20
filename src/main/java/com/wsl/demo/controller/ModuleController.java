@@ -5,7 +5,10 @@ import com.wsl.demo.service.ModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -25,5 +28,19 @@ public class ModuleController {
         mv.addAttribute("modules",modules);
         mv.addAttribute("user","bbb");
         return "/module/module";
+    }
+
+    @RequestMapping("load.do")
+    @ResponseBody
+    public List<Module> load(){
+        List<Module> modules = moduleService.getList();
+        return modules;
+    }
+
+    @RequestMapping("get/{id}")
+    public ModelAndView getModule(@PathVariable("id")String id){
+        ModelAndView mv = new ModelAndView("/module/edit");
+        mv.addObject("module",moduleService.getEntity(id));
+        return mv;
     }
 }

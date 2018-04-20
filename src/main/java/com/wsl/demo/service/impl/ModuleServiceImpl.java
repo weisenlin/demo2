@@ -22,4 +22,9 @@ public class ModuleServiceImpl implements ModuleService {
     public List<Module> getList() {
         return moduleMapper.selectAll();
     }
+
+    @Override
+    public Module getEntity(String id) {
+        return moduleMapper.selectByPrimaryKey(id);
+    }
 }
