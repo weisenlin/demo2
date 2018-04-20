@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>进口报关单列表</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<!--标题工具栏-->
+			<div class="row p-x p-t border-b">
+				<div class="col-sm-4 form-inline">
+					<a class="refresh mg-t-5">
+						<h3 class="dsi m-r-md  text-primary">进口报关单</h3>
+					</a>
+				<a class="xshow-switch m-l" xrole="open"><span class="xico xico-arrowup"></span>筛选</a>
+				</div>
+				<div class="col-sm-8 form-inline text-right">
+					<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+						<a type="button" class="btn btn-primary"><span class="xico xico-arrow-up3"></span>排序</a>
+						<a type="button" class="btn btn-primary"><span class="xico xico-file-add"></span>新增</a>
+						<a type="button" class="btn btn-primary"><span class="xico xico-inbox2"></span>导入</a>
+					</div>
+				</div>
+			</div>
+			<!--标题工具栏end-->
+			<!--搜索栏-通栏布局超出自动折行-->
+
+			<div class="x-table xshow-sidebar p-a">
+				<table class="table table-sm table-bordered th-right">
+					<tr>
+						<th class="fn-7">单据状态</th>
+						<td>
+							<select name="Select2" class="w-100" id="Select" tabindex="">
+								<option></option>
+								<option>选项内容...</option>
+								<option>选项内容...</option>
+							</select>
+						</td>
+						<th class="fn-7">客户</th>
+						<td colspan="3">
+							<select name="Select3" class="w-100" id="Select3" tabindex="">
+								<option></option>
+								<option>选项内容...</option>
+								<option>选项内容...</option>
+							</select>
+						</td>
+						<th class="fn-5">排序项</th>
+						<td align="right">
+							<select name="Select4" class="w-100" id="Select4" tabindex="">
+								<option></option>
+								<option>选项内容...</option>
+								<option>选项内容...</option>
+							</select>
+						</td>
+						<th>
+							<select name="Select5" class="w-100" id="Select5" tabindex="">
+								<option></option>
+								<option>选项内容...</option>
+								<option>选项内容...</option>
+							</select>
+						</th>
+						<td rowspan="3" class="fn-7">
+							<button type="button" class="btn dsb center-block btn-primary mg-t-5" data-dismiss="modal"><span class="xico xico-chazhao"></span>查询</button>
+							<button type="button" class="btn dsb center-block btn-link mg-t-5" data-dismiss="modal">清空条件</button>
+						</td>
+					</tr>
+					<tr>
+						<th>创建开始日期</th>
+						<td><input type="text" tabindex="" class="dates-sel" id="date2" placeholder="请选择"></td>
+						<th>创建结束日期</th>
+						<td><input type="text" tabindex="" class="dates-sel" id="date3" placeholder="请选择"></td>
+						<th class="fn-7">平台单据编号</th>
+						<td><input id="input16" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th>海关编号</th>
+						<td colspan="2"><input id="input20" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+					</tr>
+					<tr>
+						<th>企业单据编号</th>
+						<td><input id="input17" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th>统一编号</th>
+						<td colspan="6"><input id="input18" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<!--<th>统一编号</th>
+						<td><input id="input19" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th>&nbsp;</th>
+						<td colspan="2">&nbsp;</td>-->
+					</tr>
+				</table>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 p-a">
+					排序：
+					<button class="btn btn-sm btn-info-outline">创建时间<span class="xico xico-arrow-up3"></span></button>
+					<button class="btn btn-sm btn-info-outline">客户编码<span class="xico xico-arrow-down3"></span></button>
+					<button class="btn btn-sm btn-info-outline">平台单据编号</button>
+					<button class="btn btn-sm btn-info-outline">预录入编号</button>
+					<button class="btn btn-sm btn-info-outline">海关编号 </button>
+					<button class="btn btn-sm btn-info-outline">备案号</button>
+					<button class="btn btn-sm btn-info-outline">进口日期</button>
+					<button class="btn btn-sm btn-info-outline">申报日期</button>
+					<button class="btn btn-sm btn-info-outline">运输方式</button>
+					<button class="btn btn-sm btn-info-outline">监管方式</button>
+					<a class="xico text-danger xico-square-cross fs-m p-a"></a>
+				</div>
+			</div>
+
+			<!--表格栏-->
+			<div class="x-table search-x p-a">
+				<table class="table table-sm table-bordered table-striped">
+					<tr class="th-center">
+						<th>操作</th>
+						<th>平台单据编号</th>
+						<th>创建日期</th>
+						<th>单据状态</th>
+						<th>客户</th>
+						<th>企业单据编号</th>
+						<th>预录入编号</th>
+						<th>统一编号</th>
+						<th>海关编号</th>
+						<th>申报地海关</th>
+						<th>进口口岸</th>
+						<th>备案号</th>
+						<th>合同协议号</th>
+						<th>进口日期</th>
+						<th>申报日期</th>
+						<th>收发货人</th>
+						<th>消费使用单位</th>
+						<th>申报单位</th>
+						<th>运输方式</th>
+						<th>运输工具名称</th>
+						<th>航次</th>
+						<th>提运单号</th>
+						<th>监管方式</th>
+						<th>征免性质</th>
+						<th>许可证号</th>
+						<th>启运国（地区）</th>
+						<th>装货港</th>
+						<th>境内目的地</th>
+						<th>成交方式</th>
+						<th>件数</th>
+						<th>包装种类</th>
+						<th>毛重</th>
+						<th>净重</th>
+						<th>创建单位ID</th>
+						<th>货主单位ID</th>
+						<th>代理企业ID</th>
+						<th>创建人</th>
+					</tr>
+					<tr>
+						<td>
+							<div class="btn-group btn-block btn-group-sm fn-12">
+								<button type="button" class="btn btn-link">复制</button>
+								<button data-toggle="modal" data-target="#pop-info" type="button" class="btn btn-link">日志</button>
+								<button data-toggle="modal" data-target="#pop-info2" type="button" class="btn btn-link">企业单证</button>
+							</div>
+						</td>
+						<td>
+							<a href="#">DEC20170412I001</a>
+						</td>
+						<td>2017/12/31</td>
+						<td>已审核</td>
+						<td>　</td>
+						<td>　</td>
+						<td>511920171197009903</td>
+						<td>000000001264443053</td>
+						<td>511920171197009008</td>
+						<td>南海三山</td>
+						<td>南海三山</td>
+						<td>　</td>
+						<td>　</td>
+						<td>2017/4/12</td>
+						<td>2017/4/12</td>
+						<td>本田汽车零部件制造有限公司</td>
+						<td>本田汽车零部件制造有限公司</td>
+						<td>佛山市天晟报关有限公司</td>
+						<td>水路运输</td>
+						<td>7203550067</td>
+						<td>511901704090</td>
+						<td>NHFI17040104B5</td>
+						<td>一般贸易</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>CIF</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>1004</td>
+						<td>1004</td>
+						<td>1008</td>
+						<td>张三</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="btn-group btn-block btn-group-sm fn-12">
+								<button type="button" class="btn btn-link">复制</button>
+								<button data-toggle="modal" data-target="#pop-info" type="button" class="btn btn-link">日志</button>
+								<button data-toggle="modal" data-target="#pop-info2" type="button" class="btn btn-link">企业单证</button>
+							</div>
+						</td>
+						<td>
+							<a href="#">DEC20170412I001</a>
+						</td>
+						<td>2017/12/31</td>
+						<td>草稿</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>南海三山</td>
+						<td>　</td>
+						<td>　</td>
+						<td>2017/4/12</td>
+						<td>　</td>
+						<td>本田汽车零部件制造有限公司</td>
+						<td>本田汽车零部件制造有限公司</td>
+						<td>佛山市天晟报关有限公司</td>
+						<td>水路运输</td>
+						<td>7203550067</td>
+						<td>511901704090</td>
+						<td>NHFI17040104C5</td>
+						<td>一般贸易</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>CIF</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>　</td>
+						<td>1004</td>
+						<td>1004</td>
+						<td>　</td>
+						<td>张三</td>
+						<tr>
+							<td>
+								<div class="btn-group btn-block btn-group-sm fn-12">
+									<button type="button" class="btn btn-link">复制</button>
+									<button data-toggle="modal" data-target="#pop-info" type="button" class="btn btn-link">日志</button>
+									<button data-toggle="modal" data-target="#pop-info2" type="button" class="btn btn-link">企业单证</button>
+								</div>
+							</td>
+							<td>
+								<a href="#">DEC20170412I001</a>
+							</td>
+							<td>2017/12/31</td>
+							<td>已审核</td>
+							<td>　</td>
+							<td>　</td>
+							<td>511920171197009903</td>
+							<td>000000001264443053</td>
+							<td>511920171197009008</td>
+							<td>南海三山</td>
+							<td>南海三山</td>
+							<td>　</td>
+							<td>　</td>
+							<td align="right">2017/4/12</td>
+							<td align="right">2017/4/12</td>
+							<td>本田汽车零部件制造有限公司</td>
+							<td>本田汽车零部件制造有限公司</td>
+							<td>佛山市天晟报关有限公司</td>
+							<td>水路运输</td>
+							<td align="right">7203550067</td>
+							<td>511901704090</td>
+							<td>NHFI17040104B5</td>
+							<td>一般贸易</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>CIF</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td align="right">1004</td>
+							<td align="right">1004</td>
+							<td align="right">1008</td>
+							<td>张三</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="btn-group btn-block btn-group-sm fn-12">
+									<button type="button" class="btn btn-link">复制</button>
+									<button data-toggle="modal" data-target="#pop-info" type="button" class="btn btn-link">日志</button>
+									<button data-toggle="modal" data-target="#pop-info2" type="button" class="btn btn-link">企业单证</button>
+								</div>
+							</td>
+							<td>
+								<a href="#">DEC20170412I001</a>
+							</td>
+							<td>2017/12/31</td>
+							<td>草稿</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>南海三山</td>
+							<td>　</td>
+							<td>　</td>
+							<td align="right">2017/4/12</td>
+							<td>　</td>
+							<td>本田汽车零部件制造有限公司</td>
+							<td>本田汽车零部件制造有限公司</td>
+							<td>佛山市天晟报关有限公司</td>
+							<td>水路运输</td>
+							<td align="right">7203550067</td>
+							<td>511901704090</td>
+							<td>NHFI17040104C5</td>
+							<td>一般贸易</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>CIF</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td align="right">1004</td>
+							<td align="right">1004</td>
+							<td>　</td>
+							<td>张三</td>
+						</tr>
+				</table>
+			</div>
+			<!--表格栏end-->
+
+			<!--日志弹窗-->
+			<div id="pop-info1" class="modal fade x-modal-lg">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          						<span aria-hidden="true">&times;</span>
+          						<span class="sr-only">Close</span>
+        				</button>
+							<h4 class="modal-title">日志</h4>
+						</div>
+						<div class="modal-body search-x">
+							<!--弹窗内容开始-->
+							<table class="table-bordered table-striped w-100">
+								<tr class="th-center">
+									<th>操作时间</th>
+									<th>操作用户</th>
+									<th>操作企业</th>
+									<th>操作</th>
+									<th>办理时长</th>
+									<th>代办操作用户</th>
+									<th>意见备注</th>
+								</tr>
+								<tr>
+									<td>2017/12/9 9:36</td>
+									<td>海关</td>
+									<td>　</td>
+									<td>　</td>
+									<td>　</td>
+									<td>　</td>
+									<td>放行(P)</td>
+								</tr>
+								<tr>
+									<td>2017/12/9 9:36</td>
+									<td>海关</td>
+									<td>　</td>
+									<td>　</td>
+									<td>　</td>
+									<td>　</td>
+									<td>申报成功(7)</td>
+								</tr>
+								<tr>
+									<td>2017/12/9 9:35</td>
+									<td>海关</td>
+									<td>　</td>
+									<td>　</td>
+									<td>　</td>
+									<td>　</td>
+									<td>上载成功(3)</td>
+								</tr>
+								<tr>
+									<td>2017/12/9 9:31</td>
+									<td>王五</td>
+									<td>佛山市天晟报关有限公司</td>
+									<td>上传</td>
+									<td>　</td>
+									<td>　</td>
+									<td>　</td>
+								</tr>
+								<tr>
+									<td>2017/12/8 9:30</td>
+									<td>李四</td>
+									<td>佛山市天晟报关有限公司</td>
+									<td>复核</td>
+									<td>　</td>
+									<td>　</td>
+									<td>通过</td>
+								</tr>
+								<tr>
+									<td>2017/12/9 9:15</td>
+									<td>刘二</td>
+									<td>本田汽车零部件制造</td>
+									<td>复核</td>
+									<td>　</td>
+									<td>　</td>
+									<td>通过</td>
+								</tr>
+								<tr>
+									<td>2017/12/9 9:10</td>
+									<td>钱七</td>
+									<td>本田汽车零部件制造</td>
+									<td>提交</td>
+									<td>　</td>
+									<td>　</td>
+									<td>　</td>
+								</tr>
+							</table>
+							<!--弹窗内容开始end-->
+						</div>
+						<div class="modal-footer text-center">
+							<button type="button" class="btn btn-danger" data-dismiss="modal">&nbsp;&nbsp;关闭&nbsp;&nbsp;</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--日志弹窗end-->
+
+			<!--企业单证弹窗-->
+			<div id="pop-info2" class="modal fade x-modal-lg">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          						<span aria-hidden="true">&times;</span>
+          						<span class="sr-only">Close</span>
+        				</button>
+							<h4 class="modal-title">企业单证</h4>
+						</div>
+						<div class="modal-body">
+							<!--弹窗内容开始-->
+							<div class="x-table search-x">
+								<table class="table-bordered table-striped w-100">
+									<col width="20">
+									<col width="60">
+									<col width="200">
+									<col width="200">
+									<col width="60">
+									<col width="130">
+									<tr>
+										<td><input class="gn1" type="checkbox" tabindex="" value="1"></td>
+										<td>文件序号</td>
+										<td>文件名称</td>
+										<td>上传企业</td>
+										<td>上传人</td>
+										<td>上传时间</td>
+									</tr>
+									<tr>
+										<td><input class="gn1" type="checkbox" tabindex="" value="1"></td>
+										<td>1</td>
+										<td>发票.XLS</td>
+										<td>本田汽车零部件制造</td>
+										<td>张三</td>
+										<td>2017/11/10 10:00</td>
+									</tr>
+									<tr>
+										<td><input class="gn1" type="checkbox" tabindex="" value="1"></td>
+										<td>2</td>
+										<td>装箱单.XLS</td>
+										<td>本田汽车零部件制造</td>
+										<td>张三</td>
+										<td>2017/11/10 10:00</td>
+									</tr>
+									<tr>
+										<td><input class="gn1" type="checkbox" tabindex="" value="1"></td>
+										<td>3</td>
+										<td>报关单草单.PDF</td>
+										<td>本田汽车零部件制造</td>
+										<td>张三</td>
+										<td>2017/11/10 10:00</td>
+									</tr>
+									<tr>
+										<td><input class="gn1" type="checkbox" tabindex="" value="1"></td>
+										<td>4</td>
+										<td>订舱单.PDF</td>
+										<td>佛山市东城货代</td>
+										<td>李四</td>
+										<td>2017/11/10 10:10</td>
+									</tr>
+									<tr>
+										<td><input class="gn1" type="checkbox" tabindex="" value="1"></td>
+										<td>5</td>
+										<td>B/L.PDF</td>
+										<td>佛山市东城货代</td>
+										<td>李四</td>
+										<td>2017/11/11 10:10</td>
+									</tr>
+								</table>
+							</div>
+							<!--弹窗内容开始end-->
+						</div>
+						<div class="modal-footer text-center">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">上传/保存</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--上传随附单据弹窗end-->
+		</div>
+
+		<script src="../lib/inuse/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+			});
+			$(function() {
+				//同时绑定多个日期控件.date-sel
+				lay('.date-sel').each(function() {
+					laydate.render({
+						elem: this,
+						trigger: 'click',
+						theme: '#39c'
+					});
+				});
+			});
+			//刷新页面
+			xrefresh('.refresh');
+			//切换筛选栏显示
+			xshowswitch('.xshow-switch', '.xshow-sidebar');
+		</script>
+
+	</body>
+
+</html>

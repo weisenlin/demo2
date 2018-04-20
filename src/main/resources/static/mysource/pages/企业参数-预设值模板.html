@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>企业参数设置-预设值模板</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<!--标题菜单栏-->
+			<div id="group1" class="row p-x p-t border-b ">
+				<div class="col-sm-3">
+					<a class="refresh col-lg-12">
+					<h3 class="dsi text-primary">企业参数-预设值模板</h3>
+					</a>
+				</div>
+				<div class="col-sm-9 p-t">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs border-none pull-right" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link" href="#tabs1">企业信息</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="#tabs2">预设值模板</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--标题菜单栏end-->
+			<div id="group2">
+				<div id="group2-1">
+					<div class="p-a bg-grey border-t border-b">
+						<!--<label class="fn-4" for="Select">业务类型</label>&nbsp;-->
+						<select class="text-black w-100 xinput-md" id="Select" tabindex="">
+							<option>全部业务</option>
+							<option>选项内容...</option>
+							<option>选项内容...</option>
+						</select>
+					</div>
+					<div id="mlist" class="scroll-y">
+						<ul class="x-ul-list list-border-b list-sm">
+							<li>
+								<a>进口报关单</a>
+							</li>
+							<li>
+								<a>一般贸易进口报关单</a>
+							</li>
+							<li>
+								<a>进口集中报关单</a>
+							</li>
+							<li>
+								<a>进口申报单</a>
+							</li>
+							<li>
+								<a>出口报关单</a>
+							</li>
+							<li>
+								<a>一般贸易出口报关单</a>
+							</li>
+							<li>
+								<a>出口集中报关单</a>
+							</li>
+							<li>
+								<a>出口申报单</a>
+							</li>
+							<li>
+								<a>进口关封</a>
+							</li>
+							<li>
+								<a>出口关封</a>
+							</li>
+							<li>
+								<a>转厂发货单</a>
+							</li>
+							<li>
+								<a>转厂收货单</a>
+							</li>
+							<li>
+								<a>转厂退货单</a>
+							</li>
+							<li>
+								<a>转厂收退货单</a>
+							</li>
+							<li>
+								<a>资料库备案</a>
+							</li>
+							<li>
+								<a>手册备案</a>
+							</li>
+							<li>
+								<a>手册核销</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="group2-2" style="display: none;">
+					<div class="border-a">
+						<div class="p-a">
+							<span class="xico xico-wenjianjia2"></span><span id="itms">进口报关单</span>
+						</div>
+						<div class="p-x border-b p-b">
+							<input id="template-name" tabindex="" type="text" class="w-100 form-control" placeholder="">
+							<button id="get-template" type="button" class="btn btn-primary btn-sm m-t xopen center-block" data-dismiss="modal"><span class="xico xico-plus3"></span>新建模板</button>
+						</div>
+						<ul class="x-ul-list list-border-b border-b">
+							<li class="row">
+								<div class="col-sm-11">
+									<a class="xopen">预设值模板名称1</a>
+								</div>
+								<a class="col-sm-1 text-danger xdel">
+									<span class="xico xico-cross2"></span>
+								</a>
+							</li>
+							<li class="row">
+								<div class="col-sm-11">
+									<a class="xopen">预设值模板名称2</a>
+								</div>
+								<a class="col-sm-1 text-danger xdel">
+									<span class="xico xico-cross2"></span>
+								</a>
+							</li>
+							<li class="row">
+								<div class="col-sm-11">
+									<a class="xopen">预设值模板名称3</a>
+								</div>
+								<a class="col-sm-1 text-danger xdel">
+									<span class="xico xico-cross2"></span>
+								</a>
+							</li>
+							<li class="row">
+								<div class="col-sm-11">
+									<a class="xopen">预设值模板名称4</a>
+								</div>
+								<a class="col-sm-1 text-danger xdel">
+									<span class="xico xico-cross2"></span>
+								</a>
+							</li>
+						</ul>
+						<div class="text-center p-a">
+							<button type="button" class="btn btn-sm btn-primary xclose" data-dismiss="modal">&nbsp;关闭&nbsp;</button>
+						</div>
+					</div>
+				</div>
+				<div id="group2-3" style="display: none;">
+					<!--工具栏toolbar-->
+					<div class="x-toolbar-wk">
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a type="button" class="btn btn-primary"><span class="xico xico-arrow-left3"></span>模板</a>
+							<a type="button" class="btn btn-primary">模板&nbsp;<span class="xico xico-arrow-right3"></span></a>
+							<a type="button" class="btn btn-primary"><span class="xico xico-inbox2"></span>导入企业模板</a>
+						</div>
+						<div class="btn-group x-toolbar pull-right" role="group" aria-label="Basic example">
+							<a type="button" class="btn btn-primary"><span class="xico xico-baocun"></span>保存</a>
+							<a type="button" class="btn btn-primary"><span class="xico xico-cross2"></span>删除</a>
+							<a type="button" class="btn btn-primary xclose2"><span class="xico xico-reply2"></span>关闭</a>
+						</div>
+					</div>
+					<!--工具栏toolbar end-->
+
+					<div class="border-b p-t">
+						<h4 id="template-title" class="dsi text-info"><span class="xico xico-hetong7 fs-m"></span>预设值模板名称1</h4>
+						<label class="pull-right"><input type="checkbox" tabindex=""  value="1" checked>&nbsp;默认模板</label>
+					</div>
+					<div class="p-t">
+						<h4 class="text-success">报关单表头</h4>
+						<div class="x-table">
+							<table class="table table-sm table-bordered">
+								<tr>
+									<th>申报地海关</th>
+									<td>黄埔新港海关▼</td>
+									<th>进口口岸</th>
+									<td>埔开发区▼</td>
+									<th>运输方式</th>
+									<td>水路运输▼</td>
+								</tr>
+								<tr>
+									<th>监管方式</th>
+									<td>进料对口▼</td>
+									<th>征免性质</th>
+									<td>进料加工▼</td>
+									<th>启运国（地区）</th>
+									<td>美国▼</td>
+								</tr>
+								<tr>
+									<th>装货港</th>
+									<td>美国▼</td>
+									<th>境内目的地</th>
+									<td>广州经济技术开发区▼</td>
+									<th>成交方式</th>
+									<td>CIF▼</td>
+								</tr>
+								<tr>
+									<th>包装种类</th>
+									<td>纸箱▼</td>
+									<th>贸易国(地区）</th>
+									<td>香港▼</td>
+									<th>报关单类型</th>
+									<td>通关无纸化▼</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="p-t">
+						<h4 class="text-success">其它事项确认</h4>
+						<div class="x-table">
+							<table class="table table-sm table-bordered">
+								<tr>
+									<th>特殊关系确认</th>
+									<td>是▼</td>
+									<th>价格影响确认</th>
+									<td>否▼</td>
+									<th>支付特许权使用费确认</th>
+									<td>否▼</td>
+								</tr>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//控制业务列表高度
+			setheight('#mlist');
+
+			$(document).ready(function() {
+				//刷新页面
+				xrefresh('.refresh');
+				//单复选框定义
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				//打开模板列表并传值到列表标题
+				$('#mlist a').on('click', function() {
+					$('#group2-2').css('display', 'block');
+					$('#itms').text($(this).text());
+//					showgroup23();
+				});
+				//xopen打开模板编辑表
+				$('.xopen').on('click', function() {
+					$('#group2-3').css('display', 'block');
+					$('#template-title').text($(this).text());
+//					showgroup23();
+				})
+				//xdel删除模板列表单项
+				$('.xdel').on('click', function() {
+					$(this).parent().remove();
+				})
+				//新建模板按钮事件
+				$('#get-template').on('click', function() {
+					$('#template-title').text($('#template-name').val());
+				})
+				//关闭按钮（关闭模板列表）
+				$('.xclose').on('click',function(){
+					$('#group2-2').css('display', 'none');
+//					$('#group2-3').removeClass('col-sm-8').addClass('col-sm-10');
+				})
+				
+				//关闭按钮2（关闭模板列表）
+				$('.xclose2').on('click',function(){
+					$('#group2-3').css('display', 'none');
+				})
+				
+				//控制栏目显示
+				function showgroup23() {
+					xdisplay = $('#group2-3').css('display');
+					if(xdisplay == 'none') {
+						$('#group2-3').removeClass('col-sm-8').addClass('col-sm-10');
+					} else {
+						$('#group2-3').removeClass('col-sm-10').addClass('col-sm-8');
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

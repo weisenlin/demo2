@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="row pd-10">
+			<div class="col-sm-3 col-sm-push-1">
+				<h2 class="text-primary border-b">标题格式</h2>
+				<h1>h1标题格式</h1>
+				<h2>h2标题格式</h2>
+				<h3>h3标题格式</h3>
+				<h4>h4标题格式</h4>
+				<h5>h5标题格式</h5>
+				<h6>h6标题格式</h6>
+				<h2 class="text-primary border-b">通用字号</h2>
+				<p class="text-grey2">fs-sm / fs / fs-m / fs-b / fs-sb</p>
+				<p><span class="fs-sm">5698.00</span> <em class="text-danger"> fs-sm</em></p>
+				<p><span class="fs">5698.00</span><em class="text-danger"> fs</em></p>
+				<p><span class="fs-m">5698.00</span><em class="text-danger"> fs-m</em></p>
+				<p><span class="fs-b">5698.00</span><em class="text-danger"> fs-b</em></p>
+				<p><span class="fs-sb">5698.00</span><em class="text-danger"> fs-sb</em></p>
+				<h2 class="text-primary border-b">星号</h2>
+				<p class="text-grey2">star-sm</p>
+				<p>必填项目<i class="star-sm"></i></p>
+				<h2 class="text-primary border-b">货币符号</h2>
+				<p class="text-grey2">currency-sm</p>
+				<p><span class="currency-sm fs text-danger">5698.00</span></p>
+				<p><span class="currency-sm fs-m text-danger">5698.00</span></p>
+				<p><span class="currency-sm fs-b text-danger">5698.00</span></p>
+				<p><span class="currency-sm fs-sb text-danger">5698.00</span></p>
+				<h2 class="text-primary border-b">英文大小写</h2>
+				<p class="text-uppercase">welcome for you 字母大写（text-uppercas）</p>
+				<p class="text-lowercase">welcome for you 字母小写（text-lowercase）</p>
+				<p class="text-capitalize">welcome for you 词首字母大写（text-capitalize）</p>
+			</div>
+			<div class="col-sm-6 col-sm-push-2">
+				<div class="row text-center">
+					<h3 class="text-primary text-left border-b">背景色</h3>
+					<div class="col-xs-2 bg-primary text-white">bg-primary</div>
+					<div class="col-xs-2 bg-success text-white">bg-success</div>
+					<div class="col-xs-2 bg-warning text-white">bg-warning</div>
+					<div class="col-xs-2 bg-danger text-white">bg-danger</div>
+					<div class="col-xs-2 bg-info text-white">bg-info</div>
+					<div class="col-xs-2 bg-inverse text-white">bg-inverse</div>
+					<div class="col-xs-2 bg-faded">bg-faded</div>
+					<div class="col-xs-2 bg-grey">bg-grey</div>
+					<div class="col-xs-2 bg-white">bg-white</div>
+				</div>
+				<h2 class="text-primary border-b">文字颜色</h2>
+				<p class="text-primary">主题文字颜色（text-primary）</p>
+				<p class="text-success">通过文字颜色（text-success）</p>
+				<p class="text-warning">提醒文字颜色（text-warning）</p>
+				<p class="text-danger">醒目文字颜色（text-danger）</p>
+				<p class="text-info">信息文字颜色（text-info）</p>
+				<p class="text-muted">禁用文字颜色（text-muted）</p>
+				<p class="text-grey">灰度文字颜色（text-grey）</p>
+				<p class="text-grey2">注释文字颜色（text-grey2）</p>
+				<p class="bg-primary text-white">白色文字颜色（text-white）</p>
+				<h2 class="text-primary border-b">段落格式</h2>
+				<p>段落文字-支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；</p>
+				<p>段落文字-审批提醒功能帮助申请人实时查看审批状态和结果，及时跟进审批进度，提高工作效率。</p>
+				<h2 class="text-primary border-b">缩进段落格式</h2>
+				<div class="text-indent">
+					<p>段落文字-支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；</p>
+					<p>段落文字-审批人员可通过网页端或移动端进行查阅和审批，大幅缩短审批周期，促使各项需求事务快速达成；</p>
+				</div>
+
+				<h2 class="text-primary border-b">无格式列表</h2>
+				<div>
+					<ul class="x-ul-list">
+						<li>段落文字-支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；</li>
+						<li>段落文字-审批提醒功能帮助申请人实时查看审批状态和结果，及时跟进审批进度，提高工作效率。</li>
+					</ul>
+				</div>
+				
+				<h2 class="text-primary border-b">自定义符号列表</h2>
+				<div>
+					<ul class="x-ul">
+						<li>段落文字-支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；</li>
+						<li>段落文字-审批提醒功能帮助申请人实时查看审批状态和结果，及时跟进审批进度，提高工作效率。</li>
+					</ul>
+				</div>
+
+				<h2 class="text-primary border-b">自定义数值列表</h2>
+				<div>
+					<ol class="x-ol">
+						<li>段落文字-支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；</li>
+						<li>段落文字-审批人员可通过网页端或移动端进行查阅和审批，大幅缩短审批周期，促使各项需求事务快速达成；</li>
+					</ol>
+				</div>
+
+				<h2 class="text-primary border-b">中文嵌套列表</h2>
+				<div class="china-li-1">
+					<ol>
+						<li>段落文字-支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；</li>
+						<li>段落文字-审批人员可通过网页端或移动端进行查阅和审批，大幅缩短审批周期，促使各项需求事务快速达成；
+							<ol>
+								<li>段落文字-支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；</li>
+								<li>段落文字-审批提醒功能帮助申请人实时查看审批状态和结果，及时跟进审批进度，提高工作效率。</li>
+							</ol>
+						</li>
+						<li>段落文字-审批提醒功能帮助申请人实时查看审批状态和结果，及时跟进审批进度，提高工作效率。</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.x-progress {
+				background-image: url(../images/progress.png);
+			}
+			
+			.x-progress .s1 {
+				background-image: url(../images/prog2.png);
+			}
+			
+			.x-progress .s2 {
+				background-image: url(../images/prog3.png);
+			}
+			
+			.x-progress .s3 {
+				background-image: url(../images/prog4.png);
+			}
+			
+			.x-progress .s4 {
+				background-image: url(../images/prog3.png);
+			}
+			
+			.x-progress .s5 {
+				background-image: url(../images/prog6.png);
+			}
+			
+			.x-progress .s6 {
+				background-image: url(../images/prog7.png);
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<div class="h-topbar">
+			<div class="x-fixed-width clearfix">
+				<div class="logo pull-left">
+					<h3>新盛通 <span class="text-warning">Smartlink</span> 云报关平台</h3>
+				</div>
+				<div class="r-menu pull-right">
+					<ul>
+						<li>
+							<a href=""><span class="xico xico-bangzhu"></span>第一次使用平台</a>
+						</li>
+						<li>
+							<a href=""><span class="xico xico-shouhou2"></span>平台客服</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--顶部end-->
+
+		<!--内容区-->
+		<div class="h-main x-fixed-width">
+
+			<!--进度条-->
+			<div class="x-progress">
+				<div class="x-prog s1"></div>
+				<!--s1-s6分别对应以下6个阶段状态-->
+			</div>
+			<!--进度条end-->
+
+			<!--申请会员须知 s1-->
+			<div class="x-page m-b-lg active">
+				<div class="border-a p-a-lg">
+					<h2 class="text-center m-b">用户服务协议</h2>
+					<p>本协议是您与加盈掌柜平台包括加盈掌柜网页版网站和App手机应用端（简称"本站"，网址：www.zhanggui360.com）所有者（以下简称为"加盈掌柜"）之间就加盈掌柜网站服务等相关事宜所订立的契约，请您仔细阅读本注册协议，您点击"同意并继续"按钮后，本协议即构成对双方有约束力的法律文件。
+					</p>
+					<p>
+					</p>
+					<p>一、 本站服务条款的确认和接纳
+					</p>
+					<p>
+					</p>
+					<p>1.1本站的各项电子服务的所有权和运作权归加盈掌柜所有。用户同意所有注册协议条款并完成注册程序，才能成为本站的正式用户。用户确认：本协议条款是处理双方权利义务的契约，始终有效，法律另有强制性规定或双方另有特别约定的，依其规定。
+					</p>
+					<p>
+					</p>
+					<p>1.2用户点击同意本协议的，即视为用户确认自己具有享受本站服务、下单购物等相应的权利能力和行为能力，能够独立承担法律责任。
+					</p>
+					<p>
+					</p>
+					<p>1.3如果您在18周岁以下，您只能在父母或监护人的监护参与下才能使用本站。
+					</p>
+					<p>
+					</p>
+					<p>1.4加盈掌柜保留在中华人民共和国大陆地区法施行之法律允许的范围内独自决定拒绝服务、关闭用户账户、清除或编辑内容或取消订单的权利。
+					</p>
+					<p>
+					</p>
+					<p>二、 本站服务
+					</p>
+					<p>
+					</p>
+					<p>2.1加盈掌柜通过互联网依法为用户提供互联网信息等服务，用户在完全同意本协议及本站规定的情况下，方有权使用本站的相关服务。
+					</p>
+					<p>
+					</p>
+					<p>2.2用户必须自行准备如下设备和承担如下开支：（1）上网设备，包括并不限于电脑或者其他上网终端、调制解调器及其他必备的上网装置；（2）上网开支，包括并不限于网络接入费、上网设备租用费、手机流量费等。
+					</p>
+					<p>
+					</p>
+					<p>三、 用户信息</p>
+				</div>
+				<div class="text-center m-a-md">
+					<input type="button" value="知道了，下一步" class="btn btn-success btn-lg">
+				</div>
+			</div>
+			<!--申请会员须知end-->
+
+			<!--填写企业信息s2 & 审核不通过 s4-->
+			<div class="x-page m-b-lg active">
+				<div class="x-alert bg-danger">
+					<span class="xico xico-circle-cross fs-b"></span>
+					<span class="info"><strong>审核不通过</strong> ，存在问题：营业执照不符，请重新完善资料后再提交！</span>
+				</div>
+				<h2 class="m-t-lg">企业基本信息</h2>
+				<div class="border-t border-b p-a-lg m-b-lg ">
+					<form>
+						<div class="w-80 x-form-lg">
+							<div class="form-group row">
+								<label class="col-sm-3">企业类型：</label>
+								<div class="col-sm-9">
+									<div class="radio">
+										<label>
+          <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          货主单位
+        </label>
+										<label>
+          <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          代理单位
+        </label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputEmail3" class="col-sm-3">企业名称：</label>
+								<div class="col-sm-9">
+									<input type="email" class="form-control" id="inputEmail3" placeholder="请输入企业名称">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3">统一社会信用代码：</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="请输入信用代码">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3">手机号码：</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control " id="inputPassword3" placeholder="18912345678" disabled>
+								</div>
+							</div>
+						</div>
+					</form>
+
+				</div>
+				<h2 class="dsi">附件</h2><i> (上传附件要求：原件高清扫描件、文件格式为jpg/png、文件大小<1M)</i>
+				<div class="border-a p-x-md p-t-md">
+					<div class="upimg-wk clearfix">
+						<a class="upimg"><span class="xico xico-plus3"></span><i>营业执照营业执照营业执照营业执照营业执照营业执照营业执照</i></a>
+						<a class="upimg"><span class="xico xico-plus3"></span><i>营业执照</i></a>
+						<a class="upimg"><span class="xico xico-plus3"></span><i>营业执照</i></a>
+						<a class="upimg"><span class="xico xico-plus3"></span><i>营业执照</i></a>
+						<a class="upimg"><span class="xico xico-plus3"></span><i>营业执照</i></a>
+						<a class="upimg"><span class="xico xico-plus3"></span><i>营业执照</i></a>
+						<a class="upimg"><span class="xico xico-plus3"></span><i>营业执照</i></a>
+						<a class="upimg"><span class="xico xico-plus3"></span><i>营业执照</i></a>
+						<a class="upimg"><span class="xico xico-plus3"></span><i>营业执照</i></a>
+					</div>
+				</div>
+				<div class="text-center m-a-md">
+					<input type="button" value=" 提 交 " class="btn btn-warning btn-lg">
+					<input type="button" value="保存，暂不提交" class="btn btn-success btn-lg">
+				</div>
+				<p class="text-center"><i>提交后，平台工作人员将在2个工作日内完成审核</i></p>
+			</div>
+			<!--填写企业信息 & 审核不通过end-->
+
+			<!--等待审核s3-->
+			<div class="x-page m-b-lg active">
+
+				<div class="x-bico center-block bg-info m-b-md">
+					<span class="xico xico-dianhua m-r-0"></span>
+				</div>
+
+				<p class="text-center fs-m text-info border-b p-b center-block w-50">请您保持手机畅通，我们将第一时间告知您审核结果</p>
+				<p class="text-center fs-m text-warning">正在审核中.....</p>
+			</div>
+			<!--等待审核end-->
+
+			<!--审核通过 + 设置管理员账号 s5-->
+			<div class="x-page m-b-lg active">
+				<div class="x-alert bg-success">
+					<span class="xico  xico-circle-check fs-b"></span>
+					<span class="info"><strong>审核通过</strong> ，请设置管理员信息。</span>
+				</div>
+				<h2 class="m-t-lg">设置管理员账号</h2>
+				<div class="border-t border-b p-a-lg m-b-lg ">
+					<form>
+						<div class="w-80 x-form-lg">
+							<div class="form-group row">
+								<label for="inputEmail3" class="col-sm-2">管理员账号：</label>
+								<div class="col-sm-4">
+									<input type="email" class="form-control" id="inputEmail3" placeholder="请输入账号名">
+								</div>
+								<i class="col-sm-6 p-l">6-18位字符，可包含数字和字母（区分大小写）</i>
+							</div>
+							<div class="form-group row">
+								<label for="inputEmail3" class="col-sm-2">管理员密码：</label>
+								<div class="col-sm-4">
+									<input type="email" class="form-control" id="inputEmail3" placeholder="请输入密码">
+								</div>
+								<i class="col-sm-6 p-l">6-18位字符，可包含数字和字母（区分大小写）</i>
+							</div>
+							<div class="form-group row">
+								<label for="inputEmail3" class="col-sm-2">确认密码：</label>
+								<div class="col-sm-4">
+									<input type="email" class="form-control" id="inputEmail3" placeholder="请再次输入密码">
+								</div>
+								<i class="col-sm-6 p-l"></i>
+							</div>
+						</div>
+					</form>
+
+				</div>
+				<div class="text-center m-a-md">
+					<input type="button" value="下一步" class="btn btn-success btn-lg">
+				</div>
+				<p class="text-center"><i class="text-danger">账号/密码不符合要求，请重新输入！</i></p>
+			</div>
+			<!--审核通过 + 设置管理员账号end-->
+
+			<!--恭喜成为会员 s6-->
+			<div class="x-page m-b-lg active">
+
+				<div class="x-bico center-block bg-success m-b-md">
+					<span class="xico xico-check2 m-r-0"></span>
+				</div>
+
+				<p class="text-center fs-sb text-success border-b p-b center-block w-50">
+					恭喜成为会员！</p>
+				<p class="text-center fs-m text-warning">首次登录平台请用管理员账号。</p>
+
+				<div class="text-center m-a-md">
+					<input type="button" value="返回首页" class="btn btn-primary btn-lg">
+				</div>
+			</div>
+			<!--恭喜成为会员end-->
+
+			<!--查看会员资料 + 修改管理员账号 s6-->
+			<div class="x-page m-b-lg active">
+
+				<h2 class="m-t-lg">企业基本信息</h2>
+				<div class="border-t border-b p-a-lg m-b-lg ">
+					<form>
+						<div class="w-80 x-form-lg">
+							<div class="form-group row">
+								<label class="col-sm-3">企业类型：</label>
+								<div class="col-sm-9">
+									<div class="radio">
+										<label>
+          <input type="radio" name="gridRadios" id="gridRadios1" value="option1" disabled checked>
+          货主单位
+        </label>
+										<label>
+          <input type="radio" name="gridRadios" id="gridRadios2" value="option2" disabled>
+          代理单位
+        </label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputEmail3" class="col-sm-3">企业名称：</label>
+								<div class="col-sm-9">
+									<input type="email" class="form-control" id="inputEmail3" placeholder="请输入企业名称" disabled>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3">统一社会信用代码：</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="请输入信用代码" disabled>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3">手机号码：</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control " id="inputPassword3" placeholder="18912345678" disabled>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="border-a p-x-md p-t-md m-t-lg">
+						<div class="upimg-wk clearfix">
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照营业执照营业执照营业执照营业执照营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照营业执照营业执照营业执照营业执照营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+							<a class="upimg"><img src="holder.js/100px80" alt="" /><i>营业执照</i></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-block">
+						<h3 class="text-info">重置管理员密码</h3>
+						<p class="text-center"><i>如果管理员遗忘了密码，可点击以下按钮重置管理员密码</i></p>
+						<div class="text-center m-a-md">
+							<input type="button" value="发送新密码到注册手机" class="btn btn-danger btn-lg">
+						</div>
+						<p class="text-center"><i>收到密码后，请及时修改密码。</i></p>
+					</div>
+				</div>
+
+			</div>
+			<!--填写企业信息 & 审核不通过end-->
+
+		</div>
+		<!--内容区end-->
+
+		<!--底部-->
+		<div class="h-bottom">
+			<div class="x-fixed-width">
+				<div class="bot-link row text-center">
+					<a href="" class="col-sm-4"><span class="xico xico-youjian"></span>邮箱：nstYun@nst.com</a>
+					<a href="" class="col-sm-4"><span class="xico xico-kehuguanli"></span>交流群：1987983</a>
+					<a href="" class="col-sm-4"><span class="xico xico-pc_weixin"></span>公众号：新盛通云平台</a>
+				</div>
+				<div class="b-menu text-center">
+					<ul class="clearfix">
+						<li>
+							<a href="">关于我们 </a>
+						</li>
+						<li>
+							<a href="">网站声明</a>
+						</li>
+						<li>
+							<a href="">帮助中心</a>
+						</li>
+						<li>
+							<a href="">联系我们</a>
+						</li>
+						<li>
+							<a href="">常见问题</a>
+						</li>
+					</ul>
+				</div>
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="b-code text-right">
+							<img src="../images/follow-us1.jpg">
+						</div>
+					</div>
+					<div class="col-sm-10">
+						<div class="b-info">
+							<ul class="copyright clearfix">
+								<li>Copyright © 2017 XXXXXXXXX 版权所有</li>
+								<li>粤ICP备XXXXXXX号XX1</li>
+								<li>增值电信业务经营许可证 ：XXXXXXX</li>
+								<li>本站法律顾问：XXXXX律师</li>
+							</ul>
+						</div>
+						<div class="b-info">
+							<ul class="infobtn clearfix">
+								<li>
+									<a href=""><span class="xico xico-lianxiren"></span>意见反馈</a>
+								</li>
+								<li>
+									<a href=""><span class="xico xico-shouhou2"></span>服务热线:4006-999-688</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!--底部end-->
+
+		<script type="text/javascript">
+			//用于单选复选框样式控制
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+			});
+		</script>
+	</body>
+
+</html>

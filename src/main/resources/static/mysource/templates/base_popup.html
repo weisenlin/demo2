@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--提示信息-->
+		<div id="alert1" class="alert alert-warning alert-dismissible fade in" role="alert">
+			<strong>警告信息提示！</strong> 编辑提示的信息。
+		</div>
+
+		<div id="alert2" class="alert alert-danger fade in hidden" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    <span aria-hidden="true">&times;</span>
+			    <span class="sr-only">Close</span>
+  			</button>
+			<strong>错误信息提示！</strong> 编辑提示的信息。
+		</div>
+
+		<div id="alert3" class="alert alert-success alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    <span aria-hidden="true">&times;</span>
+			    <span class="sr-only">Close</span>
+  			</button>
+			<strong>正确信息提示！</strong> 编辑提示的信息。
+		</div>
+
+		<div id="alert4" class="alert alert-info alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    <span aria-hidden="true">&times;</span>
+			    <span class="sr-only">Close</span>
+  			</button>
+			<strong>系统信息提示！</strong> 编辑提示的信息。
+		</div>
+		<!--提示信息end-->
+
+		<!--按钮组-->
+		<!--第一步data-toggle="modal" 声明-->
+		<!--第二步data-target="xxx" xxx为调用弹窗id或class，见以下示范-->
+		<div class="pd-10">
+			<p class="text-primary m-t-lg">
+				弹窗示例</p>
+			<div class="text-center">
+				<div class="p-a">
+					<input data-toggle="modal" data-target="#myModal" id="btn1" type="button" value="　完整弹窗　" class="btn btn-primary">
+					<input data-toggle="modal" data-target=".bd-example-modal-lg" id="btn2" type="button" value="　大弹窗　" class="btn btn-danger">
+					<input data-toggle="modal" data-target=".bd-example-modal-sm" id="btn3" type="button" value="　小弹窗　" class="btn btn-success">
+					<input data-toggle="modal" data-target="#gridSystemModal" id="btn4" type="button" value="　带布局弹窗　" class="btn btn-warning">
+				</div>
+				<div class="p-a">
+					<input data-toggle="modal" data-target="#pop-info" id="btn5" type="button" value="　延时关闭提示信息弹窗 　" class="btn btn-info">
+					<input onclick="closealert('#alert1')" id="btn6" type="button" value="关闭警告提示" class="btn btn-warning">
+					<input onclick="xshow('#alert2')" id="btn7" type="button" value="显示错误提示" class="btn btn-primary">
+					<input onclick="xhide('#alert2')" id="btn8" type="button" value="隐藏错误提示" class="btn btn-danger">
+				</div>
+				<div class="p-a">
+					<input onclick="xwaitopen()" type="button" value="显示等待" class="btn btn-primary">
+					<input onclick="xwaitclose()" type="button" value="隐藏等待" class="btn btn-danger" style="z-index: 1999; margin-left: 5px; position: fixed;">
+				</div>
+				<div class="p-a">
+					<input onclick="xwaitopen_s()" type="button" value="显示等待(简版)" class="btn btn-primary">
+					<input onclick="xwaitopen_s('显示提示信息...','0','5')" type="button" value="定制提示信息(提示信息，遮罩控制，延时)" class="btn btn-primary">
+					<!--参数说明：xwaitopen_s(xtext, xfull, xtime)所有参数不填写为调用系统默认等待窗口
+						参数1：提示信息文字（默认值'正在处理......'），
+						参数2：0不显示底部遮罩（默认1显示），
+						参数3：填写数字为延时关闭秒数（默认0不延时关闭）
+					-->
+					<input onclick="xwaitclose_s()" type="button" value="移除信息(简版)" class="btn btn-danger" style="z-index: 1999; margin-left: 5px; position: fixed;">
+				</div>
+				<div class="p-a">
+					<input id="ms_info" type="button" value="系统提示信息" class="btn btn-info">
+					<input id="ms_success" type="button" value="成功提示信息" class="btn btn-success">
+					<input id="ms_error" type="button" value="错误提示信息" class="btn btn-danger">
+				</div>
+			</div>
+		</div>
+		<!--按钮组end-->
+
+		<!--完整弹窗-->
+		<div id="myModal" class="modal fade x-modal-sm">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+						<h4 class="modal-title">系统提示</h4>
+					</div>
+					<div class="modal-body text-center">
+						<h4>确定取消线上关系吗?</h4>
+					</div>
+					<div class="modal-footer text-center">
+						<button type="button" class="btn btn-primary">&nbsp;&nbsp;确定&nbsp;&nbsp;</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">&nbsp;&nbsp;关闭 &nbsp;&nbsp;</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--完整弹窗end-->
+
+		<!--大弹窗框架-->
+		<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					大弹窗内容...
+				</div>
+			</div>
+		</div>
+		<!--大弹窗框架end-->
+
+		<!-- 小弹窗框架 -->
+		<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					小弹窗内容...
+				</div>
+			</div>
+		</div>
+		<!-- 小弹窗框架end -->
+
+		<!--带布局的弹窗-->
+		<!--在模态框中使用网格系统，需要建立一个.modal-body容器，然后在该容器中使用普通的网格系统类。-->
+		<div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="gridModalLabel">带布局弹窗</h4>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-12">
+								<p>在模态框中使用网格系统，需要建立一个<span class="text-danger">.modal-body</span>容器，然后在该容器中使用普通的网格系统类。</p>
+							</div>
+							<div class="col-md-4">.col-md-4</div>
+							<div class="col-md-4">.col-md-4</div>
+							<div class="col-md-4">.col-md-4</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">.col-md-4</div>
+							<div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">&nbsp;&nbsp;关闭&nbsp;&nbsp;</button>
+						<button type="button" class="btn btn-primary">&nbsp;&nbsp;确定&nbsp;&nbsp;</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--带布局的弹窗end-->
+
+		<!-- 延时关闭提示信息弹窗 -->
+		<div id="pop-info" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content bg-grey2 p-a text-center">
+					点击保存按钮试试...
+				</div>
+			</div>
+		</div>
+		<!-- 小弹窗框架end -->
+
+		<!--等待中弹窗（测试用） -->
+		<!--<div id="pop-wait" class="modal fade text-center" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="true" aria-hidden="true">
+			<img class="dsi" src="../images/loading-2.gif" style="margin-top: 300px;" />
+		</div>-->
+		<!-- 等待中弹窗end -->
+		
+		<!--等待弹窗简洁版-->
+		<!--<div class="xawait">
+			<div class="xtext">
+				正在处理......
+			</div>
+		</div>-->
+
+		<script type="text/javascript">
+			//简洁等待弹窗垂直居中
+//			vcenter('.xawait>.xtext');
+
+			//js调用弹窗示例
+			$(document).ready(function() {
+				//直接调用默认系统提示信息
+//				Messenger().post("直接调用默认系统提示信息...");
+
+				//带参数调用消息提示
+//				Messenger().post({
+//					message: '带参数调用错误消息提示',
+//					type: 'error',
+//					showCloseButton: true
+//				});
+				
+			});
+
+			//提示信息初始化 定义本页信息提示出现位置及风格
+			Messenger.options = {
+				extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
+				theme: 'air'
+			}
+
+			//调用系统提示信息（默认 info）
+			$("#ms_info").click(function() {
+				$.globalMessenger().post({
+					message: "系统提示：今天天气不错！", //提示信息
+				});
+			});
+			//调用成功提示信息（success）
+			$("#ms_success").click(function() {
+				$.globalMessenger().post({
+					message: "操作成功", //提示信息
+					type: 'success', //消息类型。error、info、success
+				});
+			});
+			//调用错误提示信息（error）
+			$("#ms_error").click(function() {
+				$.globalMessenger().post({
+					message: "错误消息：你这样做是不对的...", //提示信息
+					type: 'error', //消息类型。error、info、success
+					hideAfter: 0, //多长时间消失，0不消失
+					showCloseButton: true, //是否显示关闭按钮
+					hideOnNavigate: true //是否隐藏导航
+				});
+			});
+			
+			//点击【延时关闭提示信息弹窗】按钮提示并延迟关闭
+			var pop_div = '#pop-info';
+			var pop_time = 2000;
+			var pop_info = '文件已经保存...'
+			$(pop_div).on("show.bs.modal", xclose(pop_div, pop_time, pop_info))
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,110 @@
+<html>
+	<link rel="StyleSheet" href="../dtree.css" type="text/css" />
+	<script type="text/javascript" src="../dtree.js"></script>
+
+<body >
+<textarea id="test" style="width:800px;" rows="20"></textarea>
+
+ <script type="text/javascript">
+	d2 = new dTree('d2',"./.."); 
+	d2.multiSel = true; //多选
+	d2.isRootDif = false;//不区别根节点
+ //d2.add('3','-1','主管部门结构'); 
+ d2.add('310000','-1','上海市','rul',true); 
+ d2.add('320000','-1','重庆市','rul');
+ d2.add('320100','320000','崇阳区','rul',true);
+ d2.add('310100','310000','黄浦区','rul',true); 
+ d2.add('310900','310000','虹口区','rul'); 
+ 
+ 
+ d2.itemClickMethod = showValue;
+ 
+ function showValue(id,name){
+ 	alert(id + "+" + name);
+ }
+ </script>
+ 
+ <style>
+ .exam{
+ 	background-color:#fffccc;
+ }
+ 
+ .exam a{
+ 	color: #333;
+	text-decoration: none;
+ }
+ 
+ .exam a:hover{
+ 	color: #333;
+	text-decoration: underline;
+ }
+ </style>
+
+ <div class="exam">
+
+ <table>
+ 	<tr>
+ 		<td>功能描述</td><td>js代码</td>
+ 	</tr>
+ 	<tr>	
+ 		<td><a onClick="if(d2.itemClickMethod == null)d2.itemClickMethod = showValue" href="##">添加点击事件</a></td>
+ 		<td><p> d2.itemClickMethod = showValue;
+ 
+			 function showValue(id,name){
+			 	alert(id + "+" + name);
+			 }</p></td>
+	</tr>	
+	
+ 	<tr>	
+ 		<td><a onClick="d2.itemClickMethod = null" href="##">去掉点击事件</a></td>
+ 		<td><p> d2.itemClickMethod = null;</p></td>
+	</tr>
+	
+	<tr>	 
+		<td><a onClick="alert(d2.getCurrentItem().id)"  href="##"> 获取当前节点id </a></td>
+		<td><p>d2.getCurrentId() or d2.getCurrentItem().id</p></td>
+	</tr>
+	<tr>	
+		<td><a onclick="alert(d2.getSelectedIds());" href="##">获得所有选中的节点值</a></td>
+		<td>d2.getSelectedIds()</td>
+	 </tr>
+	 <tr>
+	 	<td><a onClick="d2.s('320000')" href="##">选中重庆市</a></td>
+	 	<td>d2.s('320000')</td>
+	 </tr> 
+	 <tr>
+	 	<td><a onClick="d2.openTo('310900', true)" href="##">打开并选中虹口区</a></td>
+	 	<td>d2.openTo('311201', true)</td>
+	 </tr>  
+	 
+	 <tr> 
+	 	<td><a onclick="d2.oAll(true)" href="##">带开所有节点</a></td>
+	 	<td>d2.oAll(true)</td>
+	 </tr>  
+	 
+	 <tr>
+	 	<td><a onClick="d2.oAll(false)" href="##">关闭所有节点</a>
+	 	<td>d2.oAll(false);</td>
+	 </tr>
+ 	
+ </table>
+ </div>	
+ 
+ <div id="c2">
+ </div>
+ 
+ <a href="javascript:clear()" >清空</a> 
+ <a href="javascript:testFresh()" >添加结点</a>
+ <script>
+ d2.show('c2');
+ function clear(){
+ 	var c2 = document.getElementById('c2');
+ 	c2.innerHTML = "";
+ }
+ function testFresh(){
+ 	d2.add('330000','-1','广东省','rul');
+ 	d2.show('c2');
+ }
+ </script>
+</body>
+<html>

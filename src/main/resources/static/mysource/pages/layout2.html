@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dtree/dtree.css" />
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var myLayout, myMenu, sbObj, a, b, myToolbar, d2;
+
+			function doOnLoad() {
+				myLayout = new dhtmlXLayoutObject({
+					parent: document.body,
+					pattern: "2U",
+					offsets: {
+						top: 20,
+						right: 0,
+						bottom: 0,
+						left: 0
+					}
+				});
+
+				myMenu = new dhtmlXMenuObject("menuObj");
+				myLayout.attachMenu(myMenu);
+
+				a = myLayout.cells("a")
+				a.setWidth(220);
+				a.setText('');
+				//				a.hideHeader();
+				a.attachObject('a_tree');
+
+				b = myLayout.cells("b");
+				b.hideHeader();
+
+				b.attachObject('my_tabbar');
+				myTabbar = new dhtmlXTabBar({
+					parent: "my_tabbar",
+					close_button: true,
+					tabs: [
+
+					]
+				});
+
+				myLayout.attachEvent("onResizeFinish", function() {
+					myTabbar.setSizes();
+				});
+				myLayout.attachEvent("onPanelResizeFinish", function() {
+					myTabbar.setSizes();
+				});
+
+			}
+
+			<!-- 导航菜单打开标签页 -->
+			function openModule(id, name, url) {
+				if(!myTabbar.tabs('tab' + id)) {
+					myTabbar.addTab('tab' + id, name);
+					var curFrame = document.createElement('iframe');
+					curFrame.id = "frame" + id;
+					curFrame.width = "100%";
+					curFrame.height = "100%";
+					curFrame.style = "border:0px";
+					iframeDiv = document.getElementById('my_tabbar');
+					iframeDiv.appendChild(curFrame);
+					curFrame.src = url;
+					myTabbar.tabs('tab' + id).attachObject("frame" + id);
+				}
+				myTabbar.tabs('tab' + id).setActive();
+			}
+
+			<!-- 页面功能打开标签页 -->
+			function openTab(name, url) {
+				var id = new Date().getTime();
+				myTabbar.addTab('tab' + id, name);
+				var curFrame = document.createElement('iframe');
+				curFrame.id = "frame" + id;
+				curFrame.width = "100%";
+				curFrame.height = "100%";
+				curFrame.style = "border:0px";
+				iframeDiv = document.getElementById('my_tabbar');
+				iframeDiv.appendChild(curFrame);
+				curFrame.src = url;
+				myTabbar.tabs('tab' + id).attachObject("frame" + id);
+				myTabbar.tabs('tab' + id).setActive();
+			}
+		</script>
+
+	</head>
+
+	<body onload="doOnLoad();">
+
+		<div class="logBar">
+			<div id="logo">新盛通<em>smartlink</em>报关云平台</div>
+			<div id="menuObj">
+				<div class="row">
+					<div class="col-sm-4">
+						<a href="layout_tree.html">侧栏树结构菜单</a>
+					</div>
+					<div class="col-sm-8 text-right">
+						<a href="javascript:;">第一次使用平台？</a>
+						<a href="javascript:;">平台客服</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="my_tabbar" class="tabBarClass"></div>
+
+		<div id="a_tree" class="menubar">
+			<div class="left_login row">
+				<div class="col-sm-4">
+					<img class="img-circle x-img-full" src="../images/user.jpg" />
+				</div>
+				<div class="col-sm-8">
+					<div class="login_info">
+						<h4>欧阳山峰</h4>
+						<button type="button" class="btn btn-success btn-sm">退出</button>
+					</div>
+				</div>
+			</div>
+			<div class="menu">
+				<ul class="m1">
+					<li class="m-1">
+						<a href="layout_tree.html">侧栏树结构菜单</a>
+					</li>
+					<li class="m-1 active">
+						<a href="javascript:;">一级菜单文字2 active<em></em></a>
+						<ul class="m2">
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+							<li class="m-2 active">
+								<a href="javascript:;">菜单文字-2 active</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+						</ul>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">一级菜单文字</a>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">一级菜单文字2<em></em></a>
+						<ul class="m2">
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:;">菜单文字-2</a>
+							</li>
+						</ul>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">一级菜单文字</a>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">一级菜单文字</a>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">一级菜单文字</a>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">一级菜单文字</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			//信息折叠展开
+			$(".m-1").on("click", function() {
+				$(".m-1").removeClass("active");
+				$(this).toggleClass("active");
+			});
+			$(".m-2").on("click", function() {
+				$(".m-2").removeClass("active");
+				$(this).toggleClass("active");
+			});
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>切换账号</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--切换账号弹窗-->
+		<div id="pop-info1" class="modal fade x-modal-sm" data-backdrop="false">
+			<div class="modal-dialog modal-xdrag" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          						<span aria-hidden="true">&times;</span>
+          						<span class="sr-only">Close</span>
+        				</button>
+						<h4 class="modal-title">切换账号</h4>
+					</div>
+					<div class="modal-body">
+						<!--弹窗内容开始-->
+						<div class="tab-content">
+							<div class="p-b text-primary">
+								<span class="xico xico-yonghu fs-m"></span>
+								请选择您要切换的账号
+							</div>
+							<div class="bg-grey border-a p-a row">
+								<label class="p-l p-b col-sm-3 xradio"><input type="radio" name="Radios" id="Radios1" value="1">&nbsp;张珊</label>
+								<label class="p-l p-b col-sm-3 xradio"><input type="radio" name="Radios" id="Radios2" value="2">&nbsp;欧阳佩珊</label>
+								<label class="p-l p-b col-sm-3 xradio"><input type="radio" name="Radios" id="Radios3" value="3">&nbsp;王明阳</label>
+								<label class="p-l p-b col-sm-3 xradio"><input type="radio" name="Radios" id="Radios4" value="4">&nbsp;周武</label>
+								<label class="p-l p-b col-sm-3 xradio"><input type="radio" name="Radios" id="Radios5" value="5">&nbsp;欧阳峰</label>
+								<label class="p-l p-b col-sm-3 xradio"><input type="radio" name="Radios" id="Radios6" value="6">&nbsp;司马懿</label>
+							</div>
+							<!--弹窗内容end-->
+						</div>
+					</div>
+					<div class="modal-footer text-center">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">&nbsp;确定切换&nbsp;</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--切换账号弹窗end-->
+
+		<script src="../lib/inuse/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				$('#pop-info1').modal('show'); //调试弹窗用途 显示弹窗
+				xdrag('.modal-xdrag');
+			});
+			$(function() {
+				//同时绑定多个日期控件.date-sel
+				lay('.date-sel').each(function() {
+					laydate.render({
+						elem: this,
+						trigger: 'click',
+						theme: '#39c'
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

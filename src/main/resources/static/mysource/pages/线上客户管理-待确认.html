@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>线上客户管理</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<!--搜索栏-->
+			<div class="search-bar bg-white">
+				<div class="row">
+					<div class="col-sm-9 form-inline">
+						<a class="refresh m-r-md mg-t-5"><h3 class="dsi text-primary">线上客户管理</h3></a>
+						在平台企业库里，查找您想邀约的企业:
+						<div class="form-group">
+							<input type="text" class="form-control" size="45" id="exampleInputEmail2" placeholder="海关编码/机构代码/信用码/公司名称">
+						</div>
+						<button type="submit" class="btn btn-primary btn-sm"><span class="xico xico-chazhao m-r-0"></span></button>
+					</div>
+					<div class="col-sm-3 form-inline text-right">
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a href="线上客户管理-发送邀约.html" type="button" class="btn btn-primary"><span class="xico xico-lianxiren"></span>发起新的邀约</a>
+						</div>
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a type="button" class="btn btn-primary"><span class="xico xico-reply2"></span>返回</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--搜索栏end-->
+
+			<!--表格栏-->
+			<div class="x-table p-a">
+				<h3>客户列表</h3>
+				<table class="table table-sm table-striped">
+					<thead>
+						<tr>
+							<th>企业名称</th>
+							<th class="fn-8">海关注册编码</th>
+							<th class="fn-8">组织机构代码</th>
+							<th class="fn-11">社会统一信用码</th>
+							<th class="fn-8">邀约日期</th>
+							<th class="fn-11 text-center">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>广州天河工业园工业一厂</td>
+							<td>1234567898</td>
+							<td>1234567898</td>
+							<td>123456789823232</td>
+							<td>2017-12-06</td>
+							<td>
+								<div class="btn-group btn-block btn-group-sm" role="group" aria-label="Basic example">
+									<button type="button" data-toggle="modal" data-target="#pop-ok" class="btn btn-sm btn-link an-ok"><span class="xico xico-zan2"></span>同意</button>
+									<button type="button" data-toggle="modal" data-target="#pop-info" class="btn btn-sm btn-link an-cancel"><span class="xico xico-ban2"></span>拒绝</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>广州天河工业园工业一厂</td>
+							<td>1234567898</td>
+							<td>1234567898</td>
+							<td>123456789823232</td>
+							<td>2017-12-06</td>
+							<td>
+								<i class="text-success fs-sm text-center dsb">等待对方确认中...</i>
+								<div class="btn-group btn-block btn-group-sm" role="group" aria-label="Basic example">
+									<button type="button" data-toggle="modal" data-target="#pop-info" class="btn btn-sm btn-link an-cancel"><span class="xico xico-laji"></span>撤回邀请</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>广州天河工业园工业一厂</td>
+							<td>1234567898</td>
+							<td>1234567898</td>
+							<td>123456789823232</td>
+							<td>2017-12-06</td>
+							<td>
+								<div class="btn-group btn-block btn-group-sm" role="group" aria-label="Basic example">
+									<button type="button" data-toggle="modal" data-target="#pop-ok" class="btn btn-sm btn-link an-ok"><span class="xico xico-zan2"></span>同意</button>
+									<button type="button" data-toggle="modal" data-target="#pop-info" class="btn btn-sm btn-link an-cancel"><span class="xico xico-ban2"></span>拒绝</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>广州天河工业园工业一厂</td>
+							<td>1234567898</td>
+							<td>1234567898</td>
+							<td>123456789823232</td>
+							<td>2017-12-06</td>
+							<td>
+								<div class="btn-group btn-block btn-group-sm" role="group" aria-label="Basic example">
+									<button type="button" data-toggle="modal" data-target="#pop-ok" class="btn btn-sm btn-link an-ok"><span class="xico xico-zan2"></span>同意</button>
+									<button type="button" data-toggle="modal" data-target="#pop-info" class="btn btn-sm btn-link an-cancel"><span class="xico xico-ban2"></span>拒绝</button>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--表格栏end-->
+
+			<!--分页栏-->
+			<nav class="text-center">
+				<ul class="pagination">
+					<li class="disabled">
+						<a href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+							<span class="sr-only">Previous</span>
+						</a>
+					</li>
+					<li class="active">
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+							<span class="sr-only">Next</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<!--分页栏end-->
+
+			<!--【同意】弹窗-->
+			<div id="pop-ok" class="modal fade">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+							<h4 class="modal-title">操作确认</h4>
+						</div>
+						<div class="modal-body">
+							<h4>已匹配客户档案</h4>
+							<ul class="x-ul border-a p-t fs">
+								<li>0002 广州天河工业园工业二厂</li>
+								<li>0002 广州天河工业园工业二厂</li>
+								<li>0002 广州天河工业园工业二厂</li>
+							</ul>
+							<h4 class="text-info border-a p-a">没有匹配客户档案,请重新选择！</h4>
+							<h4 class="text-danger">确定取消线上关系吗?</h4>
+						</div>
+						<div class="modal-footer text-center">
+							<button type="button" class="btn btn-primary">&nbsp;&nbsp;确定&新增客户档案&nbsp;&nbsp;</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">&nbsp;&nbsp;关闭 &nbsp;&nbsp;</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--【同意】弹窗end-->
+
+			<!--【拒绝】弹窗 -->
+			<div id="pop-info" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div id="pop-info-text" class="modal-content bg-grey2 p-a text-center">
+						点击保存按钮试试...
+					</div>
+				</div>
+			</div>
+			<!--【拒绝】弹窗 end -->
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				xrefresh('.refresh');
+			});
+
+			//点击按钮提示并延迟关闭
+			var pop_div = '#pop-info'; //弹窗容器id
+			var pop_time = 2000; //延迟时间
+			var pop_info = '操作成功！' //弹窗内容
+			$(pop_div).on("show.bs.modal", xclose(pop_div, pop_time, pop_info))
+		</script>
+	</body>
+
+</html>

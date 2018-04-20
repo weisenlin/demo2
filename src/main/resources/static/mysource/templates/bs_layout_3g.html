@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>3栏组合结构</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="row">
+			<!--上栏左-->
+			<div class="col-sm-12 p-a border-b">
+				<!--标题、工具栏（注意调整默认宽度）-->
+				<div class="row">
+					<h3 class="col-lg-3 text-primary">表格标题</h3>
+					<div class="m-b col-lg-9 text-lg-right p-r">
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a type="button" class="btn btn-primary"><span class="xico xico-fuzhi"></span>复制</a>
+							<a type="button" class="btn btn-primary"><span class="xico xico-rizhi1"></span>粘贴</a>
+						</div>
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a type="button" class="btn btn-primary"><span class="xico xico-hetong5"></span>批量申报</a>
+							<a type="button" class="btn btn-primary"><span class="xico xico-dayin1"></span>打印报关单</a>
+							<a type="button" class="btn btn-primary"><span class="xico xico-shezhi"></span>设置</a>
+						</div>
+					</div>
+				</div>
+				<!--标题、工具栏end-->
+			<div class="x-table set-h" style="height: 210px;">
+				<!--可设定表格高度，添加set-h类-->
+				<table class="table table-sm table-hover">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>用户名</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>张珊</td>
+							<td>女</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>李四</td>
+							<td>男</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>王五</td>
+							<td>男</td>
+							<td>@twitter</td>
+						</tr>
+						<tr>
+							<th scope="row">1</th>
+							<td>张珊</td>
+							<td>女</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>李四</td>
+							<td>男</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>王五</td>
+							<td>男</td>
+							<td>@twitter</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>王五</td>
+							<td>男</td>
+							<td>@twitter</td>
+						</tr>
+						<tr>
+							<th scope="row">1</th>
+							<td>张珊</td>
+							<td>女</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>李四</td>
+							<td>男</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>王五</td>
+							<td>男</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--上栏左end-->
+
+		</div>
+		<div class="row">
+			<!--下栏左-->
+			<div class="col-sm-4 p-a border-r">
+				<!--标题、工具栏（注意调整默认宽度）-->
+				<div class="row">
+					<h3 class="col-lg-3 text-primary">表格标题</h3>
+					<div class="m-b col-lg-9 text-lg-right">
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a type="button" class="btn btn-primary"><span class="xico xico-fuzhi"></span>复制</a>
+							<a type="button" class="btn btn-primary"><span class="xico xico-rizhi1"></span>粘贴</a>
+						</div>
+					</div>
+				</div>
+				<!--标题、工具栏end-->
+				<div class="x-table">
+					<table class="table table-sm table-hover">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>用户名</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>张珊</td>
+								<td>女</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>李四</td>
+								<td>男</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>王五</td>
+								<td>男</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--左栏end-->
+
+			<!--下栏右-->
+			<div class="col-sm-8 p-a border-l m-l--1">
+				<!--标题、工具栏（注意调整默认宽度）-->
+				<div class="row">
+					<h3 class="col-lg-3 text-primary">表格标题</h3>
+					<div class="m-b col-lg-9 text-lg-right">
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a type="button" class="btn btn-primary"><span class="xico xico-fuzhi"></span>复制</a>
+							<a type="button" class="btn btn-primary"><span class="xico xico-rizhi1"></span>粘贴</a>
+						</div>
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a type="button" class="btn btn-primary"><span class="xico xico-hetong5"></span>批量申报</a>
+							<a type="button" class="btn btn-primary"><span class="xico xico-dayin1"></span>打印报关单</a>
+							<a type="button" class="btn btn-primary"><span class="xico xico-shezhi"></span>设置</a>
+						</div>
+					</div>
+				</div>
+				<!--标题、工具栏end-->
+				<div class="x-table">
+					<table class="table table-sm table-hover">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>用户名</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>张珊</td>
+								<td>女</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>李四</td>
+								<td>男</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>王五</td>
+								<td>男</td>
+								<td>@twitter</td>
+							</tr>
+							<tr>
+								<th scope="row">1</th>
+								<td>张珊</td>
+								<td>女</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>李四</td>
+								<td>男</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>王五</td>
+								<td>男</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--右栏end-->
+
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<!--以下为演示用途样式，无需引入项目文件。-->
+		<style type="text/css">
+			html,
+			body {
+				font-family: 'Slabo 27px', serif;
+				padding: 0;
+				margin: 0;
+				background: #ffffff;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			a {
+				color: #4ab19a;
+			}
+			.clear {
+				clear: both;
+				float: none;
+				width: 100%;
+			}
+			.container {
+				max-width: 1170px;
+				width: 100%;
+				padding-right: 15px;
+				padding-left: 15px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+			.container .gallery a img {
+				float: left;
+				width: 20%;
+				height: auto;
+				border: 2px solid #fff;
+				-webkit-transition: -webkit-transform .15s ease;
+				-moz-transition: -moz-transform .15s ease;
+				-o-transition: -o-transform .15s ease;
+				-ms-transition: -ms-transform .15s ease;
+				transition: transform .15s ease;
+				position: relative;
+			}
+			.container .gallery a:hover img {
+				-webkit-transform: scale(1.05);
+				-moz-transform: scale(1.05);
+				-o-transform: scale(1.05);
+				-ms-transform: scale(1.05);
+				transform: scale(1.05);
+				z-index: 5;
+			}
+			.container .gallery a.big img {
+				width: 40%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="text-center m-t">Simple Lightbox 引入插件</h1>
+			<h3>引入插件相关资源</h3>
+			<p>中文帮助： http://www.dowebok.com/186.html#comments</p>
+			<p>GitHub：https://github.com/andreknieriem/simplelightbox</p>
+			<p>注：相关资源已经集成到压缩包，无需再引入。</p>
+
+			<div class="gallery">
+				<a href="../images/temp/image1.jpg" class="big"><img src="../images/temp/thumbs/thumb1.jpg" alt="" title="测试图片1" /></a>
+				<a href="../images/temp/image2.jpg"><img src="../images/temp/thumbs/thumb2.jpg" alt="" title="测试图片2" /></a>
+				<a href="../images/temp/image3.jpg"><img src="../images/temp/thumbs/thumb3.jpg" alt="" title="测试图片3" /></a>
+				<a href="../images/temp/image4.jpg"><img src="../images/temp/thumbs/thumb4.jpg" alt="" title="测试图片4" /></a>
+				<div class="clear"></div>
+
+
+				<a href="../images/temp/image2.jpg"><img src="../images/temp/thumbs/thumb2.jpg" alt="" title="测试图片2" /></a>
+				<a href="../images/temp/image1.jpg" class="big"><img src="../images/temp/thumbs/thumb1.jpg" alt="" title="测试图片1" /></a>
+				<a href="../images/temp/image4.jpg"><img src="../images/temp/thumbs/thumb4.jpg" alt="" title="测试图片4" /></a>
+				<a href="../images/temp/image3.jpg"><img src="../images/temp/thumbs/thumb3.jpg" alt="" title="测试图片3" /></a>
+				<div class="clear"></div>
+
+				<a href="../images/temp/image3.jpg"><img src="../images/temp/thumbs/thumb3.jpg" alt="" title="测试图片3" /></a>
+				<a href="../images/temp/image2.jpg"><img src="../images/temp/thumbs/thumb2.jpg" alt="" title="测试图片2" /></a>
+				<a href="../images/temp/image4.jpg"><img src="../images/temp/thumbs/thumb4.jpg" alt="" title="测试图片4" /></a>
+				<a href="../images/temp/image1.jpg" class="big"><img src="../images/temp/thumbs/thumb1.jpg" alt="" title="测试图片1" /></a>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$('.gallery a').simpleLightbox()
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dtree/dtree.css" />
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var myLayout, myMenu, sbObj, a, b, myToolbar, d2;
+			function doOnLoad() {
+				myLayout = new dhtmlXLayoutObject({
+					parent: document.body,
+					pattern: "2U",
+					offsets: {
+						top: 20,
+						right: 0,
+						bottom: 0,
+						left: 0
+					}
+				});
+
+				myMenu = new dhtmlXMenuObject("menuObj");
+				myLayout.attachMenu(myMenu);
+
+				a = myLayout.cells("a")
+				a.setWidth(200);
+				a.setText(''); //栏标题
+				//a.hideHeader();
+				a.attachObject('a_tree');
+
+				b = myLayout.cells("b");
+				b.hideHeader();
+
+				b.attachObject('my_tabbar');
+				myTabbar = new dhtmlXTabBar({
+					parent: "my_tabbar",
+					close_button: true,
+					tabs: [
+
+					]
+				});
+
+				myLayout.attachEvent("onResizeFinish", function() {
+					myTabbar.setSizes();
+				});
+				myLayout.attachEvent("onPanelResizeFinish", function() {
+					myTabbar.setSizes();
+				});
+				openModule('1', '基础页面', '../templates/base.html'); //默认页面
+			}
+
+			<!-- 导航菜单打开标签页 -->
+			function openModule(id, name, url) {
+				if(!myTabbar.tabs('tab' + id)) {
+					myTabbar.addTab('tab' + id, name);
+					var curFrame = document.createElement('iframe');
+					curFrame.id = "frame" + id;
+					curFrame.width = "100%";
+					curFrame.height = "100%";
+					curFrame.style = "border:0px";
+					iframeDiv = document.getElementById('my_tabbar');
+					iframeDiv.appendChild(curFrame);
+					curFrame.src = url;
+					myTabbar.tabs('tab' + id).attachObject("frame" + id);
+				}
+				myTabbar.tabs('tab' + id).setActive();
+			}
+
+			<!-- 页面功能打开标签页 -->
+			function openTab(name, url) {
+				var id = new Date().getTime();
+				myTabbar.addTab('tab' + id, name);
+				var curFrame = document.createElement('iframe');
+				curFrame.id = "frame" + id;
+				curFrame.width = "100%";
+				curFrame.height = "100%";
+				curFrame.style = "border:0px";
+				iframeDiv = document.getElementById('my_tabbar');
+				iframeDiv.appendChild(curFrame);
+				curFrame.src = url;
+				myTabbar.tabs('tab' + id).attachObject("frame" + id);
+				myTabbar.tabs('tab' + id).setActive();
+			}
+		</script>
+
+	</head>
+
+	<body onload="doOnLoad();">
+		<!--顶通栏-->
+		<div class="logBar">
+			<div id="logo"><i>Smartlink</i>新盛通科技有限公司</div>
+			<div id="menuObj">
+				<div class="row rightbar">
+					<div class="col-sm-4">
+						<h4 class="user">当前用户：欧阳山峰<button type="button" class="btn btn-primary m-l" data-dismiss="modal"><span class="xico xico-tuichu"></span>退出</button></h4>
+					</div>
+					<div class="col-sm-8 text-right x-btn-ls">
+						<span id="lpop" >
+						<a id="m_work" xhref="../pop-info/待办事项弹窗.html"><span class="xico xico-shijian"></span>待办事项<em>2</em></a>
+						<a id="m_message" xhref="../pop-info/消息中心弹窗.html"><span class="xico xico-youjian"></span>消息中心<em>5</em></a>
+						<a id="m_Setting" xhref="../pop-info/个人设置弹窗.html"><span class="xico xico-yonghu3"></span>个人设置</a>
+						<a id="m_Setting" xhref="../pop-info/切换账号弹窗.html"><span class="xico xico-kehuguanli"></span>切换账号</a>
+						</span>
+						<a id="xcallmsg" class="talkbtn"><span class="xico xico-speech-bubble"></span><em>5</em></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--顶通栏end-->
+
+		<!--页标签-->
+		<div id="my_tabbar" class="tabBarClass"></div>
+
+		<!--页标签end-->
+
+		<!--侧栏-->
+		<div id="a_tree" class="menubar">
+			<!--左栏菜单-->
+			<div class="menu scroll-y">
+				<ul class="m1">
+					<li class="m-1 active">
+						<a href="javascript:openModule('1', '基础页面', '../templates/base.html');">基础页面</a>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">常用样式<em></em></a>
+						<ul class="m2">
+							<li class="m-2">
+								<a href="javascript:openModule('2', '自定义表格', '../templates/base_table.html');">自定义表格</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('3', '工具栏', '../templates/base_toolsbar.html');">工具栏</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('4', '搜索栏', '../templates/search_bar.html');">搜索栏</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('5', '标签页', '../templates/base_tab.html');">标签页</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('6', '表单元件', '../templates/base_form.html');">表单元件</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('7', '输入表单', '../templates/base_input_table.html');">输入表单</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('8', '伸缩文字块', '../templates/base_text-grunt.html');">伸缩文字块</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('9', '页面文字', '../templates/bs_type.html');">页面文字</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('10', '占位图片展示', '../templates/base_img.html');">占位图片展示</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('11', '图片展示', '../templates/base_img_browse.html');">图片展示</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('12', '弹窗示例', '../templates/base_popup.html');">弹窗示例</a>
+							</li>
+						</ul>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">布局示例<em></em></a>
+						<ul class="m2">
+							<li class="m-2">
+								<a href="javascript:openModule('11', '常用布局样式', '../templates/bs_layer.html');">常用布局样式</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('12', '垂直分栏-三栏结构', '../templates/bs_layout_3v.html');">垂直分栏-三栏结构</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('13', '垂直分栏-两栏结构', '../templates/bs_layout_2v.html');">垂直分栏-两栏结构</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('14', '混合-上-下（左右）结构', '../templates/bs_layout_3g.html');">混合-上-下（左右）结构</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('15', '混合-上2-下2结构', '../templates/bs_layout_4g.html');">混合-上2-下2结构</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('16', '页面定位', '../templates/base_position.html');">页面定位</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('17', '侧滑弹出栏', '../templates/base_slide.html');">侧滑弹出栏</a>
+							</li>
+						</ul>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">通关申报<em></em></a>
+						<ul class="m2">
+							<li class="m-2">
+								<a href="javascript:openModule('61', '进口报关单列表', '../pages/进口报关单列表.html');">进口报关单列表</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('62', '进口报关单详情', '../pages/进口报关单详情.html');">进口报关单详情</a>
+							</li>
+							<!--<li class="m-2">
+								<a href="javascript:openModule('63', '转关申报单', '../pages/转关申报单.html');">转关申报单</a>
+							</li>-->
+							<li class="m-2">
+								<a href="javascript:openModule('64', '企业参数-预设值模板', '../pages/企业参数-预设值模板.html');">企业参数-预设值模板</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('65', '企业导入模板列表', '../pages/企业导入模板列表.html');">企业导入模板列表</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('66', '企业导入模板', '../pages/企业导入模板.html');">企业导入模板</a>
+							</li>
+							<!--<li class="m-2">
+								<a href="javascript:openModule('67', '操作日志查询', '../pages/操作日志查询.html');">操作日志查询</a>
+							</li>-->
+						</ul>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">底帐管理<em></em></a>
+						<ul class="m2">
+							<li class="m-2">
+								<a href="javascript:openModule('81', '备案资料库底帐', '../pages/备案资料库底帐.html');">备案资料库</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('82', '备案资料库底账详情', '../pages/备案资料库底账详情.html');">备案资料库详情</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('83', '通关手册底帐', '../pages/通关手册底帐.html');">通关手册</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('84', '通关手册底帐详情', '../pages/通关手册底帐详情.html');">通关手册详情</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('85', '深加工结转申请表-转入', '../pages/深加工结转申请表-转入.html');">深加工结转申报表-转入</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('86', '深加工结转申请表-转入详情', '../pages/深加工结转申请表-转入详情.html');">深加工结转申报表-转入详情</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('87', '深加工结转申报表-转出', '../pages/深加工结转申请表-转出.html');">深加工结转申报表-转出</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('88', '深加工结转申报表-转出详情', '../pages/深加工结转申请表-转出详情.html');">深加工结转申报表-转出详情</a>
+							</li>
+							<!--<li class="m-2">
+								<a href="javascript:openModule('87', '操作日志查询', '../pages/操作日志查询.html');">操作日志查询</a>
+							</li>-->
+						</ul>
+					</li>
+					<li class="m-1">
+						<a href="javascript:openModule('18', '弹窗列表', '../pages/弹窗列表.html');">弹窗列表</a>
+					</li>
+					<li class="m-1">
+						<a href="javascript:;">系统管理<em></em></a>
+						<ul class="m2">
+							<li class="m-2">
+								<a href="javascript:openModule('71', '企业参数管理', '../pages/企业参数管理.html');">企业参数管理</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('72', '用户管理', '../pages/用户管理.html');">用户管理</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('73', '角色权限管理', '../pages/角色权限管理.html');">角色权限管理</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('74', '客户分组管理', '../pages/客户分组管理.html');">客户分组管理</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('75', '客户档案管理', '../pages/客户档案管理.html');">客户档案管理</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('76', '线上客户管理', '../pages/线上客户管理.html');">线上客户管理</a>
+							</li>
+							<li class="m-2">
+								<a href="javascript:openModule('77', '操作日志查询', '../pages/操作日志查询.html');">操作日志查询</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--左栏菜单end-->
+		</div>
+		<!--侧栏end-->
+		
+		<!--message列表面板-->
+		<div class="xchat xcard" style="background-image: url(../images/message-topbj1.jpg);">
+			<div class="xchat-header row">
+				<div id="xcolor">
+					<a id="xc1">&nbsp;</a>
+					<a id="xc2">&nbsp;</a>
+					<a id="xc3">&nbsp;</a>
+					<a id="xc4">&nbsp;</a>
+				</div>
+				<div class="col-xs-2 text-center">
+					<img class="img-circle w-70 m-t" src="../images/user.jpg" />
+				</div>
+				<div class="col-xs-10">
+					<h3>张山峰</h3>
+					<!--<a><span class="xico xico-yonghu3"></span>个人设置</a>-->
+				</div>
+				<a class="xclose"><span class="xico xico-cross2 fs-m"></span></a>
+				<div class="col-xs-12 row xscarch">
+					<div class="col-xs-1">
+						<span class="xico xico-chazhao text-white"></span>
+					</div>
+					<div class="col-xs-11">
+						<input id="input" tabindex="" type="text" class="w-100" placeholder="搜索用户（昵称/姓名/公司名）">
+					</div>
+				</div>
+			</div>
+			<div class="xchat-body">
+				<!-- Nav tabs -->
+				<ul class="xtopbar nav nav-tabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" href="#xchat-tabs1" role="tab" data-toggle="tab">消息</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#xchat-tabs2" role="tab" data-toggle="tab">联系人</a>
+					</li>
+				</ul>
+				<div class="xchat-info scroll-y">
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<!--消息列表-->
+						<div role="tabpanel" class="tab-pane active" id="xchat-tabs1">
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">张山峰</span>
+									<span class="xmessage">今天晚上有空吗？有场很精彩的电影，要不要一起去看。</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">50</i>
+								</div>
+							</a>
+							<a class="row xitem border-t">
+								<div class="col-xs-12 text-center fs-sm">
+									更多...
+								</div>
+							</a>
+						</div>
+						<!--联系人列表-->
+						<div role="tabpanel" class="tab-pane" id="xchat-tabs2">
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+							<a class="row xitem">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="../images/user.jpg" />
+								</div>
+								<div class="col-xs-10">
+									<p class="xuser">张山峰<span class="fs-sm text-info"> / 业务代表</span></p>
+									<span class="xmessage">广州新盛通科技有限公司</span>
+								</div>
+							</a>
+					
+							<a class="row xitem border-t">
+								<div class="col-xs-12 text-center fs-sm">
+									更多...
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="xchat-bottom row text-center">
+				<span class="fs-sm">Smartlink Message</span>
+			</div>
+		</div>
+
+		<!--message聊天面板-->
+		<div class="xmsg xcard">
+			<div class="xmsg-title">
+				<a class="xcls-msg"><span class="xico xico-cross2 fs-m"></span></a>
+				<div class="call-user-info p-l">
+					<span class="xico xico-yonghuchazhao fs-m"></span>
+					<h4 class="dsi">张山峰</h4><span> / 广州新盛通科技有限公司</span>
+				</div>
+			</div>
+			<div class="xmsg-body row">
+				<!--联系人信息-->
+				<div class="xuserinfo xdisabled-1 scroll-y p-t">
+					<div class="row p-b">
+						<div class="col-xs-4 text-right p-t-md">
+							<img class="img-circle w-40" src="../images/user.jpg" />
+						</div>
+						<div class="col-xs-8 p-t-lg p-l-md"><button id="xuserinfo-edit" type="button" class="btn btn-sm btn-info hidden">编辑</button></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4 p-t-3 text-right">昵称：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-10" placeholder="张山峰" disabled></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4 p-t-3 text-right">真实姓名：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-10" placeholder="张山峰" disabled></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4 p-t-3 text-right">所在单位：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-20" placeholder="广州新盛通科技有限公司" disabled></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4 p-t-3 text-right">性别：</div>
+						<div class="col-xs-8">
+							<select id="Select1" tabindex="" class="fn-5" disabled>
+								<option>未知</option>
+								<option>男</option>
+								<option>女</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4 p-t-3 text-right">年龄：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-10" placeholder="28岁" disabled></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4 p-t-3 text-right">手机：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-10" placeholder="1892525258" disabled></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4 p-t-3 text-right">职能描述：</div>
+						<div class="col-xs-8"><textarea id="textarea" tabindex="" class="w-80" rows="2" disabled placeholder="服务部经理。与申报企业做对接工作"></textarea></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-8 col-xs-push-4">
+							<button type="button" id="xuserinfo-save" class="btn btn-success" data-dismiss="modal" style="display: none;">&nbsp;确定&nbsp;</button>
+							<button type="button" id="xuserinfo-close" class="btn btn-primary" data-dismiss="modal">&nbsp;关闭&nbsp;</button>
+						</div>
+					</div>
+				</div>
+				<!--聊天-->
+				<div class="xmsg-list col-xs-3 scroll-y">
+					<a class="row xitem xluse">
+						<div class="col-xs-3 text-center">
+							<img class="img-circle w-80" src="../images/user.jpg" />
+						</div>
+						<div class="col-xs-6">
+							<span class="xuser">张山峰</span>
+						</div>
+						<div class="col-xs-3 text-right">
+							<i class="label label-danger">50</i>
+							<span class="xico xico-cross2 xclsitem"></span>
+						</div>
+					</a>
+					<a class="row xitem xluse">
+						<div class="col-xs-3 text-center">
+							<img class="img-circle w-80" src="../images/user.jpg" />
+						</div>
+						<div class="col-xs-6">
+							<span class="xuser">李时珍</span>
+						</div>
+						<div class="col-xs-3 text-right">
+							<i class="label label-danger">50</i>
+							<span class="xico xico-cross2 xclsitem"></span>
+						</div>
+					</a>
+					<a class="row xitem xluse">
+						<div class="col-xs-3 text-center">
+							<img class="img-circle w-80" src="../images/user.jpg" />
+						</div>
+						<div class="col-xs-6">
+							<span class="xuser">刘诗诗</span>
+						</div>
+						<div class="col-xs-3 text-right">
+							<i class="label label-danger">50</i>
+							<span class="xico xico-cross2 xclsitem"></span>
+						</div>
+					</a>
+				</div>
+				<div class="xmsg-info col-xs-9">
+					<div class="xmsg-text border-b scroll-y p-a">
+						<div class="xtext row text-center">
+							<a class="fs-sm col-xs-12" href="">更多消息...</a>
+						</div>
+						<div class="xtext row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">
+									<a class="upfile">
+										<div class="xico xico-file3"></div>
+										<div class="fname">
+											发送文件名称发送文件名称发送文件名称.后缀名
+										</div>
+									</a>
+								</span>
+							</div>
+						</div>
+						<div class="row text-center fs-sm m-b">
+							<span>2018/02/08 15:30:23</span>
+						</div>
+						<div class="xtext row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">客户聊天文字</span>
+							</div>
+						</div>
+						<div class="xtext row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">客户聊天文字客户聊天文字</span>
+							</div>
+						</div>
+						<div class="xtext mytalk row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">我的聊天文字</span>
+							</div>
+						</div>
+						<div class="xtext mytalk row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">我的聊天文字我的聊天文字我的聊天文字</span>
+							</div>
+						</div>
+						<div class="xtext mytalk row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">
+									<div class="upimg" href="">
+										<img src="../images/message-topbj3.jpg"/>
+										<div class="xtools">
+											<a href="">预览</a>
+											<a href="">下载</a>
+										</div>
+									</div>
+								</span>
+							</div>
+						</div>
+						<div class="xtext-bottom"></div>
+					</div>
+					<div class="xmsg-edit">
+						<div class="xtextarea" style="height: 75px;">
+							富文本编辑器457x75
+						</div>
+						<div class="xbtn text-right p-a">
+							<div class="pull-left w-80 text-right">
+								<button type="button" class="btn btn-info-outline" data-dismiss="modal"><span class="xico xico-paper-clip"></span>附件</button>
+							</div>
+							<button id="sendbtn" type="button" class="btn btn-primary m-r p-x" data-dismiss="modal">&nbsp;&nbsp;发送&nbsp;&nbsp;</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//左栏菜单折叠展开，配合类.m-1实现动画效果。
+			$(".m-1").on("click", function() {
+				var h2 = $(this).children(".m2").height(); //获取子菜单高度
+				var h1 = 33; //1级菜单高度
+				if(h2 == undefined) {
+					h2 = 0; //如果没有子菜单设h2=0
+				}
+				hs = h2 + h1; //hs等于1+2级菜单总高度
+				var hasactive = $(this).hasClass("active") //1级菜单激活状态
+				var hasac = $(this).hasClass("ac") //1级菜单激活状态下是否展开，ac=true为激活未展开状态
+				if(hs > h1 && hasactive == false) { //未激活，点击激活并展开
+					$(".m-1").removeAttr("style").removeClass("active"); //重置1级菜单
+					$(this).addClass("active"); //激活当前1级菜单
+					$(this).attr("style", "height:" + hs + "px"); //设置当前菜单高度
+				} else if(hasac == true && hasactive == true) { //已激活，点击展开
+					$(this).attr("style", "height:" + hs + "px").removeClass("ac");
+				} else if(hs > h1 && hasactive == true) { //已激活，点击折叠
+					$(this).attr("style", "height:" + h1 + "px").addClass("ac");
+				} else { //无子菜单激活
+					$(".m-1").removeAttr("style").removeClass("active");
+					$(this).addClass("active").removeAttr("style");
+				}
+			});
+
+			$(".m-2").on("click", function(e) {
+				e.stopImmediatePropagation() //阻止父层冒泡
+				$(".m-2").removeClass("active"); //移除2级菜单激活
+				$(this).addClass("active"); //激活点击当前2级菜单
+			});
+			//左栏菜单折叠展开end
+
+			//控制菜单栏高度
+			setheight('.menu',132,0)
+			
+			//键盘监测屏蔽F5刷新键
+			$(document).keydown(function(event) {
+				keyCode = event.which;
+				if(event.keyCode == 116) {
+					return false;
+				}
+			});
+			
+			//载入弹窗js
+			loadpop('#lpop');
+			
+			//聊天
+			$(document).ready(function() {
+				//换肤
+				$('#xc1').on('click', function() {
+					$('.xchat').css('background-image', 'url(../images/message-topbj1.jpg)');
+					$('.xmsg').css('background-image', 'url(../images/xmsgbj1.jpg)');
+				})
+				$('#xc2').on('click', function() {
+					$('.xchat').css('background-image', 'url(../images/message-topbj2.jpg)');
+					$('.xmsg').css('background-image', 'url(../images/xmsgbj2.jpg)');
+				})
+				$('#xc3').on('click', function() {
+					$('.xchat').css('background-image', 'url(../images/message-topbj3.jpg)');
+					$('.xmsg').css('background-image', 'url(../images/xmsgbj3.jpg)');
+				})
+				$('#xc4').on('click', function() {
+					$('.xchat').css('background-image', 'url(../images/message-topbj4.jpg)');
+					$('.xmsg').css('background-image', 'url(../images/xmsgbj4.jpg)');
+				})
+				
+				//面板拖拽
+				xdrag('.xmsg','.xmsg-title'); //聊天面板
+				xdrag('.xchat','.xchat-header>div'); //列表面板
+
+				//面板x按钮关闭面板
+				$('.xclose').on('click', function() {
+					$('.xchat').hide();
+				})
+				$('.xcls-msg').on('click', function() {
+					$('.xmsg').hide();
+				})
+				
+				//消息按钮切换显示面板
+				$('#xcallmsg').on('click', function() {
+					xWidth = $(window).outerWidth(true) - 285;
+					$('.xchat').css({
+						'bottom': '15px',
+						'left': xWidth + 'px'
+					});
+					$('.xchat').toggle('fast');
+				})
+				
+				//打开聊天面板
+				$('.xchat-info .xitem').on('click', function() {
+					xWidth = $(window).outerWidth(true) - 915;
+					$('.xmsg').css({
+						'bottom': '100px',
+						'left': xWidth + 'px'
+					});
+					$('.xuserinfo').hide(0);
+					$('.xmsg').fadeIn(300);
+					xgoscrollbottom('.xmsg-text','.xtext-bottom');
+					xps=$(this).parents().attr('id');
+					if (xps=='#xchat-tabs2') {
+						$('.xuserinfo').show(0);
+					}
+				})
+				
+				//移除聊天面板列表记录
+				$('.xclsitem').on('click', function() {
+					xnb = $('.xmsg-list>.xitem').length
+					if(xnb > 1) {
+						$(this).parents('.xitem').remove();
+					} else {
+						$('.xmsg').fadeOut(200);
+					}
+				})
+				
+				//聊天面板列表点击事件
+				$('.xluse').on('click', function() {
+					xtext = $(this).children('div').children('.xuser').text();
+					$('.call-user-info h4').text(xtext);
+				})
+				
+				//联系人信息
+				//点击顶部标题栏切换显示
+				$('.call-user-info').on('click', function() {
+					$('.xuserinfo').slideToggle(200);
+				})
+				//关闭按钮
+				$('#xuserinfo-close').on('click', function() {
+					$('.xuserinfo').slideUp(300);
+				})
+				//编辑按钮
+				$('#xuserinfo-edit').on('click', function() {
+					$('#xuserinfo-save').show();
+					xremovedisabled('.xdisabled-1');
+				})
+				//确定按钮
+				$('#xuserinfo-save').on('click',function(){
+					xadddisabled('.xdisabled-1');
+					$('#xuserinfo-save').hide()
+				})
+				//发送按钮
+				$('#sendbtn').on('click',function(){
+					xgoscrollbottom('.xmsg-text','.xtext-bottom');
+				})
+			});
+		</script>
+	</body>
+
+</html>

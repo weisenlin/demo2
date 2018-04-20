@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="x-table p-a">
+			<h3>边线表格</h3>
+			<table class="table table-sm table-bordered">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>用户名</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>张珊</td>
+						<td>女</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>李四</td>
+						<td>男</td>
+						<td>@fat</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>王五</td>
+						<td>男</td>
+						<td>@twitter</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="x-table p-a">
+			<h3>表格内容超出隐藏</h3>
+			<table class="table table-sm table-bordered th-center td-truncate">
+					<tr>
+						<th class="fn-3">编号</th>
+						<th class="fn-5">姓名</th>
+						<th class="fn-18">公司名称</th>
+						<th class="fn-18">备注</th>
+					</tr>
+					<tr>
+						<th scope="row">1</th>
+						<td>张珊</td>
+						<td>广州新盛通科技有限公司</td>
+						<td>这个问题可以到千锋教育网站咨询，千锋教育是专业培训html5的培训机构，一直秉承“用良心做教育”的理念，致力于打造IT教育全产业链人才服务平台，每年有数十万名学员受益于千锋教育组织的技术研讨会、技术培训课、网络公开课及免费教学视频。</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>李四</td>
+						<td>广州新盛通科技有限公司</td>
+						<td>千锋教育是专业培训html5的培训机构，一直秉承“用良心做教育”的理念，致力于打造IT教育全产业链人才服务平台，每年有数十万名学员受益于千锋教育组织的技术研讨会、技术培训课、网络公开课及免费教学视频。</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>王五</td>
+						<td>广州新盛通科技有限公司</td>
+						<td>一直秉承“用良心做教育”的理念，致力于打造IT教育全产业链人才服务平台，每年有数十万名学员受益于千锋教育组织的技术研讨会、技术培训课、网络公开课及免费教学视频。</td>
+					</tr>
+			</table>
+		</div>
+
+		<div class="x-table mg-t-40 p-a">
+			<h3>带底色标题行</h3>
+			<table class="table table-sm">
+				<thead class="thead-default">
+					<tr>
+						<th>编号</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>用户名</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>张珊</td>
+						<td>女</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>李四</td>
+						<td>男</td>
+						<td>@fat</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>王五</td>
+						<td>男</td>
+						<td>@twitter</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="x-table mg-t-40 p-a">
+			<h3>间隔行</h3>
+			<table class="table table-sm table-striped">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>用户名</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>张珊</td>
+						<td>女</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>李四</td>
+						<td>男</td>
+						<td>@fat</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>王五</td>
+						<td>男</td>
+						<td>@twitter</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="x-table mg-t-40 p-a">
+			<h3>可悬停的行</h3>
+			<table class="table table-sm table-hover">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>用户名</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>张珊</td>
+						<td>女</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>李四</td>
+						<td>男</td>
+						<td>@fat</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>王五</td>
+						<td>男</td>
+						<td>@twitter</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</body>
+
+</html>

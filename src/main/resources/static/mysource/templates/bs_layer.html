@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body>div {
+				background-color: #FFFFFF;
+			}
+			
+			body>div>div {
+				/*padding: 0.5em!important;*/
+				background-color: #FFFFFF;
+				border: 1px solid #CCCCCC;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="row p-a">
+			<h3 class="text-primary">文本对齐</h3>
+			<div class="col-xs-4 p-a text-left">左对齐 <em class="text-danger">text-left</em></div>
+			<div class="col-xs-4 p-a text-center">居中对齐 <em class="text-danger">text-center</em></div>
+			<div class="col-xs-4 p-a text-right">右对齐 <em class="text-danger">text-right</em></div>
+			<div class="col-xs-4 p-a text-justify">两端对齐 <em class="text-danger">text-justify</em></div>
+			<div class="col-xs-4 p-a text-nowrap" style="overflow: hidden;">不折行 <em class="text-danger">text-nowrap</em> (段落文字-支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；)</div>
+			<div class="col-xs-4 p-a text-truncate">超出隐藏 <em class="text-danger">text-truncate</em> (段落文字-支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；)</div>
+		</div>
+
+		<div class="row p-a mg-t-40">
+			<h3 class="text-primary">块级元素对齐</h3>
+			<div class="col-xs-12 p-a">
+				清除浮动 <em class="text-danger">clearfix</em>
+				<div class="clearfix m-y">
+					<div class="pull-left border-a pd-5">
+						块左对齐 <em class="text-danger">pull-left</em>
+					</div>
+					<div class="pull-right border-a pd-5">
+						块右对齐 <em class="text-danger">pull-right</em>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 p-a">
+				<div class="center-block w-50 border-a pd-5">
+					块居中对齐 <em class="text-danger">center-block</em>
+				</div>
+			</div>
+		</div>
+
+		<div class="row p-a mg-t-40">
+			<h3 class="text-primary">屏幕元素隐藏</h3>
+			<div class="col-xs-4 p-a">
+				段落中隐藏文字，这里<span class="text-hide">文字隐藏显示</span>，试试选择文字 <em class="text-danger">text-hide</em>
+
+			</div>
+			<div class="col-xs-4 p-a">
+				除了屏幕阅读器外，其他设备上隐藏元素 <em class="text-danger">sr-only</em>
+				<div class="sr-only">
+					这些文字存在页面，但你看不到。
+				</div>
+				，看看代码
+			</div>
+			<div class="col-xs-4 p-a">
+				这里隐藏了些东西 <em class="text-danger">hidden</em>
+				<div class="hidden">
+					这些文字存在页面，但你看不到。
+				</div>
+				，看看代码
+			</div>
+			<div class="col-xs-12 p-a">
+				这里隐藏了些东西并占位， <em class="text-danger">invisible</em>
+				<div class="invisible">
+					这些文字存在页面，但你看不到。
+				</div>
+				看看代码
+			</div>
+		</div>
+
+		<div class="row p-a mg-t-40 text-center border-a p-b-lg">
+			<h3 class="text-primary text-left">边线</h3>
+			<div class="col-xs-2 border-none">
+				<a class="border-a pd-10">边线 border-a</a>
+			</div>
+			<div class="col-xs-2 border-none">
+				<a class="border-b pd-10">下边线 border-b</a>
+			</div>
+			<div class="col-xs-2 border-none">
+				<a class="border-t pd-10">上边线 border-t</a>
+			</div>
+			<div class="col-xs-2 border-none">
+				<a class="border-l pd-10">左边线 border-l</a>
+			</div>
+			<div class="col-xs-2 border-none">
+				<a class="border-r pd-10">右边线 border-r</a>
+			</div>
+			<div class="col-xs-2 border-none">
+				<a class="pd-10">无边线 border-none</a>
+			</div>
+		</div>
+
+		<div class="row p-a mg-t-40 text-center">
+			<h3 class="text-primary text-left">外边距</h3>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-a-0">m-a-0</a>
+			</div>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-a">m-a</a>
+			</div>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-t">m-t</a>
+			</div>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-b">m-b</a>
+			</div>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-l">m-l</a>
+			</div>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-r">m-r</a>
+			</div>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-x">m-x</a>
+			</div>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-y">m-y</a>
+			</div>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-a-md">m-a-md</a>
+			</div>
+			<div class="col-xs-2 ">
+				<a class="bg-primary dsb pd-5 m-a-lg">m-a-lg</a>
+			</div>
+			<div class="col-xs-12  clearfix">
+				<a class="bg-primary pd-5 m-a-auto">m-a-auto</a>
+			</div>
+		</div>
+
+		<div class="row p-a mg-t-40 text-center">
+			<h3 class="text-primary text-left">内边距</h3>
+			<div class="col-xs-2 p-a-0">
+				<a class="bg-primary dsb pd-5">p-a-0</a>
+			</div>
+			<div class="col-xs-2  p-a">
+				<a class="bg-primary dsb pd-5">p-a</a>
+			</div>
+			<div class="col-xs-2  p-t">
+				<a class="bg-primary dsb pd-5">p-t</a>
+			</div>
+			<div class="col-xs-2  p-b">
+				<a class="bg-primary dsb pd-5">p-b</a>
+			</div>
+			<div class="col-xs-2  p-l">
+				<a class="bg-primary dsb pd-5">p-l</a>
+			</div>
+			<div class="col-xs-2  p-r">
+				<a class="bg-primary dsb pd-5">p-r</a>
+			</div>
+			<div class="col-xs-2  p-x">
+				<a class="bg-primary dsb pd-5">p-x</a>
+			</div>
+			<div class="col-xs-2  p-y">
+				<a class="bg-primary dsb pd-5">p-y</a>
+			</div>
+			<div class="col-xs-12 row m-t border-none">
+				<div class="col-xs-2  border-a p-a-md">
+					<a class="bg-primary dsb pd-5">p-a-md</a>
+				</div>
+				<div class="col-xs-2  border-a p-a-lg">
+					<a class="bg-primary dsb pd-5">p-a-lg</a>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

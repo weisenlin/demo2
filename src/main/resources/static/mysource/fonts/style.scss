@@ -1,0 +1,893 @@
+@import "variables";
+
+@font-face {
+  font-family: 'xico-nst';
+  src:
+    url('#{$icomoon-font-path}/xico-nst.ttf?ynj4ue') format('truetype'),
+    url('#{$icomoon-font-path}/xico-nst.woff?ynj4ue') format('woff'),
+    url('#{$icomoon-font-path}/xico-nst.svg?ynj4ue#xico-nst') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.xico {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'xico-nst' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.xico-pc_weixin {
+  &:before {
+    content: $xico-pc_weixin;
+  }
+}
+.xico-info-filled {
+  &:before {
+    content: $xico-info-filled;
+  }
+}
+.xico-zoom-in2 {
+  &:before {
+    content: $xico-zoom-in2;
+  }
+}
+.xico-zoom-out2 {
+  &:before {
+    content: $xico-zoom-out2;
+  }
+}
+.xico-speech-bubble {
+  &:before {
+    content: $xico-speech-bubble;
+  }
+}
+.xico-ban2 {
+  &:before {
+    content: $xico-ban2;
+  }
+}
+.xico-trash3 {
+  &:before {
+    content: $xico-trash3;
+  }
+}
+.xico-gonggao {
+  &:before {
+    content: $xico-gonggao;
+  }
+}
+.xico-jinghao2 {
+  &:before {
+    content: $xico-jinghao2;
+  }
+}
+.xico-jinghao {
+  &:before {
+    content: $xico-jinghao;
+  }
+}
+.xico-gongju {
+  &:before {
+    content: $xico-gongju;
+  }
+}
+.xico-gongju1 {
+  &:before {
+    content: $xico-gongju1;
+  }
+}
+.xico-bangzhu {
+  &:before {
+    content: $xico-bangzhu;
+  }
+}
+.xico-bangzhu2 {
+  &:before {
+    content: $xico-bangzhu2;
+  }
+}
+.xico-suo {
+  &:before {
+    content: $xico-suo;
+  }
+}
+.xico-suo2 {
+  &:before {
+    content: $xico-suo2;
+  }
+}
+.xico-xiaoxi {
+  &:before {
+    content: $xico-xiaoxi;
+  }
+}
+.xico-xiaoxi2 {
+  &:before {
+    content: $xico-xiaoxi2;
+  }
+}
+.xico-yonghu {
+  &:before {
+    content: $xico-yonghu;
+  }
+}
+.xico-yonghu1 {
+  &:before {
+    content: $xico-yonghu1;
+  }
+}
+.xico-yonghu2 {
+  &:before {
+    content: $xico-yonghu2;
+  }
+}
+.xico-yonghu3 {
+  &:before {
+    content: $xico-yonghu3;
+  }
+}
+.xico-yonghuchazhao {
+  &:before {
+    content: $xico-yonghuchazhao;
+  }
+}
+.xico-youjian {
+  &:before {
+    content: $xico-youjian;
+  }
+}
+.xico-youjian2 {
+  &:before {
+    content: $xico-youjian2;
+  }
+}
+.xico-baocun {
+  &:before {
+    content: $xico-baocun;
+  }
+}
+.xico-fujian {
+  &:before {
+    content: $xico-fujian;
+  }
+}
+.xico-gengxin {
+  &:before {
+    content: $xico-gengxin;
+  }
+}
+.xico-shijian {
+  &:before {
+    content: $xico-shijian;
+  }
+}
+.xico-naozhong {
+  &:before {
+    content: $xico-naozhong;
+  }
+}
+.xico-shezhi {
+  &:before {
+    content: $xico-shezhi;
+  }
+}
+.xico-shezhi2 {
+  &:before {
+    content: $xico-shezhi2;
+  }
+}
+.xico-shuaxin {
+  &:before {
+    content: $xico-shuaxin;
+  }
+}
+.xico-tixing1 {
+  &:before {
+    content: $xico-tixing1;
+  }
+}
+.xico-tingzhi {
+  &:before {
+    content: $xico-tingzhi;
+  }
+}
+.xico-tuichu {
+  &:before {
+    content: $xico-tuichu;
+  }
+}
+.xico-xiazai1 {
+  &:before {
+    content: $xico-xiazai1;
+  }
+}
+.xico-xinjian {
+  &:before {
+    content: $xico-xinjian;
+  }
+}
+.xico-xinxi1 {
+  &:before {
+    content: $xico-xinxi1;
+  }
+}
+.xico-xinxi12 {
+  &:before {
+    content: $xico-xinxi12;
+  }
+}
+.xico-xinxi2 {
+  &:before {
+    content: $xico-xinxi2;
+  }
+}
+.xico-lianxiren {
+  &:before {
+    content: $xico-lianxiren;
+  }
+}
+.xico-liebiao8 {
+  &:before {
+    content: $xico-liebiao8;
+  }
+}
+.xico-sousuo {
+  &:before {
+    content: $xico-sousuo;
+  }
+}
+.xico-liebiao9 {
+  &:before {
+    content: $xico-liebiao9;
+  }
+}
+.xico-chazhao {
+  &:before {
+    content: $xico-chazhao;
+  }
+}
+.xico-shangchuan {
+  &:before {
+    content: $xico-shangchuan;
+  }
+}
+.xico-laji {
+  &:before {
+    content: $xico-laji;
+  }
+}
+.xico-laji2 {
+  &:before {
+    content: $xico-laji2;
+  }
+}
+.xico-guanji {
+  &:before {
+    content: $xico-guanji;
+  }
+}
+.xico-guanyuyunguanjia {
+  &:before {
+    content: $xico-guanyuyunguanjia;
+  }
+}
+.xico-jiantou {
+  &:before {
+    content: $xico-jiantou;
+  }
+}
+.xico-banshou {
+  &:before {
+    content: $xico-banshou;
+  }
+}
+.xico-baobiao {
+  &:before {
+    content: $xico-baobiao;
+  }
+}
+.xico-baoxiu {
+  &:before {
+    content: $xico-baoxiu;
+  }
+}
+.xico-dingwei {
+  &:before {
+    content: $xico-dingwei;
+  }
+}
+.xico-dingwei2 {
+  &:before {
+    content: $xico-dingwei2;
+  }
+}
+.xico-dangan {
+  &:before {
+    content: $xico-dangan;
+  }
+}
+.xico-dianhua {
+  &:before {
+    content: $xico-dianhua;
+  }
+}
+.xico-dingshixiaoshou {
+  &:before {
+    content: $xico-dingshixiaoshou;
+  }
+}
+.xico-feiyong {
+  &:before {
+    content: $xico-feiyong;
+  }
+}
+.xico-fuzhi {
+  &:before {
+    content: $xico-fuzhi;
+  }
+}
+.xico-gouwu1 {
+  &:before {
+    content: $xico-gouwu1;
+  }
+}
+.xico-gouwuche {
+  &:before {
+    content: $xico-gouwuche;
+  }
+}
+.xico-gouwuche2 {
+  &:before {
+    content: $xico-gouwuche2;
+  }
+}
+.xico-hetong {
+  &:before {
+    content: $xico-hetong;
+  }
+}
+.xico-hetong1 {
+  &:before {
+    content: $xico-hetong1;
+  }
+}
+.xico-hetong2 {
+  &:before {
+    content: $xico-hetong2;
+  }
+}
+.xico-hetong3 {
+  &:before {
+    content: $xico-hetong3;
+  }
+}
+.xico-hetong4 {
+  &:before {
+    content: $xico-hetong4;
+  }
+}
+.xico-hetong5 {
+  &:before {
+    content: $xico-hetong5;
+  }
+}
+.xico-hetong6 {
+  &:before {
+    content: $xico-hetong6;
+  }
+}
+.xico-hetong7 {
+  &:before {
+    content: $xico-hetong7;
+  }
+}
+.xico-hetong8 {
+  &:before {
+    content: $xico-hetong8;
+  }
+}
+.xico-hetong9 {
+  &:before {
+    content: $xico-hetong9;
+  }
+}
+.xico-hetong10 {
+  &:before {
+    content: $xico-hetong10;
+  }
+}
+.xico-hetong11 {
+  &:before {
+    content: $xico-hetong11;
+  }
+}
+.xico-shiyongbangzhu {
+  &:before {
+    content: $xico-shiyongbangzhu;
+  }
+}
+.xico-danju {
+  &:before {
+    content: $xico-danju;
+  }
+}
+.xico-jigouxinxi {
+  &:before {
+    content: $xico-jigouxinxi;
+  }
+}
+.xico-jisuan {
+  &:before {
+    content: $xico-jisuan;
+  }
+}
+.xico-jiesuan {
+  &:before {
+    content: $xico-jiesuan;
+  }
+}
+.xico-kaisuo {
+  &:before {
+    content: $xico-kaisuo;
+  }
+}
+.xico-kaisuo2 {
+  &:before {
+    content: $xico-kaisuo2;
+  }
+}
+.xico-kehuguanli {
+  &:before {
+    content: $xico-kehuguanli;
+  }
+}
+.xico-kehutousu {
+  &:before {
+    content: $xico-kehutousu;
+  }
+}
+.xico-rili {
+  &:before {
+    content: $xico-rili;
+  }
+}
+.xico-rili2 {
+  &:before {
+    content: $xico-rili2;
+  }
+}
+.xico-rizhi1 {
+  &:before {
+    content: $xico-rizhi1;
+  }
+}
+.xico-shouhou2 {
+  &:before {
+    content: $xico-shouhou2;
+  }
+}
+.xico-shuju1 {
+  &:before {
+    content: $xico-shuju1;
+  }
+}
+.xico-shuju2 {
+  &:before {
+    content: $xico-shuju2;
+  }
+}
+.xico-shuju4 {
+  &:before {
+    content: $xico-shuju4;
+  }
+}
+.xico-waimai {
+  &:before {
+    content: $xico-waimai;
+  }
+}
+.xico-weixiu {
+  &:before {
+    content: $xico-weixiu;
+  }
+}
+.xico-wenjianjia1 {
+  &:before {
+    content: $xico-wenjianjia1;
+  }
+}
+.xico-wenjianjia2 {
+  &:before {
+    content: $xico-wenjianjia2;
+  }
+}
+.xico-wenjianjia3 {
+  &:before {
+    content: $xico-wenjianjia3;
+  }
+}
+.xico-shouji {
+  &:before {
+    content: $xico-shouji;
+  }
+}
+.xico-shouhou {
+  &:before {
+    content: $xico-shouhou;
+  }
+}
+.xico-shouhou1 {
+  &:before {
+    content: $xico-shouhou1;
+  }
+}
+.xico-zhaoxiang2 {
+  &:before {
+    content: $xico-zhaoxiang2;
+  }
+}
+.xico-dayin1 {
+  &:before {
+    content: $xico-dayin1;
+  }
+}
+.xico-dayin2 {
+  &:before {
+    content: $xico-dayin2;
+  }
+}
+.xico-zhishichanquan {
+  &:before {
+    content: $xico-zhishichanquan;
+  }
+}
+.xico-wenjianxinxi {
+  &:before {
+    content: $xico-wenjianxinxi;
+  }
+}
+.xico-xihuan {
+  &:before {
+    content: $xico-xihuan;
+  }
+}
+.xico-xihuan2 {
+  &:before {
+    content: $xico-xihuan2;
+  }
+}
+.xico-xitong {
+  &:before {
+    content: $xico-xitong;
+  }
+}
+.xico-xiangmushenbao {
+  &:before {
+    content: $xico-xiangmushenbao;
+  }
+}
+.xico-xinyongqia {
+  &:before {
+    content: $xico-xinyongqia;
+  }
+}
+.xico-xiugaimima {
+  &:before {
+    content: $xico-xiugaimima;
+  }
+}
+.xico-yijianfankui {
+  &:before {
+    content: $xico-yijianfankui;
+  }
+}
+.xico-yuding {
+  &:before {
+    content: $xico-yuding;
+  }
+}
+.xico-zengjiahetong {
+  &:before {
+    content: $xico-zengjiahetong;
+  }
+}
+.xico-zhangdan {
+  &:before {
+    content: $xico-zhangdan;
+  }
+}
+.xico-zhaoxiang {
+  &:before {
+    content: $xico-zhaoxiang;
+  }
+}
+.xico-saoyisao {
+  &:before {
+    content: $xico-saoyisao;
+  }
+}
+.xico-zan1 {
+  &:before {
+    content: $xico-zan1;
+  }
+}
+.xico-zan2 {
+  &:before {
+    content: $xico-zan2;
+  }
+}
+.xico-zhiding {
+  &:before {
+    content: $xico-zhiding;
+  }
+}
+.xico-eye5 {
+  &:before {
+    content: $xico-eye5;
+  }
+}
+.xico-paper-clip {
+  &:before {
+    content: $xico-paper-clip;
+  }
+}
+.xico-mail5 {
+  &:before {
+    content: $xico-mail5;
+  }
+}
+.xico-layout {
+  &:before {
+    content: $xico-layout;
+  }
+}
+.xico-link4 {
+  &:before {
+    content: $xico-link4;
+  }
+}
+.xico-ribbon {
+  &:before {
+    content: $xico-ribbon;
+  }
+}
+.xico-image3 {
+  &:before {
+    content: $xico-image3;
+  }
+}
+.xico-clock4 {
+  &:before {
+    content: $xico-clock4;
+  }
+}
+.xico-monitor {
+  &:before {
+    content: $xico-monitor;
+  }
+}
+.xico-paper-stack {
+  &:before {
+    content: $xico-paper-stack;
+  }
+}
+.xico-repeat2 {
+  &:before {
+    content: $xico-repeat2;
+  }
+}
+.xico-cloud-upload3 {
+  &:before {
+    content: $xico-cloud-upload3;
+  }
+}
+.xico-cloud-download3 {
+  &:before {
+    content: $xico-cloud-download3;
+  }
+}
+.xico-share5 {
+  &:before {
+    content: $xico-share5;
+  }
+}
+.xico-flag6 {
+  &:before {
+    content: $xico-flag6;
+  }
+}
+.xico-archive2 {
+  &:before {
+    content: $xico-archive2;
+  }
+}
+.xico-inbox2 {
+  &:before {
+    content: $xico-inbox2;
+  }
+}
+.xico-outbox {
+  &:before {
+    content: $xico-outbox;
+  }
+}
+.xico-file3 {
+  &:before {
+    content: $xico-file3;
+  }
+}
+.xico-file-add {
+  &:before {
+    content: $xico-file-add;
+  }
+}
+.xico-file-subtract {
+  &:before {
+    content: $xico-file-subtract;
+  }
+}
+.xico-open {
+  &:before {
+    content: $xico-open;
+  }
+}
+.xico-forward {
+  &:before {
+    content: $xico-forward;
+  }
+}
+.xico-back2 {
+  &:before {
+    content: $xico-back2;
+  }
+}
+.xico-arrowup {
+  &:before {
+    content: $xico-arrowup;
+  }
+}
+.xico-arrowdown {
+  &:before {
+    content: $xico-arrowdown;
+  }
+}
+.xico-arrowleft {
+  &:before {
+    content: $xico-arrowleft;
+  }
+}
+.xico-arrowright {
+  &:before {
+    content: $xico-arrowright;
+  }
+}
+.xico-reply2 {
+  &:before {
+    content: $xico-reply2;
+  }
+}
+.xico-circle-plus {
+  &:before {
+    content: $xico-circle-plus;
+  }
+}
+.xico-circle-minus {
+  &:before {
+    content: $xico-circle-minus;
+  }
+}
+.xico-circle-check {
+  &:before {
+    content: $xico-circle-check;
+  }
+}
+.xico-circle-cross {
+  &:before {
+    content: $xico-circle-cross;
+  }
+}
+.xico-square-plus {
+  &:before {
+    content: $xico-square-plus;
+  }
+}
+.xico-square-minus {
+  &:before {
+    content: $xico-square-minus;
+  }
+}
+.xico-square-check {
+  &:before {
+    content: $xico-square-check;
+  }
+}
+.xico-square-cross {
+  &:before {
+    content: $xico-square-cross;
+  }
+}
+.xico-record3 {
+  &:before {
+    content: $xico-record3;
+  }
+}
+.xico-skip-back {
+  &:before {
+    content: $xico-skip-back;
+  }
+}
+.xico-rewind {
+  &:before {
+    content: $xico-rewind;
+  }
+}
+.xico-fast-forward2 {
+  &:before {
+    content: $xico-fast-forward2;
+  }
+}
+.xico-skip-forward {
+  &:before {
+    content: $xico-skip-forward;
+  }
+}
+.xico-arrow-left3 {
+  &:before {
+    content: $xico-arrow-left3;
+  }
+}
+.xico-arrow-right3 {
+  &:before {
+    content: $xico-arrow-right3;
+  }
+}
+.xico-arrow-up3 {
+  &:before {
+    content: $xico-arrow-up3;
+  }
+}
+.xico-arrow-down3 {
+  &:before {
+    content: $xico-arrow-down3;
+  }
+}
+.xico-loader {
+  &:before {
+    content: $xico-loader;
+  }
+}
+.xico-plus3 {
+  &:before {
+    content: $xico-plus3;
+  }
+}
+.xico-minus7 {
+  &:before {
+    content: $xico-minus7;
+  }
+}
+.xico-check2 {
+  &:before {
+    content: $xico-check2;
+  }
+}
+.xico-cross2 {
+  &:before {
+    content: $xico-cross2;
+  }
+}
+.xico-menu5 {
+  &:before {
+    content: $xico-menu5;
+  }
+}
+

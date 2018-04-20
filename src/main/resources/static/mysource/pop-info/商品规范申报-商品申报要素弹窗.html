@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>商品规范申报-商品申报要素</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--商品规范申报-商品申报要素弹窗-->
+		<div id="pop-info1" class="modal fade x-modal-md">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          						<span aria-hidden="true">&times;</span>
+          						<span class="sr-only">Close</span>
+        				</button>
+						<h4 class="modal-title">商品规范申报-商品申报要素</h4>
+					</div>
+					<div class="modal-body">
+						<!--弹窗内容开始-->
+						<div class="p-b">
+							商品信息：XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+						</div>
+						<div class="form-inline">
+							<div class="border-a p-a bg-grey">
+								<p>规格型号（根据海关规定，以下要素应全部填写）</p>
+								<div class="form-group w-100">
+									<label class="fn-8 text-right" for="Select1">用途（使用机型）</label>
+									<input id="input1" tabindex="" type="text" class="form-control fn-20" placeholder=""> 必填
+								</div>
+								<div class="form-group w-100">
+									<label class="fn-8 text-right" for="Select1">品牌</label>
+									<input id="input1" tabindex="" type="text" class="form-control fn-20" placeholder=""> 必填
+								</div>
+								<div class="form-group w-100">
+									<label class="fn-8 text-right" for="Select1">型号</label>
+									<input id="input1" tabindex="" type="text" class="form-control fn-20" placeholder=""> 必填
+								</div>
+								<div class="form-group w-100">
+									<label class="fn-8 text-right" for="Select1">GTIN</label>
+									<input id="input1" tabindex="" type="text" class="form-control fn-20" placeholder="">
+								</div>
+								<div class="form-group w-100">
+									<label class="fn-8 text-right" for="Select1">CAS</label>
+									<input id="input1" tabindex="" type="text" class="form-control fn-20" placeholder="">
+								</div>
+								<div class="form-group w-100">
+									<label class="fn-8 text-right" for="Select1">其它</label>
+									<input id="input1" tabindex="" type="text" class="form-control fn-20" placeholder="">
+								</div>
+							</div>
+							<div class="w-100 p-t">规格型号<i>（剩余字数：50）</i></div>
+							<textarea id="textarea" tabindex="" class="w-100 mg-t-5" rows="5"></textarea>
+						</div>
+						<!--弹窗内容开始end-->
+					</div>
+					<div class="modal-footer text-center">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">&nbsp;确定&nbsp;</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">&nbsp;关闭&nbsp;</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--商品规范申报-商品申报要素弹窗end-->
+
+		<script src="../lib/inuse/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				$('#pop-info1').modal('show'); //调试弹窗用途 显示弹窗
+			});
+			$(function() {
+				//同时绑定多个日期控件.date-sel
+				lay('.date-sel').each(function() {
+					laydate.render({
+						elem: this,
+						trigger: 'click',
+						theme: '#39c'
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

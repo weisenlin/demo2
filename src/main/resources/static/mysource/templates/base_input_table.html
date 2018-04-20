@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="p-a">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link" href="#tabs1" role="tab" data-toggle="tab">数据录入表-表格行</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#tabs2" role="tab" data-toggle="tab">数据录入表-表格列</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#tabs3" role="tab" data-toggle="tab">数据录入表-列</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#tabs4" role="tab" data-toggle="tab">常规表格录入表</a>
+				</li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane" id="tabs1">
+					<!--数据录入表-行-->
+					<div class="x-table">
+						<h3>数据录入表-行（默认表格标题居中对齐）</h3>
+						<table class="table-input w-100">
+							<!--.th-left标题左对齐 .th-right 标题右对齐-->
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>姓名</th>
+									<th>性别</th>
+									<th>用户名</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>1</th>
+									<td><input type="text" class="form-control" placeholder=""></td>
+									</td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+								</tr>
+								<tr>
+									<th>2</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+								</tr>
+								<tr>
+									<th>3</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--数据录入表-行end-->
+					<p class="text-primary m-t-lg">对齐控制.th-left标题左对齐;.th-center标题居中对齐； .th-right 标题右对齐。可加在table或者tr标签中，区别控制作用范围。</p>
+				</div>
+
+				<div role="tabpanel" class="tab-pane" id="tabs2">
+					<!--数据录入表-列-->
+					<div class="x-table">
+						<h3>数据录入表-列</h3>
+						<table class="table-input th-noborder w-100">
+							<tbody>
+								<tr>
+									<th>企业内部编码</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<th>手册编号</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<th>进口合同号</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+								</tr>
+								<tr>
+									<th>加工单位代码</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<th>申报开始日期</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<th>申报结束日期</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+								</tr>
+								<tr>
+									<th>经营单位代码</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<th>审批日期</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<th>已核销
+									</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--数据录入表-列end-->
+				</div>
+				<div role="tabpanel" class="tab-pane pd-10" id="tabs3">
+					<form>
+						<div class="row">
+							<fieldset class="form-group col-sm-4 p-r">
+								<label for="text1">标题1</label>
+								<input type="text" class="form-control" id="text1" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r">
+								<label for="text2">标题2</label>
+								<input type="text" class="form-control" id="text2" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r">
+								<label for="text1">标题1</label>
+								<input type="text" class="form-control" id="text1" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r">
+								<label for="text2">标题2</label>
+								<input type="text" class="form-control" id="text2" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r">
+								<label for="text1">标题1</label>
+								<input type="text" class="form-control" id="text1" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r">
+								<label for="text2">标题2</label>
+								<input type="text" class="form-control" id="text2" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r">
+								<label for="text1">标题1</label>
+								<input type="text" class="form-control" id="text1" placeholder="请输入...">
+							</fieldset>
+						</div>
+					</form>
+
+					<p class="text-primary m-t-lg">标题不折行</p>
+					<form>
+						<div class="row form-inline">
+							<fieldset class="form-group col-sm-4 p-r p-b">
+								<label for="text1">标题1</label>
+								<input type="text" class="form-control" id="text1" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r p-b">
+								<label for="text2">标题2</label>
+								<input type="text" class="form-control" id="text2" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r p-b">
+								<label for="text1">标题1</label>
+								<input type="text" class="form-control" id="text1" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r p-b">
+								<label for="text2">标题2</label>
+								<input type="text" class="form-control" id="text2" placeholder="请输入...">
+							</fieldset>
+							<fieldset class="form-group col-sm-4 p-r p-b">
+								<label for="text1">标题1</label>
+								<input type="text" class="form-control" id="text1" placeholder="请输入...">
+							</fieldset>
+						</div>
+					</form>
+
+					<p class="text-primary m-t-lg">填写表单</p>
+					<form>
+						<div class="w-60 x-form-lg">
+							<div class="form-group row">
+								<label for="inputEmail3" class="col-sm-3">Email</label>
+								<div class="col-sm-9">
+									<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3">Password</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-3">Radios</label>
+								<div class="col-sm-9">
+									<div class="radio">
+										<label>
+          <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          Option one is this and that&mdash;be sure to include why it's great
+        </label>
+									</div>
+									<div class="radio">
+										<label>
+          <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          Option two can be something else and selecting it will deselect option one
+        </label>
+									</div>
+									<div class="radio disabled">
+										<label>
+          <input type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+          Option three is disabled
+        </label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-3">Checkbox</label>
+								<div class="col-sm-9">
+									<div class="checkbox">
+										<label>
+          <input type="checkbox"> Check me out
+        </label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-offset-3 col-sm-9">
+									<button type="submit" class="btn btn-secondary">Sign in</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div role="tabpanel" class="tab-pane pd-10 active" id="tabs4">
+					<form>
+					<div class="x-table">
+						<h3>数据录入表-行（默认表格标题右对齐）</h3>
+						<table class="table table-sm table-bordered th-center w-100">
+							<!--.th-centert标题居中对齐 .th-left标题左对齐 .th-right 标题右对齐-->
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>类名</th>
+									<th>作用</th>
+									<th>备注</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>1</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+								</tr>
+								<tr>
+									<th>2</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+								</tr>
+								<tr>
+									<th>3</th>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									<td><input type="text" class="form-control " placeholder=""></td>
+									</td>
+								</tr>
+								<tr>
+									<th>4</th>
+									<td>.th-centert</td>
+									</td>
+									<td>标题居中对齐</td>
+									<td>类可加在table和tr标签上，区别作用范围</td>
+									</td>
+								</tr>
+								<tr>
+									<th>5</th>
+									<td>.th-left</td>
+									</td>
+									<td>标题居左对齐</td>
+									<td></td>
+									</td>
+								</tr>
+								<tr>
+									<th>6</th>
+									<td>.th-right</td>
+									</td>
+									<td>标题居右对齐</td>
+									<td></td>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="text-center">
+							<input type="submit" value="　提 交　" class="btn btn-primary">
+							<input type="reset" value="　重 写　" class="btn btn-danger">
+					</div>
+				</form>	
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//用于单选复选框样式控制
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

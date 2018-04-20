@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body class="Site x-bodybj" style="background-image: url(../images/login-bj2.jpg);">
+		<!--顶部-->
+		<div class="h-topbar Site-header">
+			<div class="x-fixed-width">
+				<div class="logo pull-left">
+					<h3>新盛通 <span class="text-warning">Smartlink</span> 云报关平台</h3>
+				</div>
+				<div class="r-menu pull-right">
+					<ul>
+						<li>
+							<a href=""><span class="xico xico-bangzhu"></span>第一次使用平台</a>
+						</li>
+						<li>
+							<a href=""><span class="xico xico-shouhou2"></span>平台客服</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--顶部end-->
+
+		<!--内容区-->
+		<div class="Site-content x-fixed-width">
+			<!--登录框-->
+			<div class="h-login center-block">
+				<div class="card x-form-md">
+					<div class="title"><em>Smartlink</em>会员登录</div>
+					<div class="card-img-top">
+						<img src="../images/login-topbar-bj.gif" alt="会员登录">
+					</div>
+					<div class="card-block">
+						<!--<h4 class="card-title">会员登录</h4>-->
+						<div class="input-group">
+							<span class="input-group-addon"><em class="xico xico-xinxi2"></em></span>
+							<input type="text" class="form-control" placeholder="登录速记码/海关编码/组织机构代码/社会信用码">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon"><em class="xico xico-yonghu"></em></span>
+							<input type="text" class="form-control" placeholder="请输入用户名">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon"><em class="xico xico-suo"></em></span>
+							<input type="password" class="form-control" placeholder="请输入密码">
+						</div>
+						<div class="row m-b">
+							<div class="col-xs-6">
+								<div class="input-group">
+									<span class="input-group-addon"><em class="xico xico-jiantou"></em></span>
+									<input type="text" class="form-control" placeholder="请输入右侧验证码">
+								</div>
+							</div>
+							<div class="col-xs-6 p-l">
+								<img src="../images/u474.png" />
+								<a href="">看不清，换一张</a>
+							</div>
+						</div>
+						<div class="text-center">
+							<a href="layout.html" class="btn btn-primary">&nbsp;&nbsp;登 录&nbsp;&nbsp;</a>
+							<a href="register.html" class="btn btn-success">&nbsp;&nbsp;注 册&nbsp;&nbsp;</a>
+						</div>
+						<div class="login-msg text-center">
+							<span class="text-danger hidden">密码错误，请重新输入！</span>
+						</div>
+					</div>
+				</div>
+				<div class="info m-l">
+					<p>如果密码遗失，可联系贵单位管理员重置密码。</p>
+					<p>如果管理员密码遗失，请用注册手机号登录平台重置管理员密码。</p>
+				</div>
+			</div>
+			<!--登录框end-->
+
+		</div>
+		<!--内容区end-->
+
+		<!--底部-->
+		<div class="h-bottom Site-footer">
+			<div class="x-fixed-width posr">
+				<div class="b-code code1">
+					<img src="../images/follow-us1.jpg">
+				</div>
+				<div class="b-code code2">
+					<img src="../images/follow-us1.jpg">
+				</div>
+				<div class="b-code code3">
+					<img src="../images/follow-us1.jpg">
+				</div>
+				<div class="bot-link row text-center">
+					<a class="col-sm-3"><span class="xico xico-youjian"></span>邮箱：nstYun@nst.com</a>
+					<a class="col-sm-3"><span class="xico xico-shouhou2"></span>服务热线:4006-999-688</a>
+					<a id="showcode1" class="col-sm-2"><span class="xico xico-xiaoxi"></span>在线客服</a>
+					<a id="showcode2" class="col-sm-2"><span class="xico xico-kehuguanli"></span>交流群</a>
+					<a id="showcode3" class="col-sm-2"><span class="xico xico-pc_weixin"></span>公众号</a>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="b-menu text-center">
+							<ul class="clearfix">
+								<li>
+									<a href="">关于我们 </a>
+								</li>
+								<li>
+									<a href="">网站声明</a>
+								</li>
+								<li>
+									<a href="">帮助中心</a>
+								</li>
+								<li>
+									<a href="">联系我们</a>
+								</li>
+								<li>
+									<a href="">常见问题</a>
+								</li>
+							</ul>
+						</div>
+						<div class="b-info">
+							<ul class="copyright clearfix">
+								<li>Copyright © 2017 XXXXXXXXX 版权所有</li>
+								<li>粤ICP备XXXXXXX号XX1</li>
+								<li>增值电信业务经营许可证 ：XXXXXXX</li>
+								<li>本站法律顾问：XXXXX律师</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--底部end-->
+		<script type="text/javascript">
+			//二维码显示隐藏
+			$(document).ready(function() {
+				xmfadeshow('#showcode1', '.code1');
+				xmfadeshow('#showcode2', '.code2');
+				xmfadeshow('#showcode3', '.code3');
+			})
+		</script>
+	</body>
+
+</html>

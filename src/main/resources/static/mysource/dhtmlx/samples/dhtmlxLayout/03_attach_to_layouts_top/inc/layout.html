@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Header/Footer with menu/toolbar/ribbon/status</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<link rel="stylesheet" type="text/css" href="../../../../codebase/fonts/font_roboto/roboto.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../codebase/dhtmlx.css"/>
+	<script src="../../../../codebase/dhtmlx.js"></script>
+	<link rel="StyleSheet" href="../../../../dtree/dtree.css" type="text/css" />
+	<script type="text/javascript" src="../../../../dtree/dtree.js"></script>
+	
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+			overflow: hidden;
+			background-color: #fafafa;
+		}
+		.text_block {
+			font-family: Roboto, Arial, Helvetica;
+			font-size: 14px;
+			color: #404040;
+			padding: 5px 10px;
+			height: 70px;
+			border: 1px solid #dfdfdf;
+		}
+	</style>
+	<script>
+		
+		var myLayout, myMenu, sbObj, a, b, myToolbar, d2;
+		function doOnLoad() {
+			myLayout = new dhtmlXLayoutObject({
+				parent: document.body,
+				pattern: "2U"
+			});
+			
+			myMenu = new dhtmlXMenuObject("menuObj");
+			myMenu.setIconsPath("../../../dhtmlxMenu/common/imgs/");
+			myLayout.attachMenu(myMenu);
+						
+			a = myLayout.cells("a")
+			a.setWidth(300);
+			a.setText('功能导航');
+			a.attachObject('a_tree');
+			
+			b = myLayout.cells("b");
+			b.hideHeader();	
+
+			b.attachObject('my_tabbar');
+			myTabbar = new dhtmlXTabBar({
+				parent: "my_tabbar",
+				close_button: true,
+				tabs: [
+					
+				]
+			});
+			initTree();
+			
+		}
+		
+		
+		
+		function initTree(){
+			d2 = new dTree('d2',"../../../../dtree"); 
+			d2.multiSel = false; //多选
+			d2.isRootDif = false;//不区别根节点
+			 //d2.add('3','-1','主管部门结构'); 
+			 d2.add('310000','-1','报关单挂你','rul',true); 
+			 d2.add('320000','-1','货运单管理','../01_menu.html');
+			 d2.add('320100','320000','草稿单据','../05_all_together_with_toolbar.html',true);
+			 d2.add('320200','320000','已提交单据','rul',true);
+			 d2.add('310100','310000','待审核单据','../06_all_together_with_ribbon.html',true); 
+			 d2.add('310900','310000','已提交单据','../03_ribbon.html'); 
+			 
+			 d2.show('a_tree');	
+			 d2.itemClickMethod = openModule;
+		}
+		
+		
+		 function openModule(id,name,url){
+			if(!myTabbar.tabs('tab' + id)){
+				myTabbar.addTab('tab' + id, name);
+				var curFrame = document.createElement('iframe');
+				curFrame.id = "frame" + id;
+				curFrame.width = "100%";
+				curFrame.height = "100%";
+				curFrame.style="border:0px";
+				iframeDiv = document.getElementById('my_tabbar');
+				iframeDiv.appendChild(curFrame);
+				curFrame.src = url;
+				myTabbar.tabs('tab' + id).attachObject("frame" + id);
+			}
+			myTabbar.tabs('tab' + id).setActive();
+		 }
+
+	</script>
+</head>
+<body onload="doOnLoad();">
+<div style="height: 50px;padding-left:20px;">
+		<div id="menuObj" style="height:100%">新盛通关贸平台</div>
+</div>
+<div id="my_tabbar" style="height:100%;"></div>
+
+<div id="a_tree" style="width:100%;height:100%;"></div>
+
+</body>
+</html>

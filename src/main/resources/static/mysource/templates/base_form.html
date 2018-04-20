@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--搜索栏-->
+		<div class="search-bar">
+			<div class="row">
+				<div class="col-sm-7 form-inline">
+					<div class="form-group">
+						<label for="exampleInputEmail2">申报地海关</label>
+						<input type="text" class="form-control form-control-sm" id="exampleInputEmail2" placeholder="请输入">
+					</div>
+					分2栏布局
+				</div>
+				<div class="col-sm-5 form-inline text-right">
+					<fieldset class="form-group">
+						<label for="exampleSelect1">搜索类型:</label>
+						<select class="form-control form-control-sm" id="exampleSelect1">
+							<option>类型1</option>
+							<option>类型2</option>
+							<option>类型3</option>
+							<option>类型4</option>
+							<option>类型5</option>
+						</select>
+					</fieldset>
+					<div class="form-group">
+						<input type="text" class="form-control form-control-sm" id="exampleInputEmail2" placeholder="请输入搜索关键字">
+					</div>
+					<button type="submit" class="btn btn-primary btn-sm"><span class="xico xico-chazhao"></span>搜索</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="p-a">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<!--<li class="nav-item">
+					<a class="nav-link" href="#tabs1" role="tab" data-toggle="tab">数据录入表-行</a>
+				</li>-->
+				<li class="nav-item">
+					<a class="nav-link" href="#tabs2" role="tab" data-toggle="tab">分页</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#tabs3" role="tab" data-toggle="tab">基本表单元件</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#tabs4" role="tab" data-toggle="tab">按钮/按钮组</a>
+				</li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<!--<div role="tabpanel" class="tab-pane" id="tabs1">
+					1...
+				</div>-->
+
+				<div role="tabpanel" class="tab-pane" id="tabs2">
+					<p class="text-primary m-t">普通分页</p>
+					<p class="text-warning">使用.disabled以禁止点击链接，使用.active以指示当前页。</p>
+					<nav>
+						<ul class="pagination">
+							<li class="disabled">
+								<a href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+									<span class="sr-only">Previous</span>
+								</a>
+							</li>
+							<li class="active">
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li>
+								<a href="#">3</a>
+							</li>
+							<li>
+								<a href="#">4</a>
+							</li>
+							<li>
+								<a href="#">5</a>
+							</li>
+							<li>
+								<a href="#" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+									<span class="sr-only">Next</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<p class="text-primary m-t">小尺寸分页（.pagination-sm）</p>
+					<nav>
+						<ul class="pagination pagination-sm">
+							<li>
+								<a href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+									<span class="sr-only">Previous</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li class="active">
+								<a href="#">3</a>
+							</li>
+							<li class="disabled">
+								<a href="#" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+									<span class="sr-only">Next</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					
+					<p class="text-primary m-t">旧系统分页重构</p>
+					<div id="pageA">
+						<div class="button_pa">
+							左栏文字
+						</div>
+						<div class="left_pa">
+							<a id="headList_page_first" class="pagebnt"><em class="ico_first_pa"></em></a>
+							<span id="gex"></span>
+							<a id="headList_page_pre" class="pagebnt"><em class="ico_pre_pa"></em></a>
+							<span id="gex"></span>
+							<a id="headList_page_next" class="pagebnt"><em class="ico_next_pa"></em></a>
+							<span id="gex"></span>
+							<a id="headList_page_last" class="pagebnt"><em class="ico_last_pa"></em></a>
+							<span id="headListcurrentPage">0</span>
+							<span>&nbsp;/&nbsp;</span>
+							<span id="headListpageCount">0</span>
+							<span>&nbsp;页,每页</span>
+							<input id="headListlimit" type="text" size="3" maxlength="3" value="20">
+							<span>条</span>
+							<span id="gex"></span>
+							<a id="headList_page_goto" class="pagebnt"><em class="ico_refresh_pa"></em></a>
+							<span id="gex"></span>
+							<span>共查询到&nbsp; </span>
+							<span id="headListrowCount">0</span>
+							<span>&nbsp;条记录&nbsp;</span>
+						</div>
+					</div>
+
+					<p class="text-primary m-t">旧系统分页简化版</p>
+					<div id="pageA">
+						<div class="button_pa">
+							左栏文字
+						</div>
+						<div class="left_pa">
+							<a id="headList_page_first" class="pagebnt"><em class="ico_first_pa"></em></a>
+							<span id="gex"></span>
+							<a id="headList_page_pre" class="pagebnt"><em class="ico_pre_pa"></em></a>
+							<span id="gex"></span>
+							<a id="headList_page_next" class="pagebnt"><em class="ico_next_pa"></em></a>
+							<span id="gex"></span>
+							<a id="headList_page_last" class="pagebnt"><em class="ico_last_pa"></em></a>
+							<span id="headListcurrentPage">0</span>
+							<span>&nbsp;/&nbsp;</span>
+							<span id="headListpageCount">0</span>
+							<span>&nbsp;页，</span>
+							<span>共查询到&nbsp; </span>
+							<span id="headListrowCount">0</span>
+							<span>&nbsp;条记录&nbsp;</span>
+						</div>
+					</div>
+
+				</div>
+				<div role="tabpanel" class="tab-pane pd-10" id="tabs3">
+					<form class="bd-example">
+						<fieldset>
+							<legend>基本表单元件</legend>
+
+							<!--工具栏toolbar-->
+							<div class="x-toolbar-wk">
+								<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+									<a type="button" class="btn btn-primary"><span class="xico xico-dayin1"></span>打印报关单</a>
+									<a type="button" class="btn btn-primary"><span class="xico xico-fuzhi"></span>复制</a>
+									<a type="button" class="btn btn-primary"><span class="xico xico-hetong5"></span>批量申报</a>
+									<a type="button" class="btn btn-primary"><span class="xico xico-outbox"></span>导出</a>
+
+									<div class="btn-group pull-right" role="group">
+										<button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     更多
+    </button>
+										<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+											<a class="dropdown-item" href="#">Dropdown link</a>
+											<a class="dropdown-item" href="#">Dropdown link</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--工具栏toolbar end-->
+
+							<p class="text-grey">注：为提高用户体验，示例中使用lable容器的表单元件，除特殊情况，需按示例方法使用。）</p>
+
+							<p>
+								<label for="input">默认输入框</label>
+								<input type="text" id="input" placeholder="Example input">
+							</p>
+							<p>
+								<label for="input">输入框(readonly)</label>
+								<input type="text" id="input" placeholder="Example input" readonly>
+							</p>
+							<p>
+								<label for="input">输入框 (disabled)</label>
+								<input type="text" id="input" placeholder="Example input" disabled>
+							</p>
+
+							<p>
+								<label for="select">下拉选框</label>
+								<select id="select">
+									<option value="">全部</option>
+									<optgroup label="选项组 1">
+										<option value="">选项 1</option>
+										<option value="">选项 2</option>
+										<option value="">选项 3</option>
+									</optgroup>
+								</select>
+							</p>
+							<p>
+								<label for="select">下拉选框</label>
+								<select id="select">
+									<option value="">全部</option>
+									<optgroup label="选项组 1">
+										<option value="">选项 1</option>
+										<option value="">选项 2</option>
+										<option value="">选项 3</option>
+									</optgroup>
+									<optgroup label="选项组 2">
+										<option value="">选项 4</option>
+										<option value="">选项 5</option>
+										<option value="">选项 6</option>
+									</optgroup>
+								</select>
+							</p>
+							<p class="text-primary m-t-lg">复选框示例</p>
+							<p><label id="gn1-btn"><input type="checkbox" value="all"> 全选</label></p>
+							<p>
+								<label><input class="gn1" type="checkbox" value="1" checked> 复选框1</label>
+								<label><input class="gn1" type="checkbox" value="2"> 复选框2</label>
+								<label><input class="gn1" type="checkbox" value="2"> 复选框2</label>
+								<label><input class="gn1" type="checkbox" value="3"  disabled> 复选框禁用</label>
+								<label><input type="checkbox" value="3"> 不全选复选框</label>
+							</p>
+							<p class="text-primary m-t-lg">单选框示例（注意同组单选框 name=""要相同）</p>
+							<p>
+								<label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        单选框1
+      </label>
+								<label>
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        单选框2
+      </label>
+								<label>
+        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+        单选框3
+      </label>
+								<label>
+        <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" disabled>
+        单选框禁用
+      </label>
+							</p>
+							<div class="card border-a">
+								<div class="card-block">
+									<h4 class="text-info">自定义单复选按钮</h4>
+									<p>xselect固定样式 sel...是自定义分组类，作为分组依据，需在下方调用方法中修改，每组不同名</p>
+									<div class="x-label-list lb-8">
+										<p class="text-info">单选(可取消):xactive('.sel1','1');</p>
+										<label class="xselect sel1 active"><a>擎天柱</a></label>
+										<label class="xselect sel1"><a>擎天柱</a></label>
+										<label class="xselect sel1"><a>擎天柱</a></label>
+										<label class="xselect sel1"><a>擎天柱</a></label>
+										<label class="xselect sel1"><a>擎天柱</a></label>
+									</div>
+									<div class="x-label-list lb-8">
+										<p class="text-info">复选:xactive('.sel2'); </p>
+										<label class="xselect sel2"><a>擎天柱</a></label>
+										<label class="xselect sel2"><a>擎天柱</a></label>
+										<label class="xselect sel2"><a>擎天柱</a></label>
+										<label class="xselect sel2"><a>擎天柱</a></label>
+										<label class="xselect sel2"><a>擎天柱</a></label>
+									</div>
+								</div>
+							</div>
+							<p class="text-primary m-t-lg">多行文本</p>
+							<p>
+								<label for="textarea">多行文本标题</label>
+								<textarea id="textarea" cols="50" rows="5"></textarea>
+								<!--cols="50"控制宽度 rows="5"控制行数（默认高度） -->
+							</p>
+							<p class="text-success m-t-lg">时间选择（参见
+								<a href="http://www.layui.com/laydate/">&nbsp;laydate官网</a>）</p>
+							<p>
+								<label for="time">时间类型</label>
+								<input type="datetime" class="time-sel" id="time1" placeholder="HH:mm:ss">
+							</p>
+							<p class="text-success m-t-lg">日期（参见
+								<a href="http://www.layui.com/laydate/">&nbsp;laydate官网</a>）</p>
+							<p>
+								<label for="time">日期</label>
+								<input type="datetime" class="date-sel fn-8" id="time" placeholder="yyyy-MM-dd">
+								<label class="p-l" for="time">日期时间类型</label>
+								<input type="datetime" class="datetime-sel fn-12" id="time" placeholder="yyyy-MM-dd">
+							</p>
+							<p>
+								<label for="time">年份</label>
+								<input type="datetime" class="year-sel fn-8" id="time" placeholder="yyyy">
+								<label class="p-l" for="time">年月</label>
+								<input type="datetime" class="month-sel fn-12" id="time" placeholder="yyyy-MM">
+							</p>
+							<p>
+								<label for="time">时间范围</label>
+								<input type="datetime" class="dates-sel fn-18" id="time" placeholder=" - ">
+							</p>
+							<p class="text-primary m-t-lg">output输出事例</p>
+							<p>
+								<label for="output">输出标签前导文字</label>
+								<output name="result" id="output">100</output>
+							</p>
+
+						</fieldset>
+						<div class="border-a p-a">
+							<label class="file">
+ 								<input type="file" id="file">
+  								<span id="loadfiles1" class="file-custom"></span>
+							</label>
+						</div>
+						<div id="loadfiles1-style" class="hidden">
+							<style type="text/css">
+								#loadfiles1:after {
+									content: '文件地址/文件名称.后缀';
+								}
+							</style>
+						</div>
+						
+						<div class="btn-group x-toolbar m-t-lg" role="group" aria-label="Basic example">
+							<label class="xfile">
+			  					<input type="file" id="file">
+			  					<span class="xfile-custom bdr-r"><span class="xico xico-cloud-upload3"></span>上传Excel模板</span>
+			  					<!--类bdr-r作用是在右边加圆角边，在按钮组情况下需去除-->
+							</label>
+						</div>
+
+					</form>
+				</div>
+				<div role="tabpanel" class="tab-pane pd-10 active" id="tabs4">
+
+					<p class="text-primary">button标签/input按钮</p>
+					<p>
+						<button type="submit" class="btn btn-primary">Button submit</button>
+						<input type="submit" value="Input submit button" class="btn btn-primary">
+						<input type="button" value="Input button" class="btn btn-primary">
+					</p>
+					<p class="text-primary m-t-lg">disabled禁用按钮</p>
+					<p>
+						<button type="submit" class="btn btn-primary" disabled="">Button submit</button>
+						<input type="submit" value="Input submit button" class="btn btn-primary" disabled="">
+						<input type="button" value="Input button" class="btn btn-primary" disabled="">
+					</p>
+					<p class="text-primary m-t-lg">多种颜色按钮</p>
+					<p>
+						<button type="submit" class="btn btn-primary">primary</button>
+						<button type="submit" class="btn btn-secondary">secondary</button>
+						<button type="submit" class="btn btn-success">success</button>
+						<button type="submit" class="btn btn-info">infot</button>
+						<button type="submit" class="btn btn-warning">warning</button>
+						<button type="submit" class="btn btn-danger">danger</button>
+						<button type="submit" class="btn btn-link">link</button>
+					</p>
+					<p class="text-primary m-t-lg">外框线按钮</p>
+					<p>
+						<button type="submit" class="btn btn-primary-outline">primary-outline</button>
+						<button type="submit" class="btn btn-secondary-outline">secondary-outline</button>
+						<button type="submit" class="btn btn-success-outline">success-outline</button>
+						<button type="submit" class="btn btn-info-outline">infot-outline</button>
+						<button type="submit" class="btn btn-warning-outline">warning-outline</button>
+						<button type="submit" class="btn btn-danger-outline">danger-outline</button>
+					</p>
+					<p class="text-primary m-t-lg">小按钮</p>
+					<p>
+						<button type="submit" class="btn btn-sm btn-primary">小按钮</button>
+						<button type="submit" class="btn btn-sm btn-warning-outline">边线按钮</button>
+						<button type="submit" class="btn btn-sm btn-link">链接文字</button>
+					</p>
+					<p class="text-primary m-t-lg">大按钮</p>
+					<p class="">
+						<button type="submit" class="btn btn-lg btn-primary">大按钮</button>
+						<button type="submit" class="btn btn-lg btn-warning-outline">边线按钮</button>
+						<button type="submit" class="btn btn-lg btn-link">链接文字按钮</button>
+					</p>
+					<p class="text-primary m-t-lg">居中按钮组合</p>
+					<div class="text-center">
+						<input type="submit" value="　提 交　" class="btn btn-primary">
+						<input type="reset" value="　重 写　" class="btn btn-danger">
+						<input type="button" value="　按 钮1　" class="btn btn-success">
+						<input type="button" value="　按 钮2　" class="btn btn-warning">
+					</div>
+					<p class="text-primary m-t-lg">全宽按钮</p>
+					<p class="w-40 center-block">
+						<button type="submit" class="btn  btn-lg btn-block btn-primary">大按钮</button>
+						<button type="submit" class="btn btn-block btn-warning-outline">边线按钮</button>
+						<button type="submit" class="btn btn-block btn-link">链接文字按钮</button>
+					</p>
+					<p class="text-primary m-t-lg">全宽按钮组合</p>
+					<div class="w-50 center-block row">
+						<div class="col-sm-6 pd-5">
+							<button type="submit" class="btn btn-block btn-primary">全宽按钮（容器限制宽度）</button>
+						</div>
+
+						<div class="col-sm-6 pd-5">
+							<button type="submit" class="btn btn-block btn-danger active">按钮激活样式（.active）</button>
+						</div>
+					</div>
+
+					<p class="text-primary m-t-lg">按钮组</p>
+					<div class="btn-group btn-block" role="group" aria-label="Basic example">
+						<button type="button" class="btn btn-primary">Left</button>
+						<button type="button" class="btn btn-primary">Middle</button>
+						<button type="button" class="btn btn-primary">Right</button>
+					</div>
+
+					<div class="btn-group btn-block" role="group" aria-label="Basic example">
+						<button type="button" class="btn btn-primary">Left</button>
+						<button type="button" class="btn btn-primary">Middle</button>
+						<button type="button" class="btn btn-primary">Right</button>
+						<div class="btn-group" role="group">
+							<button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     更多
+    </button>
+							<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+								<a class="dropdown-item" href="#">Dropdown link</a>
+								<a class="dropdown-item" href="#">Dropdown link</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="btn-group btn-block btn-group-lg" role="group" aria-label="Basic example">
+						<button type="button" class="btn btn-secondary">Left</button>
+						<button type="button" class="btn btn-secondary">Middle</button>
+						<button type="button" class="btn btn-secondary">Right</button>
+					</div>
+
+					<div class="btn-group btn-block btn-group-sm" role="group" aria-label="Basic example">
+						<button type="button" class="btn btn-secondary">Left</button>
+						<button type="button" class="btn btn-secondary">Middle</button>
+						<button type="button" class="btn btn-secondary">Right</button>
+					</div>
+
+					<div class="btn-group btn-block" role="group" aria-label="Button group with nested dropdown">
+						<button type="button" class="btn btn-secondary">1</button>
+						<button type="button" class="btn btn-secondary">2</button>
+
+						<div class="btn-group" role="group">
+							<button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown
+    </button>
+							<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+								<a class="dropdown-item" href="#">Dropdown link</a>
+								<a class="dropdown-item" href="#">Dropdown link</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<script src="../lib/inuse/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//调用icheck风格
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red',
+					cursor: true
+				});
+				//同步选框状态，带icheck内容必须引入
+				xicheck();
+
+				//复选框全选（参数1：全选复选框id，参数2：需全选的复选框组类名）			
+				xicheckall('#gn1-btn', 'gn1');
+
+				//自定义选取插件（可取消）
+				xactive('.sel1', '1'); //单选
+				xactive('.sel2'); //复选
+			});
+
+			//定义调用laydate日期选择插件
+			//日期范围
+			laydate.render({
+				elem: '.dates-sel',
+				range: true,
+				theme: '#39c',
+			});
+
+			//日期选择器
+			laydate.render({
+				elem: '.date-sel',
+				theme: '#39c',
+				type: 'date'
+			});
+
+			//年选择器
+			laydate.render({
+				elem: '.year-sel',
+				theme: '#39c',
+				type: 'year'
+			});
+			//年月选择器
+			laydate.render({
+				elem: '.month-sel',
+				theme: '#39c',
+				type: 'month'
+			});
+			//时间选择器
+			laydate.render({
+				elem: '.time-sel',
+				theme: '#39c',
+				type: 'time'
+			});
+			//日期时间选择器
+			laydate.render({
+				elem: '.datetime-sel',
+				theme: '#39c',
+				type: 'datetime'
+			});
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,544 @@
+@font-face {
+  font-family: 'xico-nst';
+  src:
+    url('../fonts/fonts/xico-nst.ttf?ynj4ue') format('truetype'),
+    url('../fonts/fonts/xico-nst.woff?ynj4ue') format('woff'),
+    url('../fonts/fonts/xico-nst.svg?ynj4ue#xico-nst') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.xico {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'xico-nst' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.xico-pc_weixin:before {
+  content: "\e900";
+}
+.xico-info-filled:before {
+  content: "\e534";
+}
+.xico-zoom-in2:before {
+  content: "\e037";
+}
+.xico-zoom-out2:before {
+  content: "\e038";
+}
+.xico-speech-bubble:before {
+  content: "\e076";
+}
+.xico-ban2:before {
+  content: "\e107";
+}
+.xico-trash3:before {
+  content: "\e109";
+}
+.xico-gonggao:before {
+  content: "\e611";
+}
+.xico-jinghao2:before {
+  content: "\e612";
+}
+.xico-jinghao:before {
+  content: "\e613";
+}
+.xico-gongju:before {
+  content: "\e614";
+}
+.xico-gongju1:before {
+  content: "\e615";
+}
+.xico-bangzhu:before {
+  content: "\e616";
+}
+.xico-bangzhu2:before {
+  content: "\e617";
+}
+.xico-suo:before {
+  content: "\e61a";
+}
+.xico-suo2:before {
+  content: "\e61b";
+}
+.xico-xiaoxi:before {
+  content: "\e61c";
+}
+.xico-xiaoxi2:before {
+  content: "\e61d";
+}
+.xico-yonghu:before {
+  content: "\e61e";
+}
+.xico-yonghu1:before {
+  content: "\e61f";
+}
+.xico-yonghu2:before {
+  content: "\e620";
+}
+.xico-yonghu3:before {
+  content: "\e621";
+}
+.xico-yonghuchazhao:before {
+  content: "\e622";
+}
+.xico-youjian:before {
+  content: "\e623";
+}
+.xico-youjian2:before {
+  content: "\e625";
+}
+.xico-baocun:before {
+  content: "\e626";
+}
+.xico-fujian:before {
+  content: "\e627";
+}
+.xico-gengxin:before {
+  content: "\e628";
+}
+.xico-shijian:before {
+  content: "\e62d";
+}
+.xico-naozhong:before {
+  content: "\e62e";
+}
+.xico-shezhi:before {
+  content: "\e62f";
+}
+.xico-shezhi2:before {
+  content: "\e630";
+}
+.xico-shuaxin:before {
+  content: "\e631";
+}
+.xico-tixing1:before {
+  content: "\e634";
+}
+.xico-tingzhi:before {
+  content: "\e638";
+}
+.xico-tuichu:before {
+  content: "\e639";
+}
+.xico-xiazai1:before {
+  content: "\e63b";
+}
+.xico-xinjian:before {
+  content: "\e63c";
+}
+.xico-xinxi1:before {
+  content: "\e63d";
+}
+.xico-xinxi12:before {
+  content: "\e63e";
+}
+.xico-xinxi2:before {
+  content: "\e63f";
+}
+.xico-lianxiren:before {
+  content: "\e642";
+}
+.xico-liebiao8:before {
+  content: "\e64b";
+}
+.xico-sousuo:before {
+  content: "\e632";
+}
+.xico-liebiao9:before {
+  content: "\e64c";
+}
+.xico-chazhao:before {
+  content: "\e660";
+}
+.xico-shangchuan:before {
+  content: "\e64f";
+}
+.xico-laji:before {
+  content: "\e650";
+}
+.xico-laji2:before {
+  content: "\e651";
+}
+.xico-guanji:before {
+  content: "\e654";
+}
+.xico-guanyuyunguanjia:before {
+  content: "\e655";
+}
+.xico-jiantou:before {
+  content: "\e656";
+}
+.xico-banshou:before {
+  content: "\e65c";
+}
+.xico-baobiao:before {
+  content: "\e65d";
+}
+.xico-baoxiu:before {
+  content: "\e65e";
+}
+.xico-dingwei:before {
+  content: "\e662";
+}
+.xico-dingwei2:before {
+  content: "\e663";
+}
+.xico-dangan:before {
+  content: "\e666";
+}
+.xico-dianhua:before {
+  content: "\e667";
+}
+.xico-dingshixiaoshou:before {
+  content: "\e668";
+}
+.xico-feiyong:before {
+  content: "\e669";
+}
+.xico-fuzhi:before {
+  content: "\e66a";
+}
+.xico-gouwu1:before {
+  content: "\e66b";
+}
+.xico-gouwuche:before {
+  content: "\e66c";
+}
+.xico-gouwuche2:before {
+  content: "\e66d";
+}
+.xico-hetong:before {
+  content: "\e66e";
+}
+.xico-hetong1:before {
+  content: "\e66f";
+}
+.xico-hetong2:before {
+  content: "\e670";
+}
+.xico-hetong3:before {
+  content: "\e671";
+}
+.xico-hetong4:before {
+  content: "\e672";
+}
+.xico-hetong5:before {
+  content: "\e673";
+}
+.xico-hetong6:before {
+  content: "\e674";
+}
+.xico-hetong7:before {
+  content: "\e675";
+}
+.xico-hetong8:before {
+  content: "\e676";
+}
+.xico-hetong9:before {
+  content: "\e677";
+}
+.xico-hetong10:before {
+  content: "\e678";
+}
+.xico-hetong11:before {
+  content: "\e679";
+}
+.xico-shiyongbangzhu:before {
+  content: "\e67b";
+}
+.xico-danju:before {
+  content: "\e67c";
+}
+.xico-jigouxinxi:before {
+  content: "\e67f";
+}
+.xico-jisuan:before {
+  content: "\e680";
+}
+.xico-jiesuan:before {
+  content: "\e682";
+}
+.xico-kaisuo:before {
+  content: "\e684";
+}
+.xico-kaisuo2:before {
+  content: "\e685";
+}
+.xico-kehuguanli:before {
+  content: "\e686";
+}
+.xico-kehutousu:before {
+  content: "\e687";
+}
+.xico-rili:before {
+  content: "\e68a";
+}
+.xico-rili2:before {
+  content: "\e68b";
+}
+.xico-rizhi1:before {
+  content: "\e68d";
+}
+.xico-shouhou2:before {
+  content: "\e68e";
+}
+.xico-shuju1:before {
+  content: "\e68f";
+}
+.xico-shuju2:before {
+  content: "\e690";
+}
+.xico-shuju4:before {
+  content: "\e691";
+}
+.xico-waimai:before {
+  content: "\e692";
+}
+.xico-weixiu:before {
+  content: "\e693";
+}
+.xico-wenjianjia1:before {
+  content: "\e694";
+}
+.xico-wenjianjia2:before {
+  content: "\e695";
+}
+.xico-wenjianjia3:before {
+  content: "\e696";
+}
+.xico-shouji:before {
+  content: "\e697";
+}
+.xico-shouhou:before {
+  content: "\e69c";
+}
+.xico-shouhou1:before {
+  content: "\e69d";
+}
+.xico-zhaoxiang2:before {
+  content: "\e69e";
+}
+.xico-dayin1:before {
+  content: "\78";
+}
+.xico-dayin2:before {
+  content: "\e6b9";
+}
+.xico-zhishichanquan:before {
+  content: "\e69f";
+}
+.xico-wenjianxinxi:before {
+  content: "\e6a2";
+}
+.xico-xihuan:before {
+  content: "\e6a3";
+}
+.xico-xihuan2:before {
+  content: "\e6a4";
+}
+.xico-xitong:before {
+  content: "\e6a5";
+}
+.xico-xiangmushenbao:before {
+  content: "\e6a6";
+}
+.xico-xinyongqia:before {
+  content: "\e6a7";
+}
+.xico-xiugaimima:before {
+  content: "\e6a9";
+}
+.xico-yijianfankui:before {
+  content: "\e6ad";
+}
+.xico-yuding:before {
+  content: "\e6ae";
+}
+.xico-zengjiahetong:before {
+  content: "\e6af";
+}
+.xico-zhangdan:before {
+  content: "\e6b0";
+}
+.xico-zhaoxiang:before {
+  content: "\e6b1";
+}
+.xico-saoyisao:before {
+  content: "\e6b2";
+}
+.xico-zan1:before {
+  content: "\e6b3";
+}
+.xico-zan2:before {
+  content: "\e6b4";
+}
+.xico-zhiding:before {
+  content: "\e6b6";
+}
+.xico-eye5:before {
+  content: "\e000";
+}
+.xico-paper-clip:before {
+  content: "\e001";
+}
+.xico-mail5:before {
+  content: "\e002";
+}
+.xico-layout:before {
+  content: "\e004";
+}
+.xico-link4:before {
+  content: "\e005";
+}
+.xico-ribbon:before {
+  content: "\e009";
+}
+.xico-image3:before {
+  content: "\e010";
+}
+.xico-clock4:before {
+  content: "\e014";
+}
+.xico-monitor:before {
+  content: "\e021";
+}
+.xico-paper-stack:before {
+  content: "\e035";
+}
+.xico-repeat2:before {
+  content: "\e058";
+}
+.xico-cloud-upload3:before {
+  content: "\e066";
+}
+.xico-cloud-download3:before {
+  content: "\e067";
+}
+.xico-share5:before {
+  content: "\e081";
+}
+.xico-flag6:before {
+  content: "\e108";
+}
+.xico-archive2:before {
+  content: "\e121";
+}
+.xico-inbox2:before {
+  content: "\e122";
+}
+.xico-outbox:before {
+  content: "\e123";
+}
+.xico-file3:before {
+  content: "\e124";
+}
+.xico-file-add:before {
+  content: "\e125";
+}
+.xico-file-subtract:before {
+  content: "\e126";
+}
+.xico-open:before {
+  content: "\e128";
+}
+.xico-forward:before {
+  content: "\e470";
+}
+.xico-back2:before {
+  content: "\e471";
+}
+.xico-arrowup:before {
+  content: "\e580";
+}
+.xico-arrowdown:before {
+  content: "\e581";
+}
+.xico-arrowleft:before {
+  content: "\e582";
+}
+.xico-arrowright:before {
+  content: "\e583";
+}
+.xico-reply2:before {
+  content: "\e039";
+}
+.xico-circle-plus:before {
+  content: "\e040";
+}
+.xico-circle-minus:before {
+  content: "\e041";
+}
+.xico-circle-check:before {
+  content: "\e042";
+}
+.xico-circle-cross:before {
+  content: "\e043";
+}
+.xico-square-plus:before {
+  content: "\e044";
+}
+.xico-square-minus:before {
+  content: "\e045";
+}
+.xico-square-check:before {
+  content: "\e046";
+}
+.xico-square-cross:before {
+  content: "\e047";
+}
+.xico-record3:before {
+  content: "\e049";
+}
+.xico-skip-back:before {
+  content: "\e050";
+}
+.xico-rewind:before {
+  content: "\e051";
+}
+.xico-fast-forward2:before {
+  content: "\e055";
+}
+.xico-skip-forward:before {
+  content: "\e056";
+}
+.xico-arrow-left3:before {
+  content: "\e094";
+}
+.xico-arrow-right3:before {
+  content: "\e095";
+}
+.xico-arrow-up3:before {
+  content: "\e096";
+}
+.xico-arrow-down3:before {
+  content: "\e097";
+}
+.xico-loader:before {
+  content: "\e105";
+}
+.xico-plus3:before {
+  content: "\e114";
+}
+.xico-minus7:before {
+  content: "\e115";
+}
+.xico-check2:before {
+  content: "\e116";
+}
+.xico-cross2:before {
+  content: "\e117";
+}
+.xico-menu5:before {
+  content: "\e120";
+}

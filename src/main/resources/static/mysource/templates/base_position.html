@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--定位样式-->
+		<div class="x-top alert alert-info alert-dismissible fade in">x-top</div>
+		<div class="x-top-right alert alert-info alert-dismissible fade in">x-top-right</div>
+		<div class="x-top-left alert alert-info alert-dismissible fade in">x-top-left</div>
+		<div class="x-center alert alert-info alert-dismissible fade in">x-center</div>
+		<div class="xwk x-center-left alert alert-info alert-dismissible fade in" style="height: 200px; width: 300px; background-color: #F5F5F5;">
+			<div class="xvcenter">
+				x-center-leftr
+			</div>
+		</div>
+		<div class="x-center-right alert alert-info alert-dismissible fade in">x-center-right</div>
+		<div class="x-bottom alert alert-info alert-dismissible fade in">x-bottom</div>
+		<div class="x-bottom-left alert alert-info alert-dismissible fade in">x-bottom-left</div>
+		<div class="x-bottom-right alert alert-info alert-dismissible fade in">x-bottom-right</div>
+		<!--定位样式end-->
+
+		<script type="text/javascript">
+			xformat(); //样式辅助js
+			vcenter('.xvcenter', '.xwk', 'absolute');
+		</script>
+	</body>
+
+</html>

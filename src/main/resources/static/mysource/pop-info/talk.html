@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>聊天列表</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<style type="text/css">
+			.xmsg-body,
+			.xmsg-list,
+			.xmsg-info {
+				/*display: flex;*/
+			}
+			
+			.xmsg-list {}
+		</style>
+		
+		<script>
+		function addMessage(){
+			var controllerScope = $('div[ng-controller="talkCtrl"]').scope();  // Get controller's scope
+            controllerScope.talkerList[1].unSee =  controllerScope.talkerList[1].unSee + 1;// log [1,2,3,4,5]     
+			//controllerScope.addLinker();
+			controllerScope.$apply();
+		}
+		</script>
+	</head>
+
+	<body>
+		<div onclick="addMessage()">点击模拟接收到消息</div>
+		<!--打开图标-->
+		<div class="fl-menu-bar">
+			<a id="xcallmsg" class="bg-success active"><span class="xico xico-speech-bubble"></span></a>
+		</div>
+		<!--message列表面板-->
+		<div ng-app="talkApp" ng-controller="talkCtrl" class="xchat xcard" style="background-image: url(../images/message-topbj1.jpg);">
+			<div class="xchat-header row">
+				<div id="xcolor">
+					<a id="xc1" >&nbsp;</a>
+					<a id="xc2" >&nbsp;</a>
+					<a id="xc3" >&nbsp;</a>
+					<a id="xc4" >&nbsp;</a>
+				</div>
+				<div>
+				<button ng-click="addLinker()">增加一个联系人</button>
+				</div>
+				<div class="col-xs-3 text-center">
+					<img class="img-circle w-70 m-t" src="../images/user.jpg" />
+				</div>
+				<div class="col-xs-9">
+					<h3>张山峰</h3>
+					<a><span class="xico xico-yonghu3"></span>个人设置</a>
+				</div>
+				<a class="xclose"><span class="xico xico-cross2 fs-m"></span></a>
+				<div class="col-xs-12 row xscarch">
+					<div class="col-xs-1">
+						<span class="xico xico-chazhao text-white"></span>
+					</div>
+					<div class="col-xs-11">
+						<input id="input" tabindex="" type="text" class="w-100" placeholder="搜索">
+					</div>
+				</div>
+			</div>
+			<div class="xchat-body">
+				<!-- Nav tabs -->
+				<ul class="xtopbar nav nav-tabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" href="#tabs1" role="tab" data-toggle="tab">消息</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#tabs2" role="tab" data-toggle="tab">联系人</a>
+					</li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+				</ul>
+				<div class="xchat-info scroll-y">
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<!--消息列表-->
+						<div role="tabpanel" class="tab-pane active" id="tabs1">
+							<a class="row xitem" ng-repeat="u in talkerList">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" ng-src="{{u.image}}" />
+								</div>
+								<div class="col-xs-8">
+									<span class="xuser">{{u.name}}</span>
+									<span class="xmessage">{{u.lastTalk}}</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<span class="xdate">20:11</span>
+									<i class="label label-danger">{{u.unSee}}</i>
+								</div>
+							</a>
+						</div>
+						<!--联系人列表-->
+						<div role="tabpanel" class="tab-pane" id="tabs2">
+							<a class="row xitem" ng-repeat="l in linkerList">
+								<div class="col-xs-2">
+									<img class="img-circle w-100" src="{{l.image}}" />
+								</div>
+								<div class="col-xs-8">
+									<p class="xuser">{{l.name}}<span class="fs-sm text-info"> / {{l.position}}</span></p>
+									<span class="xmessage">{{l.company}}</span>
+								</div>
+								<div class="col-xs-2 text-right">
+									<button type="button" class="btn btn-sm btn-info xbt-edit" data-dismiss="modal">查看</button>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="xchat-bottom row text-center">
+				<span class="fs-sm">Smartlink Message</span>
+			</div>
+		</div>
+
+		<!--message聊天面板-->
+		<div class="xmsg xcard" >
+			<div class="xmsg-title">
+				<a class="xcls-msg"><span class="xico xico-cross2 fs-m"></span></a>
+				<div class="call-user-info p-l">
+					<span class="xico xico-yonghuchazhao fs-m"></span>
+					<h4 class="dsi">张山峰</h4><span> / 广州新盛通科技有限公司</span>
+				</div>
+			</div>
+			<div class="xmsg-body row">
+				<!--联系人信息-->
+				<div class="xuserinfo xdisabled-1 scroll-y" ng-show="userInfo.flag">
+					<div class="row">
+						<div class="col-xs-4 text-right p-t-md">
+							<img class="img-circle w-40" ng-src="userInfo.image" />
+						</div>
+						<div class="col-xs-8 p-t-lg p-l-md"><button id="xuserinfo-edit" type="button" class="btn btn-sm btn-info" data-dismiss="modal">编辑</button></div>
+					</div>
+					<div class="row p-t">
+						<div class="col-xs-4 p-t-3 text-right">昵称：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-10"  disabled>{{userInfo.name}}</div>
+					</div>
+					<div class="row p-t">
+						<div class="col-xs-4 p-t-3 text-right">真实姓名：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-10"  disabled>{{userInfo.name}}</div>
+					</div>
+					<div class="row p-t">
+						<div class="col-xs-4 p-t-3 text-right">所在单位：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-20" disabled>{{userInfo.company}}</div>
+					</div>
+					<div class="row p-t">
+						<div class="col-xs-4 p-t-3 text-right">性别：</div>
+						<div class="col-xs-8">
+							<select id="Select1" tabindex="" class="fn-5" disabled ng-model="userInfo.sex">
+								<option value="0">未知</option>
+								<option value="M">男</option>
+								<option value="F">女</option>
+							</select>
+						</div>
+					</div>
+					<div class="row p-t">
+						<div class="col-xs-4 p-t-3 text-right">年龄：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-10"  disabled>{{userInfo.age}}</div>
+					</div>
+					<div class="row p-t">
+						<div class="col-xs-4 p-t-3 text-right">手机：</div>
+						<div class="col-xs-8"><input id="input1" tabindex="" type="text" class="fn-10"  disabled>{{userInfo.age}}</div>
+					</div>
+					<div class="row p-t">
+						<div class="col-xs-4 p-t-3 text-right">职能描述：</div>
+						<div class="col-xs-8"><textarea id="textarea" tabindex="" class="w-80" rows="2" disabled ></textarea>{{userInfo.detail}}</div>
+					</div>
+					<div class="row p-t">
+						<div class="col-xs-8 col-xs-push-4">
+							<button type="button" id="xuserinfo-save" class="btn btn-success" data-dismiss="modal" style="display: none;">&nbsp;确定&nbsp;</button>
+							<button type="button" id="xuserinfo-close" class="btn btn-primary" data-dismiss="modal">&nbsp;关闭&nbsp;</button>
+						</div>
+					</div>
+				</div>
+				<!--聊天-->
+				<div class="xmsg-list col-xs-3 scroll-y">
+					<a class="row xitem xluse">
+						<div class="col-xs-3 text-center">
+							<img class="img-circle w-80" src="../images/user.jpg" />
+						</div>
+						<div class="col-xs-6">
+							<span class="xuser">张山峰</span>
+						</div>
+						<div class="col-xs-3 text-right">
+							<i class="label label-danger">50</i>
+							<span class="xico xico-cross2 xclsitem"></span>
+						</div>
+					</a>
+					<a class="row xitem xluse">
+						<div class="col-xs-3 text-center">
+							<img class="img-circle w-80" src="../images/user.jpg" />
+						</div>
+						<div class="col-xs-6">
+							<span class="xuser">李时珍</span>
+						</div>
+						<div class="col-xs-3 text-right">
+							<i class="label label-danger">50</i>
+							<span class="xico xico-cross2 xclsitem"></span>
+						</div>
+					</a>
+					<a class="row xitem xluse">
+						<div class="col-xs-3 text-center">
+							<img class="img-circle w-80" src="../images/user.jpg" />
+						</div>
+						<div class="col-xs-6">
+							<span class="xuser">刘诗诗</span>
+						</div>
+						<div class="col-xs-3 text-right">
+							<i class="label label-danger">50</i>
+							<span class="xico xico-cross2 xclsitem"></span>
+						</div>
+					</a>
+				</div>
+				<div class="xmsg-info col-xs-9">
+					<div class="xmsg-text border-b scroll-y p-a">
+						<div class="xtext row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">
+									<a class="upfile">
+										<div class="xico xico-file3"></div>
+										<div class="fname">
+											发送文件名称发送文件名称发送文件名称.后缀名
+										</div>
+									</a>
+								</span>
+							</div>
+						</div>
+						<div class="row text-center fs-sm m-b">
+							<span>2018/02/08 15:30:23</span>
+						</div>
+						<div class="xtext row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">客户聊天文字</span>
+							</div>
+						</div>
+						<div class="xtext row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">客户聊天文字客户聊天文字</span>
+							</div>
+						</div>
+						<div class="xtext mytalk row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">我的聊天文字</span>
+							</div>
+						</div>
+						<div class="xtext mytalk row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">我的聊天文字我的聊天文字我的聊天文字</span>
+							</div>
+						</div>
+						<div class="xtext mytalk row">
+							<div class="col-xs-1">
+								<img class="img-circle w-80" src="../images/user.jpg" />
+							</div>
+							<div class="col-xs-9">
+								<span class="usermsg">
+									<div class="upimg" href="">
+										<img src="../images/message-topbj3.jpg"/>
+										<div class="xtools">
+											<a href="">预览</a>
+											<a href="">下载</a>
+										</div>
+									</div>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="xmsg-edit">
+						<div class="xtextarea" style="height: 80px;">
+							富文本编辑器475x80
+						</div>
+						<div class="xbtn text-right p-a">
+							<div class="pull-left w-70 p-t text-right">
+								提示信息...
+							</div>
+							<button type="button" class="btn btn-group xcls-msg" data-dismiss="modal">关闭</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">发送</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="talk.js"> </script>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//换肤
+				$('#xc1').on('click', function() {
+					$('.xchat').css('background-image', 'url(../images/message-topbj1.jpg)');
+					$('.xmsg').css('background-image', 'url(../images/xmsgbj1.jpg)');
+				})
+				$('#xc2').on('click', function() {
+					$('.xchat').css('background-image', 'url(../images/message-topbj2.jpg)');
+					$('.xmsg').css('background-image', 'url(../images/xmsgbj2.jpg)');
+				})
+				$('#xc3').on('click', function() {
+					$('.xchat').css('background-image', 'url(../images/message-topbj3.jpg)');
+					$('.xmsg').css('background-image', 'url(../images/xmsgbj3.jpg)');
+				})
+				$('#xc4').on('click', function() {
+					$('.xchat').css('background-image', 'url(../images/message-topbj4.jpg)');
+					$('.xmsg').css('background-image', 'url(../images/xmsgbj4.jpg)');
+				})
+				
+				//面板拖拽
+				xdrag('.xmsg'); //聊天面板
+				xdrag('.xchat'); //列表面板
+
+				//面板x按钮关闭面板
+				$('.xclose').on('click', function() {
+					$('.xchat').hide();
+				})
+				$('.xcls-msg').on('click', function() {
+					$('.xmsg').hide();
+				})
+				
+				//消息按钮切换显示面板
+				$('#xcallmsg').on('click', function() {
+					xWidth = $(window).outerWidth(true) - 295;
+					$('.xchat').css({
+						'top': '20px',
+						'left': xWidth + 'px'
+					});
+					$('.xchat').toggle('fast');
+				})
+				
+				//打开聊天面板
+				$('.xchat-info .xitem').on('click', function() {
+					xWidth = $(window).outerWidth(true) - 970;
+					$('.xmsg').css({
+						'top': '50px',
+						'left': xWidth + 'px'
+					});
+					$('.xmsg').fadeIn(300);
+				})
+				
+				//移除聊天面板列表记录
+				$('.xclsitem').on('click', function() {
+					xnb = $('.xmsg-list>.xitem').length
+					if(xnb > 1) {
+						$(this).parents('.xitem').remove();
+					} else {
+						$('.xmsg').fadeOut(200);
+					}
+				})
+				
+				//聊天面板列表点击事件
+				$('.xluse').on('click', function() {
+					xtext = $(this).children('div').children('.xuser').text();
+					$('.call-user-info h4').text(xtext);
+				})
+				
+				//联系人信息
+				//点击顶部标题栏切换显示
+				$('.call-user-info').on('click', function() {
+					$('.xuserinfo').slideToggle(200);
+				})
+				//关闭按钮
+				$('#xuserinfo-close').on('click', function() {
+					$('.xuserinfo').slideUp(300);
+				})
+				//编辑按钮
+				$('#xuserinfo-edit').on('click', function() {
+					$('#xuserinfo-save').show();
+					xremovedisabled('.xdisabled-1');
+				})
+				//确定按钮
+				$('#xuserinfo-save').on('click',function(){
+					xadddisabled('.xdisabled-1');
+					$('#xuserinfo-save').hide()
+				})
+				
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="div垂直居中,div文字垂直居中,div中input垂直居中,JS特效代码" />
+<meta name="description" content="DIV实现input垂直居中，兼容IE6、IE7、IE8、Firefox、Safari。更多代码请访问懒人图库JS代码频道。" />
+<style type="text/css">      
+body{font-size:12px;}   
+.lanrentuku1{
+border: 1px solid #CCC;
+width:1120px;
+height:40px;
+margin:auto;
+display: table;   
+*position: relative;   
+overflow: hidden;  
+}   
+               
+.lanrentuku2 {
+vertical-align: middle;
+display: table-cell;
+*position: absolute;
+*top: 50%;
+} 
+         
+.lanrentuku3 {
+*position: relative;
+*top: -50%;
+float:right;
+padding-right:10px;
+}   
+</style>  
+<title>DIV实现input垂直居中 兼容IE6、IE7、IE8、Firefox、Safari_懒人图库</title>
+</head>
+
+<body><br /><br /><br />
+
+<div class="lanrentuku1">  
+	<div class="lanrentuku2">  
+		<form action="search.php" name="formsearch">
+			<div class="lanrentuku3">
+			<input name="textfield" type="text" size="30">
+			</div>
+		</form>
+	</div>  
+</div>  
+
+<p align="center">DIV实现input垂直居中，兼容IE6、IE7、IE8、Firefox、Safari。</p>
+<p align="center">来源：<a href="http://www.nifengla.com/" target="_blank">你疯啦</a>　代码整理：<a href="http://www.lanrentuku.com/" target="_blank">懒人图库</a></p>
+<p align="center">＊尊重他人劳动成果，转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+
+<input type="checkbox" value="adfasdfasdfsad" checked="checked" onclick="alert(this.checked)"/>
+<input type="checkbox" value="sdfasdfasdfsdf" checked="true" onclick="alert(this.value)"  />
+</body>
+</html>

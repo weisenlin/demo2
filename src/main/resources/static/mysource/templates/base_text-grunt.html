@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<h3 class="pd-10">伸缩文字块</h3>
+		<div class="pd-10" id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          功能简述
+        </a>
+      </h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					<p>支持自由创建审批模板，全面覆盖企业日常审批的各种事务类型，如：报销、借款、加班、出差、用章、汇报、请假、公告等。按需自由流转，选人送审灵活快捷；
+					</p>
+					<p>审批人员可通过网页端或移动端进行查阅和审批，大幅缩短审批周期，促使各项需求事务快速达成；
+					</p>
+					<p>审批提醒功能帮助申请人实时查看审批状态和结果，及时跟进审批进度，提高工作效率。</p>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          审批主页视图
+        </a>
+      </h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<p>分类导航：我创建的、我审批的、抄送我的、我关注的、管理员视图
+					</p>
+					<p>审批状态：审批中、已办结、已终止
+					</p>
+					<p>审批结果：同意、不同意
+					</p>
+					<p>审批类型：报销、借款、加班、出差、用章、请假、公告……</p>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+         新建流程审批
+        </a>
+      </h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<ol>
+						<li>点击新建审批按钮后，弹出新建审批表单。
+						</li>
+						<li>审批类型：在发起申请时根据管理员所配置的类型模板按需选取。
+						</li>
+						<li>名称：定义审批主题，不能为空。
+						</li>
+						<li>审批人：如为固定流程，需从已定流程各环节已确定的人员名单中选取，可多选。
+						</li>
+						<li>抄送人：需要知悉审批全过程进展的人员，可多选。
+						</li>
+						<li>标签：可为审批添加个性化标签，定义审批的类型属性。
+						</li>
+						<li>附件：可上传文档或图片附件。
+						</li>
+						<li>提醒：可为审批事项设定自动提醒时间点，仅对设置人生效。
+						</li>
+						<li>导出：所有审批数据均可以导出为Excel表格进行存储。</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

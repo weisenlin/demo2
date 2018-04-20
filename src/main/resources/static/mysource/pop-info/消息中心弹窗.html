@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>消息中心</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--消息中心弹窗-->
+		<div id="pop-info1" class="modal fade x-modal-lg" data-backdrop="false">
+			<div class="modal-dialog modal-xdrag" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          						<span aria-hidden="true">&times;</span>
+          						<span class="sr-only">Close</span>
+        				</button>
+						<h4 class="modal-title">消息中心</h4>
+					</div>
+					<div class="modal-body">
+						<!--弹窗内容开始-->
+						<!--消息中心-->
+						<div class="row p-b">
+							<div class="col-sm-9">
+								共有<i class="p-x text-danger">10</i>张作业单待签收
+							</div>
+							<div class="col-sm-3 text-right">
+								<button class="btn btn-sm btn-danger">全部签收</button>
+							</div>
+						</div>
+						<div class="xtable scroll-y" style="max-height: 250px;">
+							<table class="table table-sm">
+								<col width="30">
+								<col width="">
+								<col width="150">
+								<col width="100">
+								<tr>
+									<td><span class="xico xico-gonggao text-danger"></span></td>
+									<td>单据编号为
+										<a class="p-x">A234567899</a>的<i class="p-x text-primary">进口报关单</i>等待您的签收</td>
+									<td class="text-grey">2017-11-07 12:21:23</td>
+									<td class="text-right">
+										<button class="btn btn-sm btn-primary-outline">签收</button>
+										<button class="btn btn-sm btn-primary-outline">去办理</button>
+									</td>
+								</tr>
+								<tr>
+									<td><span class="xico xico-gonggao text-danger"></span></td>
+									<td>单据编号为
+										<a class="p-x">A234567899</a>的<i class="p-x text-primary">进口报关单</i>等待您的签收</td>
+									<td class="text-grey">2017-11-07 12:21:23</td>
+									<td class="text-right">
+										<button class="btn btn-sm btn-primary-outline">签收</button>
+										<button class="btn btn-sm btn-primary-outline">去办理</button>
+									</td>
+								</tr>
+								<tr>
+									<td><span class="xico xico-gonggao text-success"></span></td>
+									<td>您的报关单已申报(系统信息类)</td>
+									<td class="text-grey">2017-11-07 12:21:23</td>
+									<td class="text-right">
+										<button class="btn btn-sm btn-primary-outline">查看</button>
+									</td>
+								</tr>
+								<tr class="xinfo">
+									<td><span class="xico xico-gonggao text-primary"></span></td>
+									<td class="text-line">世界互联网大会将于2016年11月16日至18日在浙江乌镇举办。大会的主题是"创新驱动 造福人类——携手共建网络空间命运共同体"。</td>
+									<td class="text-grey">2017-11-07 12:21:23</td>
+									<td class="text-right">
+										<span class="xico xico-arrowdown"></span>
+									</td>
+								</tr>
+								<tr class="xinfo">
+									<td><span class="xico xico-gonggao text-primary"></span></td>
+									<td class="text-line">第三届世界互联网大会将于2016年11月16日至18日在浙江乌镇举办。大会的主题是"创新驱动 造福人类——携手共建网络空间命运共同体"。</td>
+									<td class="text-grey">2017-11-07 12:21:23</td>
+									<td class="text-right">
+										<span class="xico xico-arrowdown"></span>
+									</td>
+								</tr>
+								<tr class="xinfo">
+									<td><span class="xico xico-gonggao text-primary"></span></td>
+									<td class="text-line">大会的主题是"创新驱动 造福人类——携手共建网络空间命运共同体"。第三届世界互联网大会将于2016年11月16日至18日在浙江乌镇举办。</td>
+									<td class="text-grey">2017-11-07 12:21:23</td>
+									<td class="text-right">
+										<span class="xico xico-arrowdown"></span>
+									</td>
+								</tr>
+								<tr class="xinfo">
+									<td><span class="xico xico-gonggao text-primary"></span></td>
+									<td class="text-line">2016年11月16日至18日在浙江乌镇举办。第三届世界互联网大会将于2016年11月16日至18日在浙江乌镇举办。大会的主题是"创新驱动 造福人类——携手共建网络空间命运共同体"。</td>
+									<td class="text-grey">2017-11-07 12:21:23</td>
+									<td class="text-right">
+										<span class="xico xico-arrowdown"></span>
+									</td>
+								</tr>
+								<tr>
+									<td><span class="xico xico-gonggao text-danger"></span></td>
+									<td>单据编号为
+										<a class="p-x">A234567899</a>的<i class="p-x text-primary">进口报关单</i>等待您的签收</td>
+									<td class="text-grey">2017-11-07 12:21:23</td>
+									<td class="text-right">
+										<button class="btn btn-sm btn-primary-outline">签收</button>
+										<button class="btn btn-sm btn-primary-outline">去办理</button>
+									</td>
+								</tr>
+								<tr>
+									<td><span class="xico xico-gonggao text-danger"></span></td>
+									<td>单据编号为
+										<a class="p-x">A234567899</a>的<i class="p-x text-primary">进口报关单</i>等待您的签收</td>
+									<td class="text-grey">2017-11-07 12:21:23</td>
+									<td class="text-right">
+										<button class="btn btn-sm btn-primary-outline">签收</button>
+										<button class="btn btn-sm btn-primary-outline">去办理</button>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<script type="text/javascript">
+							//展开收缩的长信息
+							$(".xinfo").click(function() {
+								$(this).find(".text-line").toggleClass('xopen');
+							});
+						</script>
+						<!--消息中心end-->
+
+						<!--弹窗内容end-->
+					</div>
+					<div class="modal-footer text-center">
+						<button type="button" class="btn btn-link" data-dismiss="modal">查看更多历史消息...</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--待办事项弹窗end-->
+
+		<script src="../lib/inuse/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				$('#pop-info1').modal('show'); //调试弹窗用途 显示弹窗
+				xdrag('.modal-xdrag');
+			});
+			$(function() {
+				//同时绑定多个日期控件.date-sel
+				lay('.date-sel').each(function() {
+					laydate.render({
+						elem: this,
+						trigger: 'click',
+						theme: '#39c'
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.xflex {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				background-color: #999;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+			}
+			
+			.xflex.flex-1 {
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+				justify-content: space-between;
+			}
+			
+			.xflex.flex-2 {
+				-ms-flex-pack: distribute;
+				justify-content: space-around;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: reverse;
+				-ms-flex-direction: row-reverse;
+				flex-direction: row-reverse;
+			}
+			
+			.xflex.flex-3 {
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+				justify-content: space-between;
+			}
+			
+			.xflex.flex-4 {
+				-ms-flex-pack: distribute;
+				justify-content: space-around;
+			}
+			
+			.xflex.flex-5 {
+				-ms-flex-wrap: wrap-reverse;
+				flex-wrap: wrap-reverse;
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+				justify-content: space-between;
+			}
+			
+			.xflex.flex-6 {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-ms-flex-wrap: nowrap;
+				flex-wrap: nowrap;
+			}
+			
+			.xflex.flex-7 {
+				-ms-flex-flow: column nowrap;
+				flex-flow: column nowrap;
+			}
+			
+			.xflex.flex-8 {
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+			}
+			
+			.xflex.flex-9 {
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				justify-content: center;
+				-ms-flex-line-pack: center;
+				align-content: center;
+			}
+			
+			.xflex.flex-9 div {
+				width: 15%;
+			}
+			
+			.xflex.flex-10 {
+				-ms-flex-wrap: nowrap;
+				flex-wrap: nowrap;
+			}
+			
+			.xflex.flex-10 div {
+				width: auto;
+			}
+			
+			.xflex.flex-10 .item1 {
+				-webkit-box-ordinal-group: 2;
+				-ms-flex-order: 1;
+				order: 1;
+				-ms-flex-preferred-size: 100px;
+				flex-basis: 100px;
+			}
+			
+			.xflex.flex-10 .item2 {
+				-webkit-box-ordinal-group: 4;
+				-ms-flex-order: 3;
+				order: 3;
+				-webkit-box-flex: 2;
+				-ms-flex-positive: 2;
+				flex-grow: 2;
+				-ms-flex-negative: 0;
+				flex-shrink: 0;
+			}
+			
+			.xflex.flex-10 .item3 {
+				-webkit-box-ordinal-group: 3;
+				-ms-flex-order: 2;
+				order: 2;
+				-webkit-box-flex: 1;
+				-ms-flex-positive: 1;
+				flex-grow: 1;
+				-ms-flex-negative: 1;
+				flex-shrink: 1;
+				-ms-flex-item-align: end;
+				align-self: flex-end;
+			}
+			
+			.xflex.flex-10 .item4 {
+				-webkit-box-ordinal-group: 5;
+				-ms-flex-order: 4;
+				order: 4;
+				-webkit-box-flex: 1;
+				-ms-flex-positive: 1;
+				flex-grow: 1;
+				-ms-flex-negative: 1;
+				flex-shrink: 1;
+			}
+			
+			.xflex div {
+				width: 25%;
+				text-align: center;
+				padding: 10px;
+				background-color: #ccc;
+			}
+			
+			.xflex div a {
+				background-color: #f17373;
+				display: block;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="xflex flex-1">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+		<div class="xflex m-t flex-2">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+		<div class="xflex m-t flex-3">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		<div class="xflex m-t flex-4">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		<div class="xflex m-t flex-5">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+		<div class="xflex m-t flex-6 w-30">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		<div class="xflex m-t flex-7 w-30">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		<div class="xflex m-t flex-8">
+			<div>
+				<a style="height: 50px;">1</a>
+			</div>
+			<div>
+				<a style="height: 150px;">2</a>
+			</div>
+			<div>
+				<a style="height: 100px;">3</a>
+			</div>
+		</div>
+		<div class="xflex m-t flex-9" style="height: 300px;">
+			<div class="item1">
+				<a style="height: 30px;">1</a>
+			</div>
+			<div class="item2">
+				<a style="height: 25px;">2</a>
+			</div>
+			<div class="item3">
+				<a style="height: 50px;">3</a>
+			</div>
+			<div class="item4">
+				<a style="height: 30px;">4</a>
+			</div>
+			<div>
+				<a style="height: 25px;">5</a>
+			</div>
+			<div>
+				<a style="height: 25px;">6</a>
+			</div>
+			<div>
+				<a style="height: 50px;">7</a>
+			</div>
+			<div>
+				<a style="height: 30px;">8</a>
+			</div>
+			<div>
+				<a style="height: 25px;">9</a>
+			</div>
+			<div>
+				<a style="height: 30px;">10</a>
+			</div>
+		</div>
+		<div class="xflex m-t flex-10" style="height: 100px;">
+			<div class="item1">
+				<a style="height: 30px;">1</a>
+			</div>
+			<div class="item1">
+				<a style="height: 30px;">1</a>
+			</div>
+			<div class="item2">
+				<a style="height: 25px;">2</a>
+			</div>
+			<div class="item3">
+				<a style="height: 50px;">3</a>
+			</div>
+			<div class="item4">
+				<a style="height: 30px;">4</a>
+			</div>
+		</div>
+
+	</body>
+
+</html>

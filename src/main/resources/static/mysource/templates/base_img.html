@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="x-fixed-width p-a-lg">
+			<h3 class="text-center bg-grey p-a border-a">占位图片展示</h3>
+			<div class="row">
+				<div class="col-sm-3 text-center p-a-md">
+					<img data-src="holder.js/200x150?bg=336699" />
+					<p>背景色占位符</p>
+				</div>
+				<div class="col-sm-3 text-center p-a-md">
+					<img data-src="holder.js/200x150?outline=yes&bg=336699" />
+					<p>线框占位符</p>
+				</div>
+				<div class="col-sm-6 text-center p-a-md">
+					<img data-src="holder.js/100px150?textmode=literal&size=12&bg=336699" />
+					<p>100宽度占位符</p>
+				</div>
+				<div class="col-sm-3 text-center p-a-md">
+					<img data-src="holder.js/200x150?theme=noimg"/>
+					<p>Noimg缺省图样式</p>
+				</div>
+				<div class="col-sm-3 text-center p-a-md">
+					<img data-src="holder.js/200x150?theme=sky&text=sky" />
+					<p>模板样式sky</p>
+				</div>
+				<div class="col-sm-3 text-center p-a-md">
+					<img data-src="holder.js/200x150?theme=vine&text=vine" />
+					<p>模板样式vine</p>
+				</div>
+				<div class="col-sm-3 text-center p-a-md">
+					<img data-src="holder.js/200x150?theme=lava&text=lava" />
+					<p>模板样式lava</p>
+				</div>
+				<div class="col-sm-3 text-center p-a-md">
+					<img data-src="holder.js/200x150?theme=gray&text=gray" />
+					<p>模板样式gray</p>
+				</div>
+				<div class="col-sm-3 text-center p-a-md">
+					<img data-src="holder.js/200x150?theme=industrial&text=industrial" />
+					<p>模板样式industrial</p>
+				</div>
+				<div class="col-sm-3 text-center p-a-md">
+					<img data-src="holder.js/200x150?theme=social&text=social" />
+					<p>模板样式social</p>
+				</div>
+			</div>
+
+			<h3 class="text-center bg-grey p-a border-a">形状图片展示</h3>
+			<div class="row">
+				<div class="col-sm-4 text-center p-a-md">
+					<img class="img-rounded" data-src="holder.js/200x150?bg=336699" />
+					<p>圆角图片</p>
+				</div>
+
+				<div class="col-sm-4 text-center p-a-md">
+					<img class="img-circle" data-src="holder.js/150x150?bg=336699" />
+					<img class="img-circle" data-src="holder.js/100x100?bg=336699" />
+					<img class="img-circle" data-src="holder.js/50x50?bg=336699" />
+					<p>圆形图片</p>
+				</div>
+
+				<div class="col-sm-4 text-center p-a-md">
+					<img class="img-thumbnail" data-src="holder.js/200x150?bg=336699" />
+					<p>镶边图片</p>
+				</div>
+			</div>
+
+			<h3 class="text-center bg-grey p-a border-a">对齐图片展示</h3>
+			<div class="border-a p-a">
+				<img class="img-rounded pull-left" data-src="holder.js/200x150?text=pull-left&bg=336699" />
+				<img class="img-rounded pull-right" data-src="holder.js/200x150?text=pull-right&bg=336699" />
+				<img class="img-rounded center-block" data-src="holder.js/200x150?text=center-block&bg=336699" />
+			</div>
+			<div class="border-a p-a text-center">
+				<img class="img-rounded" data-src="holder.js/200x150?text=text-center&bg=336699" />
+				<p class="m-a">非块级图片对齐，在父容器添加类.text-left/.text-center/.text-right </p>
+			</div>
+
+			<h3 class="text-center bg-grey p-a border-a">js生成图片</h3>
+			<div class="border-a p-a">
+				<div class="clearfix">
+					<div class="noimg m-a pull-left"></div>
+					<div class="noimg m-a pull-left"></div>
+					<div class="noimg m-a pull-left"></div>
+					<div class="noimg m-a pull-left"></div>
+					<div class="noimg m-a pull-left"></div>
+					<div class="noimg m-a pull-left"></div>
+					<div class="noimg m-a pull-left"></div>
+					<div class="noimg m-a pull-left"></div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//			Holder.addTheme("diy", {
+			//				bg: "#eee",
+			//				fg: "#999",
+			//				size: 20,
+			//				font: "Arial",
+			//				fontweight: "400",
+			//				outline: "yes"
+			//			});
+			Holder.addTheme("noimg", {
+				bg: "#f5f5f5",
+				fg: "#999999",
+				size: 14,
+				font: "Arial",
+				fontweight: "normal",
+				text: "Noimg"
+			});
+			Holder.addImage("holder.js/145x100?bg=336699&text=Noimg", ".noimg").run()
+		</script>
+	</body>
+
+</html>

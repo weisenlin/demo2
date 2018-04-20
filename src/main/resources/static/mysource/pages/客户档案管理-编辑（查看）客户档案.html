@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>编辑客户档案</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="p-a">
+				<!--标题、工具栏（注意调整默认宽度）-->
+				<div class="row border-b">
+					<a class="refresh col-sm-3">
+					<h3 class="dsi text-primary">编辑客户档案</h3>
+					</a>
+					<div class="m-b col-sm-9 text-sm-right">
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a id="save" data-toggle="modal" data-target="#pop-info" type="button" class="btn btn-primary"><span class="xico xico-baocun"></span>保存</a>
+							<a id="add" type="button" class="btn btn-primary"><span class="xico xico-xinjian"></span>保存并新增</a>
+						</div>
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<a href="客户档案管理.html" data-toggle="modal" data-target="#pop-info" id="close" type="button" class="btn btn-primary"><span class="xico xico-reply2"></span>返回</a>
+						</div>
+					</div>
+				</div>
+				<!--标题、工具栏end-->
+				<form>
+					<table class="table-input m-t" width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tbody>
+							<tr>
+								<td colspan="6" class="text-primary p-t fs-m">基本信息</td>
+							</tr>
+							<tr>
+								<td class="fn-7">客户编码<i class="text-danger"><i class="text-danger">*</i></i>：</td>
+								<td><input type="text" class="form-control" id="input23" placeholder="" tabindex="1"></td>
+								<td class="text-right fn-10">社会统一信用编码<i class="text-danger">*</i>：</td>
+								<td><input type="text" class="form-control" id="input2" placeholder="" tabindex="2"></td>
+								<td colspan="2">
+									<div class="radio">
+										<label><input name="gridRadios" type="radio" id="gridRadios1" tabindex="3" value="option1" checked> 正常</label>
+										<label><input name="gridRadios" type="radio" id="gridRadios2" tabindex="4" value="option2"> 停用</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>客户名称<i class="text-danger">*</i>：</td>
+								<td colspan="5"><input type="text" class="form-control" id="input3" placeholder="" tabindex="5"></td>
+							</tr>
+							<tr>
+								<td>英文名称：</td>
+								<td colspan="5"><input type="text" class="form-control" id="input4" placeholder="" tabindex="6"></td>
+							</tr>
+							<tr>
+								<td>主管海关：</td>
+								<td>
+									<select id="select" tabindex="7">
+										<option value="">全部</option>
+										<option value="">选项 1</option>
+										<option value="">选项 2</option>
+										<option value="">选项 3</option>
+									</select>
+								</td>
+								<td class="text-right">主管商务部门：</td>
+								<td>
+									<select name="select" id="select2" tabindex="8">
+										<option value="">全部</option>
+										<option value="">选项 1</option>
+										<option value="">选项 2</option>
+										<option value="">选项 3</option>
+									</select>
+								</td>
+								<td class="text-right fn-9">主管国检部门：</td>
+								<td>
+									<select name="select2" id="select3" tabindex="9">
+										<option value="">全部</option>
+										<option value="">选项 1</option>
+										<option value="">选项 2</option>
+										<option value="">选项 3</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>所在地区： </td>
+								<td>
+									<select name="select3" id="select4" tabindex="10">
+										<option value="">全部</option>
+										<option value="">选项 1</option>
+										<option value="">选项 2</option>
+										<option value="">选项 3</option>
+									</select>
+								</td>
+								<td class="text-right">AEO类别：</td>
+								<td>
+									<select name="select4" id="select5" tabindex="11">
+										<option value="">全部</option>
+										<option value="">选项 1</option>
+										<option value="">选项 2</option>
+										<option value="">选项 3</option>
+									</select>
+								</td>
+								<td class="text-right"> 企业性质：</td>
+								<td>
+									<select name="select5" id="select6" tabindex="12">
+										<option value="">全部</option>
+										<option value="">选项 1</option>
+										<option value="">选项 2</option>
+										<option value="">选项 3</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>法人代表：</td>
+								<td><input type="text" class="form-control" id="input5" placeholder="" tabindex="13"></td>
+								<td class="text-right">法人联系电话：</td>
+								<td><input type="text" class="form-control" id="input6" placeholder="" tabindex="14"></td>
+								<td class="text-right">法人传真： </td>
+								<td><input type="text" class="form-control" id="input7" placeholder="" tabindex="15"></td>
+							</tr>
+							<tr>
+								<td>企业负责人：</td>
+								<td><input type="text" class="form-control" id="input10" placeholder="" tabindex="16"></td>
+								<td class="text-right">企业负责人电话： </td>
+								<td><input type="text" class="form-control" id="input8" placeholder="" tabindex="17"></td>
+								<td class="text-right">企业负责人传真： </td>
+								<td><input type="text" class="form-control" id="input9" placeholder="" tabindex="18"></td>
+							</tr>
+							<tr>
+								<td>开户银行：</td>
+								<td><input type="text" class="form-control" id="input11" placeholder="" tabindex="19"></td>
+								<td class="text-right">账号：</td>
+								<td colspan="3"><input type="text" class="form-control" id="input12" placeholder="" tabindex="20"></td>
+							</tr>
+							<tr>
+								<td>中文地址：</td>
+								<td colspan="5"><input type="text" class="form-control" id="input13" placeholder="" tabindex="21"></td>
+							</tr>
+							<tr>
+								<td>英文地址： </td>
+								<td colspan="5"><input type="text" class="form-control" id="input14" placeholder="" tabindex="22"></td>
+							</tr>
+							<tr>
+								<td colspan="6" class="text-primary p-t fs-m">货主单位</td>
+							</tr>
+							<tr>
+								<td>海关编码：</td>
+								<td><input type="text" class="form-control" id="input15" placeholder="" tabindex="23"></td>
+								<td class="text-right">社会统一信用编码：</td>
+								<td><input type="text" class="form-control" id="input16" placeholder="" tabindex="24"></td>
+								<td class="text-right">组织机构代码： </td>
+								<td><input type="text" class="form-control" id="input17" placeholder="" tabindex="25"></td>
+							</tr>
+							<tr>
+								<td>单位名称：</td>
+								<td colspan="5"><input type="text" class="form-control" id="input18" placeholder="" tabindex="26"></td>
+							</tr>
+							<tr>
+								<td colspan="6" class="text-primary p-t fs-m">经营单位</td>
+							</tr>
+							<tr>
+								<td>海关编码：</td>
+								<td><input type="text" class="form-control" id="input19" placeholder="" tabindex="27"></td>
+								<td class="text-right"> 社会统一信用编码：</td>
+								<td><input type="text" class="form-control" id="input20" placeholder="" tabindex="28"></td>
+								<td class="text-right">组织机构代码： </td>
+								<td><input type="text" class="form-control" id="input21" placeholder="" tabindex="29"></td>
+							</tr>
+							<tr>
+								<td>单位名称：</td>
+								<td colspan="3"><input type="text" class="form-control" id="input22" placeholder="" tabindex="30"></td>
+								<td rowspan="2">&nbsp;</td>
+							</tr>
+							<tr>
+								<td>所属客户组：</td>
+								<td colspan="3">
+									<div class="x-label-list">
+										<label><input type="checkbox" tabindex="31" value="" checked> 电子行业手机组</label>
+										<label><input type="checkbox" tabindex="32" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+										<label><input type="checkbox" value=""> 电子行业手机组</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+
+			<!-- 小弹窗框架 -->
+			<div id="pop-info" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content bg-grey2 p-a text-center">
+						点击保存按钮试试...
+					</div>
+				</div>
+			</div>
+			<!-- 小弹窗框架end -->
+		</div>
+		<script type="text/javascript">
+			//			格式化单复选框
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				//刷新页面
+				xrefresh('.refresh');
+			});
+
+			//点击【保存】按钮提示并延迟关闭
+			var pop_div = '#pop-info'; //弹窗容器id
+			var pop_time = 2000; //延迟时间
+			var pop_info = '文件已经保存...' //弹窗内容
+			$(pop_div).on("show.bs.modal", xclose(pop_div, pop_time, pop_info));
+		</script>
+
+	</body>
+
+</html>

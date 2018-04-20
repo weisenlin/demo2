@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>深加工结转申请表（转入）列表</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<!--标题、工具栏（注意调整默认宽度）-->
+			<div class="row p-x p-t">
+				<div class="col-sm-4">
+					<a class="refresh">
+						<h3 class="text-primary dsi">深加工结转申请表（转入）列表</h3></a>
+						<a class="xshow-switch m-l" xrole="open"><span class="xico xico-arrowup"></span>筛选</a>
+				</div>
+				<div class="m-b col-sm-8 text-sm-right">
+					<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+						<a type="button" class="btn btn-primary"><span class="xico xico-inbox2"></span>海关下载</a>
+						<a type="button" class="btn btn-primary"><span class="xico xico-wenjianjia3"></span>下载历史</a>
+						<a type="button" class="btn btn-primary"><span class="xico xico-cross2"></span>删除</a>
+					</div>
+					<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+						<a type="button" class="btn btn-primary"><span class="xico xico-reply2"></span>关闭</a>
+					</div>
+				</div>
+			</div>
+			<!--标题、工具栏end-->
+
+			<div class="x-table xshow-sidebar p-x">
+				<table class="table table-sm table-bordered th-right">
+					<tr>
+						<th class="fn-7">统一编号</th>
+						<td><input id="input" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th class="fn-7">申报表编号</th>
+						<td>
+							<select name="Select2" class="w-100" id="Select" tabindex="">
+								<option></option>
+								<option>选项内容...</option>
+								<option>选项内容...</option>
+							</select>
+						</td>
+						<th class="fn-5">申报日期</th>
+						<td colspan="3"><input type="text" tabindex="" class="dates-sel w-100" id="date" placeholder="请选择"></td>
+						<td rowspan="2" class="fn-7 text-center"><button type="button" class="btn btn-primary m-t" data-dismiss="modal"><span class="xico xico-chazhao"></span>查询</button></td>
+					</tr>
+					<tr>
+						<th>企业内部编号</th>
+						<td><input id="input" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th>账(手)册编号</th>
+						<td><input id="input" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th>转出方</th>
+						<td><input id="input" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th class="fn-5">转入方</th>
+						<td><input id="input" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="border-t bg-grey scroll-x" style="min-height: 300px;">
+				<div class="x-table p-a">
+					<table class="table table-sm table-bordered th-center th-vm">
+						<tr>
+							<th rowspan="2">记录号</th>
+							<th rowspan="2">申报表编号</th>
+							<th rowspan="2">统一编号</th>
+							<th rowspan="2">变更次数</th>
+							<th colspan="5">转入方</th>
+							<th colspan="5">转出方</th>
+							<th rowspan="2">申报地海关</th>
+							<th rowspan="2">下载时间</th>
+						</tr>
+						<tr>
+							<th>手册/帐册号</th>
+							<th>申报日期</th>
+							<th>企业内部编号</th>
+							<th>企业代码</th>
+							<th>企业名称</th>
+							<th>手册/帐册号</th>
+							<th>申报日期</th>
+							<th>企业内部编号</th>
+							<th>企业代码</th>
+							<th>企业名称</th>
+						</tr>
+						<tr>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+						</tr>
+						<tr>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+						</tr>
+						<tr>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+							<td>　</td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+
+		</div>
+		<script src="../lib/inuse/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				//定义调用laydate日期选择插件
+				//日期选择器
+				laydate.render({
+					elem: '.date-sel',
+					theme: '#39c',
+					type: 'date'
+				});
+				//日期范围
+				laydate.render({
+					elem: '.dates-sel',
+					range: true,
+					theme: '#39c',
+				});
+
+				//刷新页面
+				xrefresh('.refresh');
+				xshowswitch('.xshow-switch', '.xshow-sidebar');
+			});
+		</script>
+
+	</body>
+
+</html>

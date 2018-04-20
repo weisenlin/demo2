@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>存为模板</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--存为模板弹窗-->
+		<div id="pop-info1" class="modal fade x-modal-md" data-backdrop="false">
+			<div class="modal-dialog modal-xdrag" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          						<span aria-hidden="true">&times;</span>
+          						<span class="sr-only">Close</span>
+        				</button>
+						<h4 class="modal-title">存为模板</h4>
+					</div>
+					<div class="modal-body">
+						<!--弹窗内容开始-->
+						<div class="form-inline input-group-sm">
+							<div class="form-group w-100">
+								<label class="fn-6" for="Select1">模板名称<i class="star-sm"></i></label>
+								<input id="input1" tabindex="" type="text" class="form-control fn-20" placeholder="">
+								<input class="gn1 m-l" type="checkbox" tabindex="" value="1"> 缺省模板
+							</div>
+							<div class="form-group w-100">
+								<div class="x-table m-y">
+									<table class="table table-sm table-bordered th-center">
+										<tr>
+											<th class="fn-2"><input class="gn1" type="checkbox" tabindex="" value="1"></th>
+											<th>表名</th>
+											<th class="fn-15">字段名</th>
+										</tr>
+										<tr>
+											<th><input class="gn1" type="checkbox" tabindex="" value="1" checked> </th>
+											<td>报关单表头</td>
+											<td>申报地海关</td>
+										</tr>
+										<tr>
+											<th><input class="gn1" type="checkbox" tabindex="" value="1"> </th>
+											<td>报关单表头</td>
+											<td>进口口岸</td>
+										</tr>
+										<tr>
+											<th><input class="gn1" type="checkbox" tabindex="" value="1"> </th>
+											<td>报关单表头</td>
+											<td>消费使用单位代码</td>
+										</tr>
+										<tr>
+											<th><input class="gn1" type="checkbox" tabindex="" value="1"> </th>
+											<td>报关单表头</td>
+											<td>消费使用单位名称</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--弹窗内容开始end-->
+					</div>
+					<div class="modal-footer text-center">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">&nbsp;确定&nbsp;</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">&nbsp;取消&nbsp;</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--存为模板弹窗end-->
+		<script src="../lib/inuse/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				$('#pop-info1').modal('show'); //调试弹窗用途 显示弹窗
+				
+				xdrag('.modal-xdrag');
+
+			});
+			$(function() {
+				//同时绑定多个日期控件.date-sel
+				lay('.date-sel').each(function() {
+					laydate.render({
+						elem: this,
+						trigger: 'click',
+						theme: '#39c'
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

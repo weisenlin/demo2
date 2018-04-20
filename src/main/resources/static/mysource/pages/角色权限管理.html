@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>角色管理</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<!--左栏-->
+				<div class="col-sm-3 p-a">
+					<!--左标题工具栏-->
+					<div class="row">
+						<a class="refresh col-lg-4">
+							<h3 class="dsi text-primary">角色管理</h3>
+						</a>
+						<div class="m-b col-lg-8 text-lg-right">
+							<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+								<a type="button" class="btn btn-primary"><span class="xico xico-square-plus"></span>新增</a>
+								<a type="button" class="btn btn-primary"><span class="xico xico-square-minus"></span>删除</a>
+							</div>
+						</div>
+					</div>
+					<!--左标题工具栏end-->
+
+					<!--左列表-->
+					<div class="x-table">
+						<table class="table table-sm">
+							<tbody>
+								<tr>
+									<td>管理员</td>
+									<td class="fn-3">启用</td>
+								</tr>
+								<tr>
+									<td>录入员</td>
+									<td><i class="text-danger">停用</i></td>
+								</tr>
+								<tr>
+									<td>财务</td>
+									<td><i class="text-danger">停用</i></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--左列表end-->
+				</div>
+				<!--左栏end-->
+
+				<!--右栏-->
+				<div class="col-sm-9 p-a">
+					<!--标题、工具栏（注意调整默认宽度）-->
+					<div class="row">
+						<div class="m-b col-lg-12 text-lg-right p-r">
+							<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+								<a type="button" class="btn btn-primary"><span class="xico xico-fuzhi"></span>保存</a>
+							</div>
+						</div>
+					</div>
+					<!--标题、工具栏end-->
+
+					<!--角色编辑区-->
+					<div class="card x-form-md">
+						<div class="card-block">
+
+							<div class="form-group border-b p-b">
+								<label for="input1" class="mg-t-5">角色名称</label>
+								<div class="dsi">
+									<input type="text" class="form-control" id="input1" placeholder="请输入企业名称">
+								</div>
+								<div class="dsi">
+									<div class="radio mg-t-5">
+										<label>
+										<input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked> 启用</label>
+										<label>
+          								<input type="radio" name="gridRadios" id="gridRadios2" value="option2"> 停用</label>
+									</div>
+								</div>
+							</div>
+
+							<!--分栏-->
+							<div class="row">
+								<!--左栏-->
+								<div class="col-sm-6 p-r border-r">
+									<!--标题头-->
+									<div class="row">
+										<h4 class="col-lg-6 text-primary">设置角色的权限</h4>
+										<div class="m-b col-lg-6 text-lg-right">
+											<label><input type="checkbox" value=""> 只显示已选中的权限</label>
+										</div>
+									</div>
+									<!--标题头end-->
+
+									<!--权限树列表-->
+									<div class="border-a">
+										<div class="tree1 p-a scroll-y">
+											<div style="height: 1500px;">
+												目录树1
+											</div>
+										</div>
+									</div>
+									<!--权限树列表end-->
+								</div>
+								<!--左栏end-->
+
+								<!--右栏-->
+								<div class="col-sm-6 p-l border-l m-l--1">
+									<!--标题头-->
+									<div class="row">
+										<h4 class="col-lg-6 text-primary">设置角色下的员工</h4>
+										<div class="m-b col-lg-6 text-lg-right">
+											<label><input type="checkbox" value=""> 只显示已选中的员工</label>
+										</div>
+									</div>
+									<!--标题头end-->
+
+									<!--权限树列表-->
+									<div class="border-a">
+										<div class="tree2 p-a scroll-y">
+											<div style="height: 1500px;">
+												目录树2
+											</div>
+										</div>
+									</div>
+									<!--权限树列表end-->
+								</div>
+								<!--右栏end-->
+
+							</div>
+							<!--分栏end-->
+
+						</div>
+					</div>
+					<!--角色编辑区end-->
+
+				</div>
+				<!--右栏end-->
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				//刷新页面
+				xrefresh('.refresh');
+				//设定tree1，tree2栏高
+				setheight('.tree1', 0, 28);
+				setheight('.tree2', 0, 28);
+			});
+		</script>
+
+	</body>
+
+</html>

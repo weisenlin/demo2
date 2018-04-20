@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>报关单详情</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<!--标题工具栏-->
+			<div class="x-toolbar-wk row">
+				<div class="col-sm-11 clearfix">
+					<div class="btn-group x-toolbar p-l" role="group">
+						<a type="button" class="btn btn-primary"><span class="xico xico-file-add"></span>新增</a>
+						<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-info1"><span class="xico xico-inbox2"></span>导入</a>
+						<a type="button" class="btn btn-primary"><span class="xico xico-fuzhi"></span>复制</a>
+						<span class="x-gx"></span>
+						<a type="button" class="btn btn-primary"><span class="xico xico-hetong7"></span>修改</a>
+						<a type="button" class="btn btn-primary"><span class="xico xico-file-subtract"></span>删除</a>
+						<a type="button" class="btn btn-primary"><span class="xico xico-inbox2"></span>提交</a>
+						<span class="x-gx"></span>
+						<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-info2"><span class="xico xico-paper-clip"></span>随附单据</a>
+						<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-info3"><span class="xico xico-wenjianxinxi"></span>企业单证</a>
+						<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-info4"><span class="xico xico-yonghu2"></span>操作授权</a>
+						<span class="x-gx"></span>
+						<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-info5"><span class="xico xxico-hetong6"></span>存为模板</a>
+						<a type="button" class="btn btn-primary"><span class="xico xico-dayin2"></span>打印</a>
+					</div>
+				</div>
+				<div class="col-sm-1 clearfix">
+					<div class="btn-group x-toolbar pull-right p-r" role="group">
+						<a type="button" class="btn btn-primary"><span class="xico xico-reply2"></span>返回</a>
+					</div>
+				</div>
+			</div>
+			<!--标题工具栏end-->
+			<!--标题栏-->
+			<div class="row">
+				<div class="col-sm-2">
+					<a class="refresh p-x p-t"><h3 class="dsi text-primary">报关单详情</h3></a>
+				</div>
+				<div class="col-sm-10 p-t">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs border-none pull-right p-r" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link" href="进口报关单详情.html">报关单</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="转关申报单.html">转关申报单</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--标题栏end-->
+
+			<!--栏1-->
+			<div class="p-a border-t">
+				<h4 class="text-success">转关运输提前报关申报：</h4>
+				<div class="x-table">
+					<table class="table table-sm table-bordered th-right">
+						<tr>
+							<th class="fn-10">转关申报单号</th>
+							<td><input id="input" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+							<th class="fn-10">是否启用电子关锁<i class="star-sm"></i></th>
+							<td>
+								<select id="Select0" tabindex="" class="w-100">
+									<option></option>
+									<option>选项内容...</option>
+									<option>选项内容...</option>
+								</select>
+							</td>
+							<th class="fn-10">境内运输方式</th>
+							<td>
+								<select id="Select1" tabindex="" class="w-100">
+									<option></option>
+									<option>选项内容...</option>
+									<option>选项内容...</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>预计抵运日期</th>
+							<td>
+								<input type="text" tabindex="" class="fn-8 date-sel" id="date" placeholder="请选择">
+							</td>
+							<th>境内运输工具编号</th>
+							<td><input id="input3" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+							<th>境内运输工具名称</th>
+							<td><input id="input4" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						</tr>
+						<tr>
+							<th>境内运输工具航次</th>
+							<td><input id="input2" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+							<th>转关单申报类型<i class="star-sm"></i></th>
+							<td>
+								<select id="Select3" tabindex="" class="w-100">
+									<option></option>
+									<option>选项内容...</option>
+									<option>选项内容...</option>
+								</select>
+							</td>
+							<th>载货清单号</th>
+							<td><input id="input5" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						</tr>
+						<tr>
+							<th>备注</th>
+							<td colspan="6"><textarea id="textarea" tabindex="" class="w-100" rows="2"></textarea></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!--栏1end-->
+
+			<!--栏2-->
+			<div class="p-a border-t">
+				<h4 class="text-success">提运单信息：</h4>
+				<div class="x-table">
+					<table class="table table-sm table-bordered th-right">
+						<tr>
+							<th class="fn-8">提运单序号</th>
+							<td align="right"><input id="input11" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+							<th class="fn-8">运输工具编号</th>
+							<td><input id="input10" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+							<th class="fn-8">船舶名称</th>
+							<td><input id="input8" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+							<th class="fn-6">航次</th>
+							<td><input id="input9" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						</tr>
+						<tr>
+							<th>提单号</th>
+							<td><input id="input6" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+							<th>集装箱数</th>
+							<td><input id="input7" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+							<th>进出境日期</th>
+							<td colspan="3">
+								<input type="text" tabindex="" class="fn-8 date-sel" id="date" placeholder="请选择">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!--栏2end-->
+
+			<!--栏3-->
+			<div class="p-a border-t">
+				<div class="row">
+					<div class="col-sm-4">
+						<h4 class="text-success">集装箱信息：</h4>
+					</div>
+					<div class="col-sm-8 text-right">
+						<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+							<button type="submit" class="btn btn-sm btn-primary"><span class="xico xico-plus3"></span>增加</button>
+							<button type="submit" class="btn btn-sm btn-danger"><span class="xico xico-cross2"></span>删除</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="x-table">
+					<table class="table table-sm table-bordered th-right">
+						<th class="fn-5">集装箱号</th>
+						<td colspan="2"><input id="input12" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th class="fn-6">电子关锁号</th>
+						<td><input id="input1" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th class="fn-13">运输工具实际重量（KG）</th>
+						<td><input id="input14" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+						<th class="fn-5">规格代码</th>
+						<td>
+							<select name="Select2" class="w-100" id="Select5" tabindex="">
+								<option></option>
+								<option>选项内容...</option>
+								<option>选项内容...</option>
+							</select>
+						</td>
+						<th class="fn-9">境内运输工具名称</th>
+						<td><input id="input15" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+					</table>
+				</div>
+			</div>
+			<div class="p-a border-a m-x bg-grey">
+				<div class="x-table scroll-y" style="max-height: 200px;">
+					<table class="table table-sm table-bordered th-center">
+						<tr>
+							<td class="fn-2 p-x"><input type="checkbox" tabindex="" value="1"></th>
+								<th>集装箱序号</th>
+								<th>集装箱号</th>
+								<th>电子关锁号</th>
+								<th>规格代码</th>
+								<th>运输工具名称</th>
+								<th class="fn-14">运输工具实际重量（Kg）</th>
+						</tr>
+						<tr>
+							<td class="p-x"><input type="checkbox" tabindex="" value="1" checked></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+			<!--栏3end-->
+
+			<!--栏4-->
+			<div class="row p-b">
+				<!--栏4左-->
+				<div class="col-sm-6 border-r p-a">
+					<h4 class="text-success">商品信息显示：</h4>
+					<div class="x-table scroll-y" style="max-height: 250px;">
+						<table class="table table-sm table-bordered th-center">
+							<tr>
+								<td class="p-x fn-2"><input type="checkbox" tabindex="" value="1"></th>
+									<th class="fn-10">商品序号</th>
+									<th class="fn-10">商品编号</th>
+									<th>商品名称</th>
+									<th class="fn-6">总数量</th>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1" checked></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!--栏4左end-->
+
+				<!--栏4右-->
+				<div class="col-sm-6 clearfix border-l p-a m-l--1">
+					<div class="row">
+						<div class="col-sm-4">
+							<h4 class="text-success">集装箱与商品关系：</h4>
+						</div>
+						<div class="col-sm-8 text-right">
+							<div class="btn-group x-toolbar" role="group" aria-label="Basic example">
+								<button type="submit" class="btn btn-sm btn-primary"><span class="xico xico-plus3"></span>增加</button>
+								<button type="submit" class="btn btn-sm btn-danger"><span class="xico xico-cross2"></span>删除</button>
+							</div>
+						</div>
+					</div>
+					<div class="x-table">
+						<table class="table table-sm table-bordered th-right">
+							<tr>
+								<th class="fn-5">商品序号</th>
+								<td>
+									<select name="Select3" class="w-100" id="Select6" tabindex="">
+										<option></option>
+										<option>选项内容...</option>
+										<option>选项内容...</option>
+									</select>
+								</td>
+								<th class="fn-8">集装箱序号</th>
+								<td>
+									<select name="Select4" class="w-100" id="Select7" tabindex="">
+										<option></option>
+										<option>选项内容...</option>
+										<option>选项内容...</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>商品件数</th>
+								<td align="right"><input id="input16" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+								<th>商品毛重（Kg）</th>
+								<td align="right"><input id="input17" tabindex="" type="text" class="w-100 form-control" placeholder=""></td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="x-table p-a border-a bg-grey scroll-y" style="max-height: 165px;">
+						<table class="table table-sm table-bordered th-center">
+							<tr>
+								<td class="p-x fn-2"><input type="checkbox" tabindex="" value="1"></th>
+									<th>商品序号</th>
+									<th>集装箱编号</th>
+									<th class="fn-6">件数</th>
+									<th class="fn-6">重量</th>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1" checked></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="p-x"><input type="checkbox" tabindex="" value="1"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+
+				</div>
+				<!--栏4右end-->
+
+			</div>
+			<!--栏4end-->
+		</div>
+		<script src="../lib/inuse/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-red',
+					radioClass: 'iradio_flat-red'
+				});
+				//					$('#pop-infox').modal('show'); //调试弹窗用途 显示弹窗
+				xrefresh('.refresh');
+			});
+			$(function() {
+				//同时绑定多个日期控件.date-sel
+				lay('.date-sel').each(function() {
+					laydate.render({
+						elem: this,
+						trigger: 'click',
+						theme: '#39c'
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

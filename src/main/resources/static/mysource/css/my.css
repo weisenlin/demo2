@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.jsgrid-click > .jsgrid-cell {
+    background: #e7ef8b;
+}
+
+
+.jsgrid-click > .jsgrid-header-cell {
+    background: #e7ef8b;
+}

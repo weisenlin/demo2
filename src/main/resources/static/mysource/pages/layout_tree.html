@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>框架页面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="renderer" content="webkit"> 
+		<link rel="stylesheet" type="text/css" href="../dhtmx/dhtmlx.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<script src="../dhtmx/dhtmlx.js"></script>
+		<script type="text/javascript" src="../dhtmx/dtree/dtree.js"></script>
+		<script src="../lib/jquery.min.js"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+
+		<script>
+			var myLayout, myMenu, sbObj, a, b, myToolbar, d2;
+
+			function doOnLoad() {
+				myLayout = new dhtmlXLayoutObject({
+					parent: document.body,
+					pattern: "2U",
+					offsets: {
+						top: 20,
+						right: 0,
+						bottom: 0,
+						left: 0
+					}
+				});
+
+				myMenu = new dhtmlXMenuObject("menuObj");
+				myLayout.attachMenu(myMenu);
+
+				a = myLayout.cells("a")
+				a.setWidth(220);
+				a.setText('功能导航');
+				a.attachObject('a_tree');
+
+				b = myLayout.cells("b");
+				b.hideHeader();
+
+				b.attachObject('my_tabbar');
+				myTabbar = new dhtmlXTabBar({
+					parent: "my_tabbar",
+					close_button: true,
+					tabs: [
+
+					]
+				});
+
+				myLayout.attachEvent("onResizeFinish", function() {
+					myTabbar.setSizes();
+				});
+				myLayout.attachEvent("onPanelResizeFinish", function() {
+					myTabbar.setSizes();
+				});
+				openModule('1', '表单实例', '../templates/base.html'); //默认页面
+			}
+
+			<!-- 导航菜单打开标签页 -->
+			function openModule(id, name, url) {
+				if(!myTabbar.tabs('tab' + id)) {
+					myTabbar.addTab('tab' + id, name);
+					var curFrame = document.createElement('iframe');
+					curFrame.id = "frame" + id;
+					curFrame.width = "100%";
+					curFrame.height = "100%";
+					curFrame.style = "border:0px";
+					iframeDiv = document.getElementById('my_tabbar');
+					iframeDiv.appendChild(curFrame);
+					curFrame.src = url;
+					myTabbar.tabs('tab' + id).attachObject("frame" + id);
+				}
+				myTabbar.tabs('tab' + id).setActive();
+			}
+
+			<!-- 页面功能打开标签页 -->
+			function openTab(name, url) {
+				var id = new Date().getTime();
+				myTabbar.addTab('tab' + id, name);
+				var curFrame = document.createElement('iframe');
+				curFrame.id = "frame" + id;
+				curFrame.width = "100%";
+				curFrame.height = "100%";
+				curFrame.style = "border:0px";
+				iframeDiv = document.getElementById('my_tabbar');
+				iframeDiv.appendChild(curFrame);
+				curFrame.src = url;
+				myTabbar.tabs('tab' + id).attachObject("frame" + id);
+				myTabbar.tabs('tab' + id).setActive();
+			}
+		</script>
+		<style type="text/css">
+			.dhxlayout_base_material div.dhx_cell_layout div.dhx_cell_hdr {
+				height: 42px;
+				line-height: 42px;
+				background-color: #39c;
+			}
+			
+			.menuTree,
+			.menubar {
+				padding: 10px;
+			}
+			
+			div#a_tree {
+				background-color: #fafafa;
+				border-right: 1px solid #dfdfdf;
+			}
+		</style>
+	</head>
+
+	<body onload="doOnLoad();">
+
+		<div class="logBar">
+			<div id="logo">新盛通<em>smartlink</em>报关云平台</div>
+			<div id="menuObj">
+				<div class="row">
+					<div class="col-sm-4">
+						<a href="layout.html">侧栏菜单结构</a>
+					</div>
+					<div class="col-sm-8 text-right">
+						<a href="">第一次使用平台？</a>
+						<a href="">平台客服</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="my_tabbar" class="tabBarClass"></div>
+
+		<div id="a_tree" class="menuTree"></div>
+		<Script type="text/javascript">
+			modTree = new dTree('modTree', '../dhtmx/dtree/');
+			modTree.multiSel = "false" == "false" ? false : true; //多选
+			modTree.isRootDif = "false" == "false" ? false : true; //不区别根节点
+
+			modTree.add('menu-1', '-1', '保留控件', '', false);
+			modTree.add('m-1-1', 'menu-1', 'combobox', '../templates/combobox.html', false);
+			modTree.add('m-1-2', 'menu-1', 'dtree示例', './dtree/html/dtree_test.html', false);
+			modTree.add('m-1-3', 'menu-1', '分页导航', '../templates/pager.html', false);
+			modTree.add('m-1-4', 'menu-1', '分页导航2', '../templates/pager2.html', false);
+			modTree.add('m-1-5', 'menu-1', '原分页表格测试', '/grid/index4.ctr#', false);
+			modTree.add('menu-2', '-1', '页面示范', '', false);
+			modTree.add('m-2-1', 'menu-2', '基础页面', '../templates/base.html', false);
+			modTree.add('m-2-2', 'menu-2', '工具栏Toorbar', '../templates/base_toolsbar.html', false);
+			modTree.add('m-2-3', 'menu-2', '搜索栏search_bar', '../templates/search_bar.html', false);
+			modTree.add('m-2-4', 'menu-2', '自定义表格x-table', '../templates/base_table.html', false);
+			modTree.add('m-2-5', 'menu-2', '标签base_tab', '../templates/base_tab.html', false);
+			modTree.add('m-2-6', 'menu-2', '输入表input_table', '../templates/base_input_table.html', false);
+			modTree.add('menu-3', '-1', '流程管理', '', false);
+			modTree.add('m-3-1', 'menu-3', '流程类型', '/engine/spring/proctype/index.ctr', false);
+			modTree.add('m-3-2', 'menu-3', '流程定义', '/engine/spring/procDefine/index.ctr', false);
+			modTree.add('m-3-3', 'menu-3', '流程测试', '/test/process.do', false);
+			modTree.show('a_tree');
+			modTree.itemClickMethod = openModule;
+		</script>
+
+	</body>
+
+</html>
