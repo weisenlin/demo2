@@ -58,7 +58,7 @@
     TradeCoOrg, TradeName, AgentCode, AgentCodeScc, AgentCodeOrg, AgentName, Notes, emstr_flag, 
     ems_flag, emsdcr_flag, dec_flag, transapply_flag, transbill_flag
   </sql>
-  <sql id="Blob_Column_List" >
+  <sql id="Blob_Column_List">
     SignBmp
   </sql>
   <select id="getUsersByEnterprise" resultType="com.wsl.demo.model.User" parameterType="int">
@@ -71,6 +71,9 @@
     <include refid="Blob_Column_List" />
     from platentinfo
     where PlatEntID = #{platEntID,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="ResultMapWithBLOBs">
+    select * from platentinfo
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from platentinfo
