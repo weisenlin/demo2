@@ -21,7 +21,7 @@
             border:1px solid #ccc;
         }
     </style>
-    <script type="text/javascript" src="http://www.w3cschool.cc/try/jeasyui/datagrid-detailview.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-easyui-datagridview/datagrid-detailview.js"></script>
     <script type="text/javascript">
         $(function(){
             $('#dg').datagrid({
