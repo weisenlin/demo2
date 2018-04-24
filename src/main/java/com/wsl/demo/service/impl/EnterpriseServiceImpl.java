@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/4/18.
  */
@@ -19,5 +21,10 @@ public class EnterpriseServiceImpl implements EnterpriseService{
     @Override
     public Enterprise getEntity(Integer id) {
         return enterpriseMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public List<Enterprise> getList() {
+        return enterpriseMapper.selectAll();
     }
 }

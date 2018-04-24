@@ -2,6 +2,9 @@ package com.wsl.demo.mapper;
 
 import com.wsl.demo.model.Enterprise;
 
+import java.util.List;
+
+
 public interface EnterpriseMapper {
     int deleteByPrimaryKey(Integer platEntID);
 
@@ -16,4 +19,6 @@ public interface EnterpriseMapper {
     int updateByPrimaryKeyWithBLOBs(Enterprise record);
 
     int updateByPrimaryKey(Enterprise record);
+
+    List<Enterprise> selectAll();
 }

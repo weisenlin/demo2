@@ -1,5 +1,7 @@
 package com.wsl.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 public class Enterprise {
@@ -86,7 +88,7 @@ public class Enterprise {
     private String transapply_flag;
 
     private String transbill_flag;
-
+    @JsonIgnore
     private byte[] signBmp;
 
     private List<User> users;

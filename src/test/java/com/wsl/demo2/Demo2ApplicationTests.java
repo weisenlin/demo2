@@ -34,7 +34,7 @@ public class Demo2ApplicationTests {
 
 	@Test
 	public void testService(){
-		User user = userService.getEntity("1001");
+		User user = userService.getEntity("1");
 		System.out.println(user.getUsername());
 	}
 
