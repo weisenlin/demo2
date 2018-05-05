@@ -1,12 +1,14 @@
 package com.wsl.demo.controller;
 
 import com.wsl.demo.model.Enterprise;
+import com.wsl.demo.model.Result;
 import com.wsl.demo.model.User;
 import com.wsl.demo.service.EnterpriseService;
 import com.wsl.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,5 +45,18 @@ public class IndexController {
     public String index() {
 
         return "/shiro/index";
+    }
+
+    @RequestMapping("/")
+    public String toLogin(){
+
+        return "/login";
+    }
+
+    @RequestMapping("/ajax/login.do")
+    @ResponseBody
+    public Result loginAjax(String platEntId, String login, String password){
+
+        return Result.OK;
     }
 }
