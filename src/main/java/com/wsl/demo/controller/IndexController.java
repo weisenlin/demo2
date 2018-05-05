@@ -56,7 +56,16 @@ public class IndexController {
     @RequestMapping("/ajax/login.do")
     @ResponseBody
     public Result loginAjax(String platEntId, String login, String password){
-
+        Map<String, Object> map = new HashMap<>();
+        map.put("loginaccount", login);
+        map.put("platentid", platEntId);
+        map.put("loginpwd", password);
+        User loginUser = userService.login(map);
+        if(loginUser!=null){
+            Result result = new Result();
+            result.setData(loginUser);
+            return result;
+        }
         return Result.OK;
     }
 }

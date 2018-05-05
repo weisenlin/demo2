@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>欢迎登录</title>
+    <title>框架页</title>
     <link rel="stylesheet" type="text/css" href="/js/lib/jquery-easyui-1.5.4.5/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="/js/lib/jquery-easyui-1.5.4.5/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="/js/lib/jquery-easyui-1.5.4.5/demo/demo.css">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<div id="loginWin" class="easyui-window" title="登录" style="width:350px;height:188px;padding:5px;"
+<div id="loginWin" class="easyui-window" title="登录" style="width:350px;height:250px;padding:5px;"
      minimizable="false" maximizable="false" resizable="false" collapsible="false">
     <div class="easyui-layout" fit="true">
         <div region="center" border="false" style="padding:5px;background:#fff;border:1px solid #ccc;">
@@ -38,8 +38,6 @@
     </div>
 </div>
 </body>
-<script type="text/javascript" src="js/jQuery/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="js/jQuery/jquery.easyui.min.js"></script>
 <script type="text/javascript">
     document.onkeydown = function(e){
         var event = e || window.event;
@@ -49,7 +47,7 @@
         }
     }
     $(function(){
-        $("input[name='login']").focus();
+        $("input[name='platEntId']").focus();
     });
     function cleardata(){
         $('#loginForm').form('clear');
@@ -68,7 +66,7 @@
                     $("#showMsg").html(request);  //登录错误提示信息
                 },
                 success:function(data) {
-                    document.location = "/";
+                    document.location = "/layout.do";
                 }
             });
         }
